@@ -1,0 +1,31 @@
+﻿<h3 class="title f-sub" onclick="shrink(0)">
+    <i class="z-subtraction"></i>
+    还款提醒记录
+</h3>
+<div class="cbody" style="display: block;">
+    <p>
+        <label for="productName">借款类型：</label>
+        <span class="selectimg u-i-middle">
+            <select name="productName" id="productName" class="form-control  select">
+                <option value="0">全部</option>
+                <option value="1">信用借款</option>
+                <option value="2">车辆借款</option>
+            </select>
+            <span></span>
+        </span>
+    </p>
+
+    <div>
+        <label for="contractDate1">还款提醒日期：</label>
+        <input type="text" readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="timeBegin" name="signDate">
+
+        <sapn class="u-spild spild">至</sapn>
+
+        <input type="text" readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="timeEnd" name="signDate1">
+    </div>
+
+    <p class="padding">
+        <button class="u-b-base u-b-exit s-b-gray u-b-spild pull-right" onclick="closeWind()">取消</button>
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild pull-right" id="carRemindExcle">导出EXCEL</button>
+    </p>
+</div>

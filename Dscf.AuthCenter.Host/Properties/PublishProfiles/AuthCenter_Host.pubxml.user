@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\贷后项目发布\认证中心服务</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Autofac.dll">
+      <publishTime>03/01/2017 16:36:14</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Wcf.dll">
+      <publishTime>09/11/2015 16:38:34</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>02/24/2016 19:36:08</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Contract.dll">
+      <publishTime>02/26/2018 14:36:59</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Contract.pdb">
+      <publishTime>02/26/2018 14:36:59</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Dao.dll">
+      <publishTime>02/26/2018 14:36:55</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Dao.pdb">
+      <publishTime>02/26/2018 14:36:55</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Domain.dll">
+      <publishTime>02/26/2018 14:36:52</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Domain.pdb">
+      <publishTime>02/26/2018 14:36:52</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Dto.dll">
+      <publishTime>02/26/2018 14:36:58</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Dto.pdb">
+      <publishTime>02/26/2018 14:36:58</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Host.dll">
+      <publishTime>02/26/2018 18:30:51</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Host.pdb">
+      <publishTime>02/26/2018 18:30:50</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Manager.dll">
+      <publishTime>02/26/2018 14:36:59</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Manager.pdb">
+      <publishTime>02/26/2018 14:36:59</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Service.dll">
+      <publishTime>02/26/2018 14:37:00</publishTime>
+    </File>
+    <File Include="bin/Dscf.AuthCenter.Service.pdb">
+      <publishTime>02/26/2018 14:37:00</publishTime>
+    </File>
+    <File Include="bin/Dscf.Common.Dao.dll">
+      <publishTime>02/26/2018 14:36:54</publishTime>
+    </File>
+    <File Include="bin/Dscf.Common.Dao.pdb">
+      <publishTime>02/26/2018 14:36:54</publishTime>
+    </File>
+    <File Include="bin/Dscf.Common.Manager.dll">
+      <publishTime>02/26/2018 14:36:55</publishTime>
+    </File>
+    <File Include="bin/Dscf.Common.Manager.pdb">
+      <publishTime>02/26/2018 14:36:55</publishTime>
+    </File>
+    <File Include="bin/Dscf.PostLoanGlobal.dll">
+      <publishTime>02/26/2018 14:36:52</publishTime>
+    </File>
+    <File Include="bin/Dscf.PostLoanGlobal.pdb">
+      <publishTime>02/26/2018 14:36:52</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/HibernatingRhinos.Profiler.Appender.dll">
+      <publishTime>12/20/2016 14:52:20</publishTime>
+    </File>
+    <File Include="bin/ICSharpCode.SharpZipLib.dll">
+      <publishTime>01/03/2011 14:16:38</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/08/2017 19:26:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/NPOI.dll">
+      <publishTime>03/21/2017 07:53:26</publishTime>
+    </File>
+    <File Include="bin/NPOI.OOXML.dll">
+      <publishTime>03/21/2017 07:53:26</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXml4Net.dll">
+      <publishTime>03/21/2017 07:53:26</publishTime>
+    </File>
+    <File Include="bin/NPOI.OpenXmlFormats.dll">
+      <publishTime>03/21/2017 07:53:26</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>03/10/2014 11:33:46</publishTime>
+    </File>
+    <File Include="DscfACService.svc">
+      <publishTime>06/21/2017 14:30:56</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>06/21/2017 14:30:56</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>06/21/2017 14:30:56</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/26/2018 18:30:51</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,13 @@
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\Dscf.Global.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\Dscf.Global.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\log4net.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\NPOI.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\NPOI.OOXML.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\NPOI.OpenXml4Net.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\NPOI.OpenXmlFormats.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\log4net.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Release\NPOI.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\obj\Release\Dscf.Global.csprojResolveAssemblyReference.cache
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\obj\Release\Dscf.Global.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\obj\Release\Dscf.Global.pdb

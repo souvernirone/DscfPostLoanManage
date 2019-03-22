@@ -1,0 +1,13 @@
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\Dscf.Global.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\Dscf.Global.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\log4net.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\NPOI.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\NPOI.OOXML.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\NPOI.OpenXml4Net.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\NPOI.OpenXmlFormats.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\log4net.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\bin\Debug\NPOI.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\obj\Debug\Dscf.Global.csprojResolveAssemblyReference.cache
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\obj\Debug\Dscf.Global.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Global\obj\Debug\Dscf.Global.pdb

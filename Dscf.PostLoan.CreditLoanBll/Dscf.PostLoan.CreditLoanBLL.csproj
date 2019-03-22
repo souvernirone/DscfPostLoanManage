@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9301EE0-8ACA-4D10-81D9-C15C3783BCC9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dscf.PostLoan.CreditLoanBLL</RootNamespace>
+    <AssemblyName>Dscf.PostLoan.CreditLoanBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dscf.Global, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\192.168.2.2\dll\Dscf.Global.dll</HintPath>
+    </Reference>
+    <Reference Include="Dscf.Global.Interface">
+      <HintPath>\\192.168.2.2\dll\Dscf.Global.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Dscf.Global.Just">
+      <HintPath>\\192.168.2.2\dll\Dscf.Global.Just.dll</HintPath>
+    </Reference>
+    <Reference Include="Dscf.Global.Unionpay">
+      <HintPath>\\192.168.2.2\dll\Wcf\bin\Dscf.Global.Unionpay.dll</HintPath>
+    </Reference>
+    <Reference Include="Dscf.Global.Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\192.168.2.2\dll\Dscf.Global.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicProxy">
+      <HintPath>\\192.168.2.2\dll\LogicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreditLoanDeptInfoBLL.cs" />
+    <Compile Include="CreditLoanInfoProductBLL.cs" />
+    <Compile Include="CreditLoanProductOrderBLL.cs" />
+    <Compile Include="CreditLoanInfoBLL.cs" />
+    <Compile Include="CreditLoanBackInfoBLL.cs" />
+    <Compile Include="CreditLoan_MonthRepayBLL.cs" />
+    <Compile Include="CreditLoanDeductProgressBLL.cs" />
+    <Compile Include="CreditLoanExcleInfoBLL.cs" />
+    <Compile Include="Extension\MapperExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DscfCreditLoanService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Dscf.PostLoan.Model.LoanInfoViewModel.datasource" />
+    <None Include="Service References\DscfCreditLoanService\CreditLoanService.wsdl">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.BankInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditCountDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditCriticalAmountListDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditFinancialExportExcleDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditOverdueExcelDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditOverdueListDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditRemidDetailDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditRemindListDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.DepartmentInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.LoanDeductProgressDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.LoanInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.LoanOrderDetailDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.LoanProductOrderDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.Loan_DeductProgressDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.Loan_MonthRepayInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.ProductDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.UserInfoDto1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\DscfCreditLoanService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\DscfCreditLoanService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\DscfCreditLoanService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\DscfCreditLoanService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dscf.PostLoan.Model\Dscf.PostLoan.Model.csproj">
+      <Project>{806b7440-3bb8-4884-b35d-8d627d103a0f}</Project>
+      <Name>Dscf.PostLoan.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoanGlobal\Dscf.PostLoanGlobal.csproj">
+      <Project>{aeafb747-35f7-410a-ba21-9100417cf486}</Project>
+      <Name>Dscf.PostLoanGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.Settlement.Model\Dscf.Settlement.Model.csproj">
+      <Project>{2c75507d-0261-4cba-bbb4-9efe21fd9f61}</Project>
+      <Name>Dscf.Settlement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dscf.PostLoan.Model\Dscf.PostLoan.Model.csproj">
+      <Project>{806b7440-3bb8-4884-b35d-8d627d103a0f}</Project>
+      <Name>Dscf.PostLoan.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DscfCreditLoanService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCreditLoanService\DscfCreditLoanService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCreditLoanService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCreditLoanService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCreditLoanService\DscfCreditLoanService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCreditLoanService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dscf.Global.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。启用“NuGet 程序包还原”可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

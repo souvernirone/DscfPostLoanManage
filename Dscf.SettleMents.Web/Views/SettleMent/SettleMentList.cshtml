@@ -1,0 +1,99 @@
+﻿@using System.Web.Optimization;
+@model Dscf.Settlement.Model.LoanSearchViewModels
+@{
+    ViewBag.Title = "借款信息列表";
+}
+<div class="g-mn1c tb">
+    <div class="search">
+        <p>
+            @Html.LabelFor(model => model.Name)
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control u-i-middle" })
+
+            @Html.LabelFor(model => model.ContractNo)
+            @Html.TextBoxFor(model => model.ContractNo, new { @class = "form-control u-i-middle" })
+        </p>
+        <p>
+            @Html.LabelFor(model => model.IdCard)
+            @Html.TextBoxFor(model => model.IdCard, new { @class = "form-control u-i-middle" })
+
+            @Html.LabelFor(model => model.UserPhone)
+            @Html.TextBoxFor(model => model.UserPhone, new { @class = "form-control u-i-middle" })
+        </p>
+        <p>
+            @Html.LabelFor(model => model.City)
+            @Html.TextBoxFor(model => model.City, new { @class = "form-control u-i-middle" })
+            @Html.ValidationMessageFor(model => model.City)
+
+            @Html.LabelFor(model => model.OrderType)
+            <span class="selectimg u-i-middle ">
+                @Html.DropDownListFor(model => model.OrderType, ViewData["custromType"] as IEnumerable<SelectListItem>, new { @class = "form-control select" })
+            </span>
+        </p>
+        <div>
+            @Html.LabelFor(model => model.SignTimeFrom)
+            @Html.TextBoxFor(model => model.SignTimeFrom, new { @readOnly = "readOnly", @class = "form-control form_datetime  u-i-middle" })
+
+            <span class="u-spild" style="font-size: 1.343em;">至</span>
+            @Html.TextBoxFor(model => model.SignTimeTo, new { @readOnly = "readOnly", @class = "form-control form_datetime  u-i-middle" })
+
+        </div>
+        <p>
+            <button class="u-b-two s-b-blue1 pull-right" id="search-btn">搜索</button>
+        </p>
+    </div>
+    @*}*@
+    <div class="table-responsive">
+
+        <table class="table table-bordered f-hide" id="integrate">
+            <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>签署地</th>
+                    <th>姓名</th>
+                    <th>身份证号</th>
+                    <th>产品类型</th>
+                    <th>合同编号</th>
+                    <th>合同金额</th>
+                    <th>签约日期</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="container"></tbody>
+        </table>
+    </div>
+    <!--分页局部视图-->
+    <div>@Html.Partial("_PartialPager")</div>
+
+</div>
+
+@section css
+{
+    @Styles.Render("~/Content/css/datepicker")
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/settleMentJs")
+    @Scripts.Render("~/bundles/datepickerJs")
+
+    @Scripts.Render("~/bundles/dataPagerJs")
+    @Scripts.Render("~/bundles/dataFormat")
+
+    <script id="templete" type="text/x-jquery-tmpl">
+        <tr id="row-${OrderId}">
+            <td>${OrderId}</td>
+            <td>${SignCity}</td>
+            <td>${Name}</td>
+            <td>${IDCard}</td>
+            <td>${ProductName}</td>
+            <td>${Contract}</td>
+            <td>${Amount}</td>
+            <td>${SignDate}</td>
+            <td>
+                <a class="u-b-one s-b-blue  " target="_self" id="details-${OrderId}" href="/SettleMent/CreditOrCarLoanInfoDetails?orderType=${OrderType}&orderId=${OrderId}&css=2060">详</a>
+                @*<button class="u-b-two s-b-blue1 pull-right" onclick="Details($.tmplItem(this))" id="details-${OrderId}">详</button>*@
+            </td>
+        </tr>
+
+    </script>
+}

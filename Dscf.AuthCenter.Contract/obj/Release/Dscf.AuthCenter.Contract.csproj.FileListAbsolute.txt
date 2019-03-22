@@ -1,0 +1,15 @@
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\Dscf.AuthCenter.Contract.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\Dscf.AuthCenter.Contract.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\Dscf.AuthCenter.Dto.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\log4net.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\Dscf.AuthCenter.Domain.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\AutoMapper.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\EntityFramework.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\Dscf.AuthCenter.Dto.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\log4net.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\Dscf.AuthCenter.Domain.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\AutoMapper.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\bin\Release\EntityFramework.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\obj\Release\Dscf.AuthCenter.Contract.csprojResolveAssemblyReference.cache
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\obj\Release\Dscf.AuthCenter.Contract.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Contract\obj\Release\Dscf.AuthCenter.Contract.pdb

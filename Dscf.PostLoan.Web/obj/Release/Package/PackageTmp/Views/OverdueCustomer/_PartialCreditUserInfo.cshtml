@@ -1,0 +1,35 @@
+﻿@using System.Web.Optimization
+
+@model Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.UserInfoDto
+
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(0)">
+        <i class="z-subtraction"></i>基本信息
+    </h3>
+    <div class="cbody">
+        <p>
+            <label>姓名：</label>
+            <span>@Model.Name</span>
+        </p>
+        <p>
+            <label>身份证号码：</label>
+            <span>@Model.IDCard</span>
+        </p>
+        <p>
+            <label>联系电话：</label>
+            <span>@Model.Phone</span>
+        </p>
+        <p>
+            <label>居住地址：</label>
+            <span>@Model.Address</span>
+        </p>
+        <p>
+            <label>居住地邮编：</label>
+            <span>@Model.AddressZipCode</span>
+        </p>
+        <p>
+            <label>居住地电话：</label>
+            <span>@Model.AddressTel</span>
+        </p>
+    </div>
+</div>

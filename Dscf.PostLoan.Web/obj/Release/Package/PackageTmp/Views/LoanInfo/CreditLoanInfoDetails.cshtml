@@ -1,0 +1,124 @@
+﻿@using System.Web.Optimization;
+@model Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.LoanInfoDto
+@{
+    ViewBag.Title = "信贷借款信息详细";
+}
+<div class="g-mn1c">
+    <div class="spilds">
+        <p>
+            <label>姓名：</label>
+            <span>@Model.Name</span>
+        </p>
+        <p>
+            <label>身份证：</label>
+            <span>@Model.IDCard</span>
+        </p>
+        <p>
+            <label>卡号：</label>
+            <span>@Model.DeductBankAccount</span>
+        </p>
+        <p>
+            <label>银行名称：</label>
+            <span>@Model.DeductBankName</span>
+
+
+        </p>
+        <p>
+            <label>支行名称：</label>
+            <span>@Model.DeductBranchBank</span>
+        </p>
+        <p>
+            <label>产品类型：</label>
+            <span>@Model.ProductName</span>
+
+        </p>
+        <p>
+            <label>合同编号：</label>
+            <span>@Model.Contract</span>
+
+        </p>
+        <p>
+            <label>合同金额：</label>
+            <span>@(Model.Amount)元</span>
+        </p>
+        <p>
+            <label>签约日期：</label>
+            <span>@(Model.SignDate.HasValue ? Model.SignDate.Value.ToLongDateString().ToString() : string.Empty)</span>
+        </p>
+        @*<p>
+                <label>月还计划表：</label>
+
+            </p>*@
+        <div>
+            <label style="vertical-align: top;">月还计划表：</label>
+            <div class="table-responsive" style="display:inline-block;">
+                <table class="table table-bordered" id="integrate">
+                    <thead>
+                        <tr>
+                            <th>第几期</th>
+                            <th>月还款</th>
+                            <th>月还本金</th>
+                            <th>月还利息</th>
+                            <th>剩余本金</th>
+                            <th>月还时间</th>
+                            <th>还款状态</th>
+                        </tr>
+                    </thead>
+                    @if (ViewData["LoanMonth"] != null)
+                    {
+                        foreach (var repay in ViewData["LoanMonth"] as Dscf.PostLoan.Model.Loan_MonthRepayViewModel[])
+                        {
+                            <tr>
+                                <td>@repay.PeriodOrder</td>
+                                <td>@repay.MonthRepay</td>
+                                <td>@repay.MonthRepayPrincipal</td>
+                                <td>@repay.MonthInterest</td>
+                                <td>@repay.RemainPrincipal</td>
+                                <td>@(repay.RepayDate.HasValue ? repay.RepayDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                                <td>
+                                    @if (repay.IsDeductSucess == true)
+                                    {
+                                        <span>已还</span>
+                                    }
+                                    else if (DateTime.Compare(repay.RepayDate.Value, DateTime.Now.Date) < 0) //逾期
+                                    {
+                                        <span>逾期</span>
+                                    }
+                                    else
+                                    {
+                                        <span>未还</span>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                    <tbody id="container"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <span class="close" onclick="window.location = '/LoanInfo/LoanInfoList?css=1052'"></span>
+
+    </div>
+
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/loanInfoDetails")
+    <script id="templete" type="text/x-jquery-tmpl">
+        <tr id="row-${LoanOrderId}">
+            <td>${LoanOrderId}</td>
+            <td>${ContractAmount}</td>
+            <td>${AmountOfHand}</td>
+            <td>${ToalPeriod}</td>
+            <td>${TotalServiceFee}</td>
+            <td>${MonthRepayPrincipal}</td>
+            <td>${MonthInterest}</td>
+            <td>${RemainPrincipal}</td>
+            <td>${TotalPricipalInterest}</td>
+        </tr>
+
+    </script>
+
+}

@@ -1,0 +1,28 @@
+﻿@model System.Collections.Generic.IEnumerable<Dscf.PostLoan.AuthCenterBLL.DscfACService.OperaterInfoDto>
+
+
+<table class="table table-bordered noborder">
+    <thead>
+        <tr>
+            <th style="width:10%">姓名</th>
+            <th style="width:8%">角色</th>
+            <th>城市</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="@Html.ViewData["Type"]" data-type="@item.CollectionTypeId">
+                <td >@item.Name</td>
+                <td class="CollectionType" data-optid="@item.Id" data-optname="@item.Name">
+                    @(string.IsNullOrEmpty(item.CollectionTypeName) ? "请选择" : item.CollectionTypeName)
+                </td>
+                <td id="@(Html.ViewData["Type"])@item.Id">@(string.Join(",", item.SupportDeptList.Select(dept => dept.SignCity)))</td>
+                <td>
+                    <a data-optid="@item.Id" class="f-add @(Html.ViewData["Type"])Link" href="#"></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

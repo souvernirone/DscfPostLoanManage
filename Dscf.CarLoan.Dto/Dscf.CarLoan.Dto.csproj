@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C6DF50E8-5F48-4853-BF76-503AB9A008AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dscf.CarLoan.Dto</RootNamespace>
+    <AssemblyName>Dscf.CarLoan.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarCountDto.cs" />
+    <Compile Include="CarFinancialExportExcleDto.cs" />
+    <Compile Include="CarFinancialExportExcleRequest.cs" />
+    <Compile Include="CarInfoDto.cs" />
+    <Compile Include="CarLoanBatchDeductDto.cs" />
+    <Compile Include="CarLoanConfigDto.cs" />
+    <Compile Include="CarLoanExtensionApplyDto.cs" />
+    <Compile Include="CarOverdueExcelDto.cs" />
+    <Compile Include="CarOverdueListDto.cs" />
+    <Compile Include="CarRemidDetailDto.cs" />
+    <Compile Include="CarUserInfoDto.cs" />
+    <Compile Include="CarRemindListDto.cs" />
+    <Compile Include="ContractFormationDto.cs" />
+    <Compile Include="DeductProgressDto.cs" />
+    <Compile Include="CarDeductViewModelDto.cs" />
+    <Compile Include="Extension\MapperExtention.cs" />
+    <Compile Include="FaceTrialInfoDto.cs" />
+    <Compile Include="ImagesDto.cs" />
+    <Compile Include="LoanMonthRepayDto.cs" />
+    <Compile Include="CarLoanOrderDetailDto.cs" />
+    <Compile Include="LoanOrderDto.cs" />
+    <Compile Include="LoanProductExtensionOrderDto.cs" />
+    <Compile Include="LoanProductOrderDto.cs" />
+    <Compile Include="ExhibitionReviewDto.cs" />
+    <Compile Include="OverdueSearchRequest.cs" />
+    <Compile Include="LoanSearchaRequest.cs" />
+    <Compile Include="LobbyInfoDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DscfACService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SignedInfoDto.cs" />
+    <Compile Include="UserInfoDto.cs" />
+    <Compile Include="UserWorkInfoDto.cs" />
+    <Compile Include="V_CarLoanOrderOverdueInfoDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dscf.CarLoan.Domain\Dscf.CarLoan.Domain.csproj">
+      <Project>{a36ca39f-7b9e-457d-8889-709ac8ad3df9}</Project>
+      <Name>Dscf.CarLoan.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\DscfACService\AuthCenterService.wsdl" />
+    <None Include="Service References\DscfACService\Dscf.CarLoan.Dto.DscfACService.DepartmentInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfACService\Dscf.CarLoan.Dto.DscfACService.DictionaryDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfACService\Dscf.CarLoan.Dto.DscfACService.OperaterInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfACService\Dscf.CarLoan.Dto.DscfACService.OptCityDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfACService\DscfACService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfACService\DscfACService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfACService\DscfACService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfACService\DscfACService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfACService\DscfACService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DscfACService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfACService\DscfACService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfACService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfACService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfACService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,28 @@
+﻿@using System.Web.Optimization
+
+@model System.Collections.Generic.IEnumerable<Dscf.PostLoan.Web.DscfBIService.MenuEntity>
+
+<ul class="m-sd ">
+    @foreach (var menu in Model.Where(item => (item.Level == 1 || item.Level == null)))
+    {
+        <li class="open">
+            <a href="javascript:;">
+                <i class="@menu.Icon"></i>
+                <span class="title">@menu.Name</span>
+                <span class="arrow open"></span>
+            </a>
+            <ul class="sub-menu" style="display: block;">
+
+                @foreach (var cmenu in Model.Where(item => item.ParentId == menu.Id))
+                {
+                    Uri uri;
+                    Uri.TryCreate(cmenu.Url, UriKind.RelativeOrAbsolute,out uri);
+                    <li>
+                        <a class="" data-id="@cmenu.Id" href="@((uri.IsAbsoluteUri ? uri.AbsolutePath : uri.ToString()) + "?css=" + cmenu.Id)">@cmenu.Name</a>
+                    </li>
+                }
+
+            </ul>
+        </li>
+    }
+</ul>

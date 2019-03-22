@@ -1,0 +1,76 @@
+﻿
+<h3 class="title f-sub" onclick="shrink(1)">
+    <i class="z-subtraction"></i>
+    逾期违约报表
+</h3>
+<div class="cbody">
+    <p>
+        <label for="loanOrderType">借款类型：</label>
+        <span class="selectimg u-i-middle">
+            <select name="loanOrderType" id="loanOrderType" class="form-control  select">
+                <option value="1">信用借款</option>
+                <option value="2">车辆借款</option>
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="deptId">城市：</label>
+        <span class="selectimg u-i-sort">
+            <select name="deptId" id="deptId" class="form-control select">
+                <option value="">全部</option>
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="customerType">客户类型：</label>
+        <span class="selectimg u-i-sort">
+            <select name="customerType" id="customerType" class="form-control select">
+                <option value="0">新客户</option>
+                <option value="1">老客户</option>
+                <option value="2">展期客户</option>
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="loanTypeId">产品名称：</label>
+        <span class="selectimg u-i-middle">
+            <select name="loanTypeId" id="loanTypeId" class="form-control u-i-middle select">
+                <option value="0">全部</option>
+
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <div>
+        <label for="repayDate">到期还款日：</label>
+        <input readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="repayDate" name="repayDate" type="text">
+    </div>
+    <p>
+        <label for="status">目前状态：</label>
+        <span class="selectimg u-i-middle">
+            <select name="status" id="status" class="form-control  select">
+                <option value="0">逾期</option>
+                <option value="1">已还款</option>
+                <option value="2">还一部分</option>
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="collectStatus">是否催收成功：</label>
+        <span class="selectimg u-i-middle">
+            <select name="collectStatus" id="collectStatus" class="form-control u-i-middle select">
+                <option value="0">是</option>
+                <option value="1">否</option>
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <p class="padding">
+        <button class="u-b-base u-b-exit s-b-gray u-b-spild pull-right" onclick="closeWind()">取消</button>
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild pull-right" id="overdueExportExcle">导出EXCEL</button>
+    </p>
+</div>

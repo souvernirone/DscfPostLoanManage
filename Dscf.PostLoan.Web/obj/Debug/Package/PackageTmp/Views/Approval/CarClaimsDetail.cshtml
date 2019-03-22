@@ -1,0 +1,249 @@
+﻿@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "划扣审批详情";
+}
+
+@model Dscf.PostLoan.Model.CarClaimsInfoTotal
+<div class="g-mn1c tb">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+
+                <th>操作人</th>
+                <th>签署地</th>
+                <th>姓名</th>
+                <th>首逾日期</th>
+                <th>累计逾期天数</th>
+                <th>累计逾期次数</th>
+                <th>累计逾期本息</th>
+                <th>累计违约金</th>
+                <th>累计罚息</th>
+                <th>待还款总额</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.CollectorName</td>
+                <td>@Model.SignCity</td>
+                <td>@Model.UserName</td>
+                <td>@(Model.FirstOverdueTime.HasValue ? Model.FirstOverdueTime.Value.ToLongDateString().ToString() : string.Empty)</td>
+                <td>@Model.OverdueTimeCount</td>
+                <td>@Model.OverdueCount</td>
+                <td>@(Model.OverduePrincipalSum)元</td>
+                <td>@(Model.OverduePenaltySum)元</td>
+                <td>@(Model.DailyPenaltySum)元</td>
+                <td>@(Model.OverduePrincipalSum + Model.OverduePenaltySum + Model.DailyPenaltySum)元</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <table class="table table-bordered f-hide" id="loanDetail">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>划扣日期</th>
+                <th>逾期天数</th>
+                <th>月还金额</th>
+                <th>违约金</th>
+                <th>罚息</th>
+                <th>已还金额</th>
+                <th>还款标识</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var claims in Model.ClaimsInfoList)
+            {
+                <tr>
+                    <td>@Model.UserName</td>
+                    <td>@(claims.RepayDate.HasValue ? claims.RepayDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                    <td>@(claims.OverdueDayCount)天</td>
+                    <td>@(claims.MonthRepay)元</td>
+                    <td>@(claims.OverduePenalty)元</td>
+                    <td>@(claims.DailyPenaltySumPerPeriod)元</td>
+                    <td>@(claims.DeductAmountSumPerPeriod)元</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="drawback">
+        <p class="tip" onclick="actionDetail(this)">
+            <span>点击查看更多</span>
+            <i class="down"></i>
+        </p>
+    </div>
+
+    @{ if (ViewBag.DeductPayApplyAndFile != null)
+     {
+        <div class="detail">
+            <p>
+                <label>划扣方式：</label>
+                <span>@ViewBag.DeductPayApplyAndFile.PayWayName</span>
+            </p>
+            <p>
+                <label>本次减免金额：</label>
+                <span>@ViewBag.DeductPayApplyAndFile.ReliefAmount</span>
+            </p>
+
+            <p>
+                <label>本次划扣金额：</label>
+                <span>
+                    @ViewBag.DeductPayApplyAndFile.RepayAmount
+                </span>
+            </p>
+            <div id="layer-photos" class="layer-photos-demo">
+                <img layer-src="@ViewBag.DeductPayApplyAndFile.FileEntity.FilePath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                     src="@ViewBag.DeductPayApplyAndFile.FileEntity.ThumbPath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                     alt="@ViewBag.FileName" layer-index="0" />
+            </div>
+            @if (ViewBag.DeductPayApplyAndFile.FileEntity.Remark != null)
+            {
+            <p>
+                <label>照片备注：</label>
+                <span>
+                    @ViewBag.DeductPayApplyAndFile.FileEntity.Remark
+                </span>
+            </p>
+            }
+        </div>
+     }
+    }
+
+    <p class="btn-nav" style="margin-top: 30px;">
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" id="pass" @(ViewBag.DeductPayApplyAndFile == null || (ViewBag.DeductPayApplyAndFile != null && ViewBag.DeductPayApplyAndFile.ApprovalStatus == -1) ? "onclick=pass()" : "disabled='disabled'")>通过</button>
+        <button class="u-b-base u-b-exprot s-b-red u-b-spild1" id="reject" @(ViewBag.DeductPayApplyAndFile == null || (ViewBag.DeductPayApplyAndFile != null && ViewBag.DeductPayApplyAndFile.ApprovalStatus == -1) ? "onclick=reject()" : "disabled='disabled'")>驳回</button>
+        <button class="u-b-base u-b-exprot s-b-gray u-b-spild1" onclick="closeWind()">取消</button>
+    </p>
+    <div id="addReason" class="f-hide alert">
+        <form id="reasonForm">
+            <p class="height">
+                <label>拒绝原因：</label>
+                <textarea id="reasonContent" name="reasonContent" class="form-control  height"></textarea>
+            </p>
+        </form>
+    </div>
+
+
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/validator")
+    <script>
+        $(function () {
+            validate();
+            layer.photos({
+                photos: '#layer-photos',
+                anim: 0
+            });
+        });
+
+        function actionDetail(obj) {
+            if ($(obj).find("i").attr("class") == "down") {
+                $(obj).find("i").removeClass('down').addClass("up");
+                $(obj).find("span").html("点击收起");
+                $("#loanDetail").removeClass("f-hide");
+            } else {
+                $(obj).find("i").removeClass('up').addClass("down");
+                $(obj).find("span").html("点击查看更多");
+                $("#loanDetail").addClass("f-hide");
+            }
+        }
+
+        function pass() {
+
+            new Alert().AlertInfo({
+                content: "确定通过吗？",
+                iClass: 'yes',
+                callBack: function () {
+                    var params = {};
+                    params.orderId = $.url.getQueryString("orderId");
+                    params.orderType =@ViewBag.OrderType
+                    params.status = 1;
+                    $.ajax({
+                        url: "/Approval/UpdateApplyStatusByKey",
+                        method: "post",
+                        async: true,
+                        dataType: "json",
+                        data: params,
+                        success: function (result) {
+
+                            if (result.ReturnType == false) {
+                                new Alert().AlertInfo({
+                                    content: result.ReturnMsg,
+                                    iClass: 'error'
+                                })
+                            }
+                            else {
+                                window.location = "/Approval/List?css=1055";
+                                return;
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        function reject() {
+
+            new Alert().AlertInfo({
+                content: "#addReason",
+                width: "450",
+                height: "280",
+                callBack: function () {
+                    if (!validator.form()) {
+                        return false
+                    }
+                    var params = {};
+                    params.orderId = $.url.getQueryString("orderId");
+                    params.orderType = @ViewBag.OrderType
+                    params.reason = $("#reasonContent").val();
+                    params.status = 0;
+                    $.ajax({
+                        url: "/Approval/UpdateApplyStatusByKey",
+                        method: "post",
+                        async: true,
+                        dataType: "json",
+                        data: params,
+                        success: function (result) {
+                            if (result.ReturnType == false) {
+                                new Alert().AlertInfo({
+                                    content: result.ReturnMsg,
+                                    iClass: 'error'
+                                })
+                            }
+                            else {
+                                window.location = "/Approval/List?css=1055";
+                                return;
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        function validate() {
+            validator = $("#reasonForm").validate({
+                errorClass: "bug",
+                errorElement: 'p',
+                errorPlacement: function (error, element) {
+                    error.appendTo(element.parent().parent());
+                },
+                rules: { "reasonContent": { required: true } },
+                messages: {
+                    "reasonContent": { required: "请填写拒绝原因！" },
+
+                }
+            }
+        );
+        }
+    </script>
+}
+@section css
+    {
+    <style>
+        p.bug {
+            color: red;
+        }
+    </style>
+}

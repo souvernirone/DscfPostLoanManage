@@ -1,0 +1,153 @@
+﻿@using System.Web.Optimization;
+@model Dscf.PostLoan.Model.CarLoanInfoDetailViewModel
+@{
+    ViewBag.Title = "查";
+}
+
+<div class="g-mn1c tb">
+    <div class="m-shrink info">
+        <h3 class="title f-sub">
+            &nbsp; &nbsp;  结算划扣（查）
+        </h3>
+        <div class="spilds">
+            <p>
+                @Html.HiddenFor(model => model.OrderId)
+                <label>姓名：</label>
+                <span>@Model.Name</span>
+            </p>
+            <p>
+                <label>产品类型：</label>
+                <span>@Model.ProductName</span>
+            </p>
+            <p>
+                <label>合同编号：</label>
+                <span> @Model.Contract</span>
+            </p>
+            <p>
+                <label>银行卡号：</label>
+                <span>@Model.BankCard</span>
+            </p>
+            <p>
+                <label>银行名称：</label>
+                <span>@Model.BankName</span>
+            </p>
+            <p>
+                <label>支行名称：</label>
+                <span>@Model.SubBranchName</span>
+            </p>
+            <p>
+                <label>支行所在省：</label>
+                <span> </span>
+            </p>
+            <p>
+                <label>支行所在市：</label>
+                <span> </span>
+            </p>
+
+            <p>
+                <label>合同金额：</label>
+                <span>@Model.Amount</span>
+            </p>
+
+            <p>
+                <label>本期月还金额：</label>
+                <span id="mont"> @ViewBag.MonthRepay.MonthRepay</span>
+            </p>
+            <div class="table-responsive" style="overflow: hidden;">
+                <label style="vertical-align: top;">月还明细表：</label>
+                <table class="table table-bordered" id="integrate" style=" display: inline-block; width: 78%; height: 100%;">
+                    <thead>
+                        <tr>
+                            <th>第几期</th>
+                            <th>月还款</th>
+                            <th>月还本金</th>
+                            <th>月还利息</th>
+                            <th>剩余本金</th>
+                            <th>月还时间</th>
+                            <th>还款状态</th>
+                        </tr>
+                    </thead>
+                    <tbody id="container"></tbody>
+                </table>
+            </div>
+            @if (ViewBag.deductProgress != null)
+            {
+                <p>
+                    <label>划扣日期：</label>
+                    <span> @ViewBag.deductProgress.LastUpdateTime.ToLongDateString().ToString() </span>
+                </p>
+                <p>
+                    <label>委托授权书：</label>
+                    <span></span>
+                </p>
+                <p>
+                    @if ((ViewBag.deductProgress.Code == "40" && ViewBag.deductProgress.PaymentType == 1) || (ViewBag.deductProgress.Code == "20" && ViewBag.deductProgress.PaymentType == 0))
+                    {
+                        <label>失败原因：</label>
+                    }
+                    else
+                    {<label>划扣进度：</label>
+                    }
+                    <span>@ViewBag.deductProgress.Result</span>
+                </p>
+                <br /><br />
+            }
+            <span class="close" onclick="window.location = '/Deduction/CarDeductionList?css=2063'"></span>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dataPagerJs")
+    @Scripts.Render("~/bundles/dataFormat")
+
+    <script id="templete" type="text/x-jquery-tmpl">
+        <tr id="row-${RepayId}">
+            <td>${PeriodOrder}</td>
+            <td>${MonthRepay}</td>
+            <td>${MonthRepayPrincipal}</td>
+            <td>${MonthInterest}</td>
+            <td>${RemainPrincipal}</td>
+            <td>${RepayDate}</td>
+            <td data-isdeduct="${IsDeductSucess}">
+                {{if IsDeductSucess==0}}
+                未还
+                {{else IsDeductSucess==1}}
+                已还
+                {{else}}
+                逾期
+                {{/if}}
+            </td>
+        </tr>
+
+    </script>
+    <script>
+        $(function () {
+
+            var orderId = $("input[name='OrderId']").val();
+
+            $.ajax({
+                url: "/Deduction/QueryCarRepayList",
+                method: "post",
+                async: true,
+                dataType: "json",
+                data: { orderId: orderId, _: Math.random() },
+                success: function (result) {
+                    if (result.ReturnType) {
+                        $("#container").empty();
+                        $.each(result.ReturnData, function (index, item) {
+                            item.RepayDate = $.format.timestamp(item.RepayDate, "yyyy年MM月dd日");
+                            $("#templete").tmpl(item).appendTo($("#container"));
+                        });
+
+                    }
+
+                }
+            });
+
+        })</script>
+}
+

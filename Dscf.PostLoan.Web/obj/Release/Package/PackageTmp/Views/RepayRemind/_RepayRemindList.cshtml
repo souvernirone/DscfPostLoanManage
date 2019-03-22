@@ -1,0 +1,45 @@
+﻿@using Dscf.PostLoan.Web.Helper;
+
+@{
+    var CurrentOperater = LoginInfoHelper.Operater();
+}
+
+<div class="m-shrink info">
+    <h3 class="title f-sub f-sub1" onclick="shrink(2)">
+        <i class="z-subtraction"></i>提醒记录
+    </h3>
+    <div class="action">
+        <span class="edit" onclick="action(1,@CurrentOperater.Id)"></span>
+        <span class="add" onclick="add()"></span>
+    </div>
+
+    <div id="tip" class="cbody" style="padding-top:10px;clear:both;">
+        @foreach (var repayRemind in ViewBag.repayRemindList)
+        {<p id="@repayRemind.RemindId">
+            <label>
+                <i data-createoptid="@repayRemind.CreateOptId"
+                   data-remindtype="@repayRemind.RemindType"
+                   class="tip f-hide" onclick="edit(@repayRemind.RemindId,this)"></i>
+                @repayRemind.CreateTime.ToString("yyyy-MM-dd HH:mm")
+            </label>
+            <span class="marright">@repayRemind.OptName</span>
+            <span class="marright" style="color:red">@repayRemind.RemindTypeName</span>
+            <span class="marright">@repayRemind.RemindContent</span>
+        </p>
+        }
+    </div>
+
+</div>
+
+<script id="templete" type="text/x-jquery-tmpl">
+    <p id="${RemindId}">
+        <label>
+            <i data-createoptid="${CreateOptId}" data-remindtype="${RemindType}"
+               class="tip f-hide" onclick="edit('${RemindId}',this)"></i>
+            ${CreateTime}
+        </label>
+        <span class="marright">${OptName}</span>
+        <span class="marright" style="color:red">${RemindTypeName}</span>
+        <span class="marright">${RemindContent}</span>
+    </p>
+</script>

@@ -1,0 +1,4 @@
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Settlement.Model\bin\Release\Dscf.Settlement.Model.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Settlement.Model\bin\Release\Dscf.Settlement.Model.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Settlement.Model\obj\Release\Dscf.Settlement.Model.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Settlement.Model\obj\Release\Dscf.Settlement.Model.pdb

@@ -1,0 +1,88 @@
+﻿<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(3)">
+        <i class="z-subtraction"></i>债权信息
+    </h3>
+    <div class="cbody">
+        @using System.Web.Optimization
+        @model Dscf.PostLoan.Model.CarClaimsInfoTotal
+
+
+        <table class="table table-bordered noborder">
+            <thead>
+                <tr>
+
+                    <th>操作人</th>
+                    <th>签署地</th>
+                    <th>姓名</th>
+                    <th>首逾日期</th>
+                    <th>累计逾期天数</th>
+                    <th>累计逾期次数</th>
+                    <th>累计逾期本息</th>
+                    <th>累计违约金</th>
+                    <th>累计罚息</th>
+                    <th>待还款总额</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    <tr>
+                        <td>@Model.CollectorName</td>
+                        <td>@Model.SignCity</td>
+                        <td>@Model.UserName</td>
+                        <td>@(Model.FirstOverdueTime.HasValue ? Model.FirstOverdueTime.Value.ToLongDateString().ToString() : string.Empty)</td>
+                        <td>@Model.OverdueTimeCount</td>
+                        <td>@Model.OverdueCount</td>
+                        <td>@(Model.OverduePrincipalSum)元</td>
+                        <td>@(Model.OverduePenaltySum)元</td>
+                        <td>@(Model.DailyPenaltySum)元</td>
+                        <td><span id="sumOverdue">@(Model.OverduePrincipalSum + Model.OverduePenaltySum + Model.DailyPenaltySum)</span>元</td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+        @if (Model != null)
+        {
+            <table class="table table-bordered f-hide" id="loanDetail">
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>划扣日期</th>
+                        <th>逾期天数</th>
+                        <th>月还金额</th>
+                        <th>违约金</th>
+                        <th>罚息</th>
+                        <th>已还金额</th>
+                        <th>还款标识</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var claims in Model.ClaimsInfoList)
+                        {
+                        <tr>
+                            <td>@Model.UserName</td>
+                            <td>@(claims.RepayDate.HasValue ? claims.RepayDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                            <td>@(claims.OverdueDayCount)天</td>
+                            <td>@(claims.MonthRepay)元</td>
+                            <td>@(claims.OverduePenalty)元</td>
+                            <td>@(claims.DailyPenaltySumPerPeriod)元</td>
+                            <td>@(claims.DeductAmountSumPerPeriod)元</td>
+                            <td></td>
+                        </tr>
+                        }
+                </tbody>
+            </table>
+
+            <div class="drawback">
+                <p class="tip" onclick="actionDetail(this)">
+                    <span>点击查看更多</span>
+                    <i class="down"></i>
+                </p>
+            </div>
+
+        }
+
+
+    </div>
+</div>

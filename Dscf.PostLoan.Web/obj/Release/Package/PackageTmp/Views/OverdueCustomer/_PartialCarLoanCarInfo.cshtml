@@ -1,0 +1,39 @@
+﻿@using System.Web.Optimization
+
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarInfoDto
+
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(2)">
+        <i class="z-subtraction"></i>车辆信息
+    </h3>
+    <div class="cbody">
+        <p>
+            <label>车牌号：</label>
+            <span>@Model.LicensePlate</span>
+        </p>
+        <p>
+            <label>品牌型号：</label>
+            <span>@Model.VehicleBrands</span>
+        </p>
+        <p>
+            <label>权属证书编号：</label>
+            <span>@Model.CertificateNumber</span>
+        </p>
+        <p>
+            <label>保险期限：</label>
+            <span>@Model.TermInsurance</span>
+        </p>
+        <p>
+            <label>车架号：</label>
+            <span>@Model.ChassisNumber</span>
+        </p>
+        <p>
+            <label>是否改装：</label>
+            <span> @(Model.IsModify.HasValue ? "是" : "否")</span>
+        </p>
+        <p>
+            <label>改装情况：</label>
+            <span> @Model.ModifyMemo</span>
+        </p>
+    </div>
+</div>

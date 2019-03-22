@@ -1,0 +1,58 @@
+
+ 
+记录时间：2017-07-08 14:49:22,279 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Dscf.LoanAfter.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+Autofac.Core.DependencyResolutionException: An exception was thrown while invoking the constructor 'Void .ctor()' on type 'LADbContext'. ---> “System.Data.Entity.Internal.AppConfig”的类型初始值设定项引发异常。 (See inner exception for details.) ---> System.TypeInitializationException: “System.Data.Entity.Internal.AppConfig”的类型初始值设定项引发异常。 ---> System.Configuration.ConfigurationErrorsException: 项“DsLoanAfterSQLConnection”已添加。 (F:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.LoanAfter.Host\web.config line 25)
+   在 System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   在 System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   在 System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   在 System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   在 System.Web.HttpContext.GetSection(String sectionName)
+   在 System.Web.Configuration.HttpConfigurationSystem.GetSection(String sectionName)
+   在 System.Web.Configuration.HttpConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String configKey)
+   在 System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   在 System.Configuration.ConfigurationManager.get_ConnectionStrings()
+   在 System.Data.Entity.Internal.AppConfig..ctor()
+   在 System.Data.Entity.Internal.AppConfig..cctor()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Internal.LazyInternalConnection..ctor(DbContext context, String nameOrConnectionString)
+   在 System.Data.Entity.DbContext..ctor(String nameOrConnectionString)
+   在 Dscf.LoanAfter.Dao.Context.LADbContext..ctor() 位置 f:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.LoanAfter.Dao\Context\LADbContext.cs:行号 14
+   在 lambda_method(Closure , Object[] )
+   在 Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 Autofac.Core.Activators.Reflection.ConstructorParameterBinding.Instantiate()
+   在 Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+   在 Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
+   在 Autofac.Core.Resolving.InstanceLookup.<Execute>b__0()
+   在 Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)
+   在 Autofac.Core.Resolving.InstanceLookup.Execute()
+   在 Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+   在 Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)
+   在 Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)
+   在 Autofac.Features.LazyDependencies.LazyRegistrationSource.<>c__DisplayClass5`1.<>c__DisplayClass7.<CreateLazyRegistration>b__4()
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Lazy`1.get_Value()
+   在 Dscf.LoanAfter.Dao.Context.LAUnitOfWorkContext.get_Context() 位置 f:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.LoanAfter.Dao\Context\LAUnitOfWorkContext.cs:行号 15
+   在 Dscf.Common.Dao.Context.UnitOfWorkContextBase.Set[TEntity]() 位置 f:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Common.Dao\Context\UnitOfWorkContextBase.cs:行号 63
+   在 Dscf.Common.Dao.Implement.RepositoryBase`1.get_Entities() 位置 f:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Common.Dao\Implement\RepositoryBase.cs:行号 41
+   在 Dscf.Common.Manager.Implement.GenericManagerBase`1.get_Entities() 位置 f:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.Common.Manager\Implement\GenericManagerBase.cs:行号 22
+   在 Dscf.LoanAfter.Manager.Implement.ExtraInfoManager.GetExtraInfoListByOrder(Int32 orderId, Int32 orderType) 位置 f:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.LoanAfter.Manager\Implement\ExtraInfoManager.cs:行号 28
+   在 Dscf.LoanAfter.Service.LoanAfterService.GetExtraInfoListByOrder(Int32 orderId, Int32 orderType) 位置 f:\鼎盛财富\LoanAfterII_贷后结算新\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.LoanAfter.Service\ExtraInfo\LoanAfterService.cs:行号 28
+   在 SyncInvokeGetExtraInfoListByOrder(Object , Object[] , Object[] )
+   在 System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+   在 System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)

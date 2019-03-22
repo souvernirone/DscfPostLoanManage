@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" />
+  <xs:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Dscf.Global" />
+  <xs:element name="UpdateOrderCollectStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+        <xs:element minOccurs="0" name="collectStatus" type="xs:int" />
+        <xs:element minOccurs="0" name="optId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderCollectStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOrderCollectStatusResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderCollectStatusBatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="orderIds" nillable="true" type="q1:ArrayOfint" />
+        <xs:element minOccurs="0" name="collectStatus" type="xs:int" />
+        <xs:element minOccurs="0" name="optId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateOrderCollectStatusBatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateOrderCollectStatusBatchResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanProductOrderByUserId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanProductOrderByUserIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetLoanProductOrderByUserIdResult" nillable="true" type="q2:ArrayOfLoanProductOrderDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageOverdueList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageNum" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="OptId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageOverdueListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dscf.Global" minOccurs="0" name="GetPageOverdueListResult" nillable="true" type="q3:PagedCreditOverdueListDtoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanProductOrderDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoanProductOrderDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetLoanProductOrderDetailResult" nillable="true" type="q4:LoanOrderDetailDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageLoanInfoList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="LoanSearchViewModel" nillable="true" type="q5:LoanSearchViewModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageLoanInfoListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Dscf.Global" minOccurs="0" name="GetPageLoanInfoListResult" nillable="true" type="q6:PagedLoanInfoDtoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIsRemindCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="optId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIsRemindCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetIsRemindCountResult" nillable="true" type="q7:CreditCountDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoan_MonthRepayInfoByorderID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLoan_MonthRepayInfoByorderIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetLoan_MonthRepayInfoByorderIDResult" nillable="true" type="q8:ArrayOfLoan_MonthRepayInfoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepayRemindList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RepayIdArray" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRepayRemindListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetRepayRemindListResult" nillable="true" type="q9:ArrayOfCreditRemindListDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageRepayRemindList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageNum" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="optId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageRepayRemindListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Dscf.Global" minOccurs="0" name="GetPageRepayRemindListResult" nillable="true" type="q10:PagedCreditRemindListDtoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCreditRemind">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="repayId" type="xs:int" />
+        <xs:element minOccurs="0" name="isRemind" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCreditRemindResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCreditRemindResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCreditRemindDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+        <xs:element minOccurs="0" name="repayId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCreditRemindDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetCreditRemindDetailResult" nillable="true" type="q11:CreditRemidDetailDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildDeptListByDeptID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="parentDeptID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChildDeptListByDeptIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetChildDeptListByDeptIDResult" nillable="true" type="q12:ArrayOfDepartmentInfoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportCityList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportCityListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" minOccurs="0" name="GetSupportCityListResult" nillable="true" type="q13:ArrayOfDepartmentInfoDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditLoanOrderReminderByOrderId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+        <xs:element minOccurs="0" name="deptOptId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditLoanOrderReminderByOrderIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="EditLoanOrderReminderByOrderIdResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageDeductApprovalList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageNum" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="keyList" nillable="true" type="q14:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPageDeductApprovalListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Dscf.Global" minOccurs="0" name="GetPageDeductApprovalListResult" nillable="true" type="q15:PagedCreditOverdueListDtoList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

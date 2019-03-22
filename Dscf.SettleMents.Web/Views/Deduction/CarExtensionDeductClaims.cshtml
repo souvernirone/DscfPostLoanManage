@@ -1,0 +1,387 @@
+﻿@using System.Web.Optimization
+@using Dscf.PostLoanGlobal;
+
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.LoanProductExtensionOrderDto
+@{
+    ViewBag.Title = "扣";
+}
+<div class="g-mn1c">
+    <div class="m-shrink info">
+        <h3 class="title f-sub">
+            &nbsp; &nbsp;  结算划扣（扣）
+        </h3>
+        <div class="spilds">
+            <div class="cbody">
+                <p>
+                    <label>姓名：</label>
+                    <span> @Model.Name</span>
+                </p>
+                <p>
+                    <label>产品类型：</label>
+                    <span> @Model.ProductName</span>
+                </p>
+                <p>
+                    <label>合同编号：</label>
+                    <span> @Model.Contract</span>
+                </p>
+                <p>
+                    <label>银行卡号：</label>
+                    <span> @Model.BankCard</span>
+                </p>
+                <p>
+                    <label>银行名称：</label>
+                    <span> @Model.BankName</span>
+                </p>
+                <p>
+                    <label>支行名称：</label>
+                    <span> @Model.SubBranchName</span>
+                </p>
+                <p>
+                    <label>支行所在省：</label>
+                    <span> </span>
+                </p>
+                <p>
+                    <label>支行所在市：</label>
+                    <span> </span>
+                </p>
+
+                <p>
+                    <label>上期合同金额：</label>
+                    <span> @Model.PreAmount</span>
+                </p>
+                <p>
+                    <label>展期合同金额：</label>
+                    <span id="extensionAmount"> @Model.ExtensionAmount</span>
+                </p>
+                <p>
+                    <label>本期综合费用：</label>
+                    <span id="feeAmount"> @Model.FeeAmount</span>
+                </p>
+                <p>
+                    <label>降额本金：</label>
+                    <span> @Model.DeratingAmount</span>
+                </p>
+                <div>
+                    <label>本息：</label>
+                    <table class="table table-bordered" style=" width: 55%; height: 80%;">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>应收</th>
+                                <th>实收</th>
+                                <th>差额</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>违约金</th>
+                                <th id="breachOne">@(Model.ReBreachofcontractAmount == null ? "0.00" : Model.ReBreachofcontractAmount.ToString())</th>
+                                <th id="breachTwo">@(Model.BreachofcontractAmount == null ? "0.00" : Model.BreachofcontractAmount.ToString())</th>
+                                <th id="breach"></th>
+                            </tr>
+                            <tr>
+                                <th>罚息</th>
+                                <th id="penaltyOne">@(Model.RePenaltyInterest == null ? "0.00" : Model.RePenaltyInterest.ToString())</th>
+                                <th id="penaltyTwo">@(Model.PenaltyInterest == null ? "0.00" : Model.PenaltyInterest.ToString())</th>
+                                <th id="penalty"></th>
+                            </tr>
+                            <tr>
+                                <th>其他</th>
+                                <th id="feeOne">@(Model.ReFee == null ? "0.00" : Model.ReFee.ToString())</th>
+                                <th id="feeTwo">@(Model.Fee == null ? "0.00" : Model.Fee.ToString())</th>
+                                <th id="fee"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>
+                    <label>本期扣款总额：</label>
+                    <span id="amount"></span>
+                </p>
+                @{ if (ViewBag.DeductPayApplyAndFile != null)
+                 { <p>
+                    <label>打款人姓名：</label>
+                    <span></span>
+                </p>
+                    <p>
+                        <label>金额：</label>
+                        <span>
+                            @(ViewBag.DeductPayApplyAndFile.RepayAmount)元
+                        </span>
+                    </p>
+                    <p>
+                        <label>打款方式：</label>
+                        <span></span>
+                    </p>
+                    <p>
+                        <label>打款银行：</label>
+                        <span></span>
+                    </p>
+                     if (ViewBag.PayWay == DeductPayUtil.DeductApply)
+                     {
+                        <p>
+                            <label>客户余额凭证</label>
+                            <span id="layer-photos" class="layer-photos-demo">
+                                <img layer-src="@ViewBag.DeductPayApplyAndFile.FileEntity.FilePath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                                     src="@ViewBag.DeductPayApplyAndFile.FileEntity.ThumbPath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                                     alt="@ViewBag.FileName" layer-index="0" />
+                            </span>
+                        </p>
+                         if (ViewBag.DeductPayApplyAndFile.FileEntity.Remark != null)
+                         {
+                            <p>
+                                <label>照片备注：</label>
+                                <span>
+                                    @ViewBag.DeductPayApplyAndFile.FileEntity.Remark
+                                </span>
+                            </p>
+                     }
+                     }
+                     else
+                     {
+                        <p>
+                            <label>线下划扣凭证</label>
+                            <span id="layer-photos" class="layer-photos-demo">
+                                <img layer-src="@ViewBag.DeductPayApplyAndFile.FileEntity.FilePath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                                     src="@ViewBag.DeductPayApplyAndFile.FileEntity.ThumbPath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                                     alt="@ViewBag.FileName" layer-index="0" />
+                            </span>
+                        </p>
+                         if (ViewBag.DeductPayApplyAndFile.FileEntity.Remark != null)
+                         {
+                            <p>
+                                <label>照片备注：</label>
+                                <span>
+                                    @ViewBag.DeductPayApplyAndFile.FileEntity.Remark
+                                </span>
+                            </p>
+                     }
+                     }
+                    <p>
+                        <label>委托授权书：</label>
+                        <span></span>
+                    </p>
+                 }
+
+                }
+                <span class="close" onclick="window.location = '/Deduction/CarDeductionList?css=2063'"></span>
+            </div>
+        </div>
+        </div>
+</div>
+<p class="btn-nav" style="margin-top: 30px;">
+    @{if (ViewBag.PayWay == DeductPayUtil.DeductApply)
+    {
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" onclick="pass()">扣款</button>
+        <button class="u-b-base u-b-exprot s-b-red u-b-spild1" onclick="reject()">驳回</button>
+    }
+      else if (ViewBag.PayWay == DeductPayUtil.PayOffline || ViewBag.PayWay == DeductPayUtil.CarDisposal)
+    {
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" onclick="passTwo()">确认已到账 </button>
+        <button class="u-b-base u-b-exprot s-b-red u-b-spild1" onclick="rejectTwo()">驳回</button>
+    }
+
+    <button class="u-b-base u-b-exprot s-b-gray u-b-spild1" onclick="window.location = '/Deduction/CarDeductionList?css=2063'">取消</button>
+}
+</p>
+<div id="addReason" class="f-hide alert">
+    <form id="reasonForm">
+        <p class="height">
+            <label>拒绝原因：</label>
+            <textarea id="reasonContent" name="reasonContent" class="form-control  height"></textarea>
+        </p>
+    </form>
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/validator")
+
+
+<script>
+    function passTwo() {
+
+        new Alert().AlertInfo({
+            content: "确定已入账吗？",
+            callBack: function () {
+                var params = {};
+                params.OrderId = $.url.getQueryString("orderId");
+                params.OrderType = "@LoanOrderUtil.CarTypeKey";
+                params.Status = "@DeductPayUtil.SuccessfulDebit";
+                params.DeductMoney = @ViewBag.DeductPayApplyAndFile.RepayAmount
+                params.DeductType =@DeductPayUtil.PayOffline
+                params.DeductKind =@DeductPayUtil.HandDeduct
+                params.ApplyId = $.url.getQueryString("applyId");
+                $.ajax({
+                    url: "/Deduction/UpdateApplyStatusByKey",
+                    method: "post",
+                    async: true,
+                    dataType: "json",
+                    data: params,
+                    success: function (result) {
+
+                        if (result.ReturnType == false) {
+                            new Alert().AlertInfo({
+                                content: result.ReturnMsg,
+                                iClass: 'error'
+                            })
+                        }
+                        else {
+                            window.location = "/Deduction/CarDeductionList?css=2063";
+                            return;
+                        }
+                    }
+                });
+            }
+        });
+    }
+    function pass() {
+
+        new Alert().AlertInfo({
+            content: "确定扣款？",
+            callBack: function () {
+                var params = {};
+                params.OrderId = $.url.getQueryString("orderId");
+                params.OrderType = @LoanOrderUtil.CarTypeKey
+                params.Status = @DeductPayUtil.DeductPending
+                params.DeductMoney = @ViewBag.DeductPayApplyAndFile.RepayAmount
+                params.DeductType =@DeductPayUtil.DeductApply
+                params.DeductKind =@DeductPayUtil.HandDeduct
+                params.ApplyId = $.url.getQueryString("applyId");
+                params.PayType = 1
+                $.ajax({
+                    url: "/Deduction/UpdateApplyStatusByKey",
+                    method: "post",
+                    async: true,
+                    dataType: "json",
+                    data: params,
+                    success: function (result) {
+
+                        if (result.ReturnType == false) {
+                            new Alert().AlertInfo({
+                                content: result.ReturnMsg,
+                                iClass: 'error'
+                            })
+                        }
+                        else {
+                            window.location = "/Deduction/CarDeductionList?css=1055";
+                            return;
+                        }
+                    }
+                });
+            }
+        });
+    }
+    function reject() {
+
+        new Alert().AlertInfo({
+            content: "#addReason",
+            width: "450",
+            height: "280",
+            callBack: function () {
+                if (!validator.form()) {
+                    return false
+                }
+                var params = {};
+                params.OrderId = $.url.getQueryString("orderId");
+                params.OrderType = @LoanOrderUtil.CarTypeKey
+                params.Status = @DeductPayUtil.RejectDebit
+                params.DeductMoney = @ViewBag.DeductPayApplyAndFile.RepayAmount
+                params.DeductType =@DeductPayUtil.DeductApply
+                params.DeductKind =@DeductPayUtil.HandDeduct
+                params.Reason = $("#reasonContent").val();
+
+                $.ajax({
+                    url: "/Deduction/UpdateApplyStatusByKey",
+                    method: "post",
+                    async: true,
+                    dataType: "json",
+                    data: params,
+                    success: function (result) {
+                        if (result.ReturnType == false) {
+                            new Alert().AlertInfo({
+                                content: result.ReturnMsg,
+                                iClass: 'error'
+                            })
+                        }
+                        else {
+                            window.location = "/Deduction/CarDeductionList?css=2063";
+                            return;
+                        }
+                    }
+                });
+            }
+        });
+    }
+    function rejectTwo() {
+
+        new Alert().AlertInfo({
+            content: "#addReason",
+            width: "450",
+            height: "280",
+            callBack: function () {
+                if (!validator.form()) {
+                    return false
+                }
+                var params = {};
+                params.OrderId = $.url.getQueryString("orderId");
+                params.OrderType = @LoanOrderUtil.CarTypeKey
+                params.Status = @DeductPayUtil.RejectDebit
+                params.DeductMoney = @ViewBag.DeductPayApplyAndFile.RepayAmount
+                params.DeductType =@DeductPayUtil.PayOffline
+                params.DeductKind =@DeductPayUtil.HandDeduct
+                params.Reason = $("#reasonContent").val();
+
+                $.ajax({
+                    url: "/Deduction/UpdateApplyStatusByKey",
+                    method: "post",
+                    async: true,
+                    dataType: "json",
+                    data: params,
+                    success: function (result) {
+                        if (result.ReturnType == false) {
+                            new Alert().AlertInfo({
+                                content: result.ReturnMsg,
+                                iClass: 'error'
+                            })
+                        }
+                        else {
+                            window.location = "/Deduction/CarDeductionList?css=2063";
+                            return;
+                        }
+                    }
+                });
+            }
+        });
+    }
+    function validate() {
+        validator = $("#reasonForm").validate({
+            errorClass: "bug",
+            errorElement: 'p',
+            errorPlacement: function (error, element) {
+                error.appendTo(element.parent().parent());
+            },
+            rules: { "reasonContent": { required: true } },
+            messages: {
+                "reasonContent": { required: "请填写拒绝原因！" },
+
+            }
+        }
+    );
+    }
+    $(function () {
+        validate();
+        var breach = parseFloat($("#breachTwo").text()) - parseFloat($("#breachOne").text());
+        $("#breach").append(breach.toFixed(2));
+        var penalty = parseFloat($("#penaltyTwo").text()) - parseFloat($("#penaltyOne").text());
+        $("#penalty").append(breach.toFixed(2));
+        var fee = parseFloat($("#feeTwo").text()) - parseFloat($("#feeOne").text());
+        $("#fee").append(fee.toFixed(2));
+        var amount = breach + penalty + fee + parseFloat($("#feeAmount").text());
+        $("#amount").append(amount.toFixed(2));
+        layer.photos({
+            photos: '#layer-photos'
+       , anim: 0
+        });
+    });
+</script>
+}

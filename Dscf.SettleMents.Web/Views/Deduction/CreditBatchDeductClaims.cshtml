@@ -1,0 +1,181 @@
+﻿@{
+    ViewBag.Title = "结算扣款(扣)";
+}
+@using System.Web.Optimization
+@model Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.CreditCriticalAmountListDto
+<div class="g-mn1c tb">
+
+    <div class="m-shrink info">
+        <h3 class="title twidth">结算扣款(划扣)</h3>
+        <div class="cbody">
+            <p>
+                <label>姓名：</label>
+                <span> @Model.Name</span>
+            </p>
+            <p>
+                <label>产品类型：</label>
+                <span> @Model.ProductName</span>
+            </p>
+            <p>
+                <label>合同编号：</label>
+                <span>@Model.Contract</span>
+            </p>
+            <p>
+                <label>银行卡号：</label>
+                <span>@Model.DeductBankAccount</span>
+            </p>
+            <p>
+                <label>银行名称：</label>
+                <span>@Model.DeductBankName</span>
+            </p>
+            <p>
+                <label>支行名称：</label>
+                <span>@Model.DeductBranchBank</span>
+            </p>
+            <p>
+                <label>开户行所在省：</label>
+                <span></span>
+            </p>
+            <p>
+                <label>开户行所在市：</label>
+                <span></span>
+            </p>
+            <p>
+                <label>合同金额：</label>
+                <span>@Model.Amount.Value</span>
+            </p>
+            <p>
+                <label>本期月还金额：</label>
+                <span>@Model.MonthRepay.Value</span>
+            </p>
+            <div>
+                <label style="vertical-align: top;">月还明细表：</label>
+                <div class="table-responsive" style="display:inline-block;">
+                    <table class="table table-bordered" id="integrate">
+                        <thead>
+                            <tr>
+                                <th>第几期</th>
+                                <th>月还款</th>
+                                <th>月还本金</th>
+                                <th>月还利息</th>
+                                <th>剩余本金</th>
+                                <th>月还时间</th>
+                                <th>还款状态</th>
+                            </tr>
+                        </thead>
+                        <tbody id="container">
+                            @if (ViewBag.Loan_MonthRepayViewList != null)
+                            {
+                                foreach (var item in ViewBag.Loan_MonthRepayViewList)
+                                {
+                                    <tr>
+                                        <td>@item.PeriodOrder</td>
+                                        <td>@item.MonthRepay</td>
+                                        <td>@item.MonthRepayPrincipal</td>
+                                        <td>@item.MonthInterest</td>
+                                        <td>@item.RemainPrincipal</td>
+                                        <td>@(item.RepayDate.ToString("yyyy-MM-dd"))</td>
+                                        <td>
+                                            @if (item.IsDeductSucess == true || item.IsDeductSucess == null)
+                                            {
+                                                <span>已还</span>
+                                            }
+                                            else if (DateTime.Compare(item.RepayDate, DateTime.Now.Date) < 0) //逾期
+                                            {
+                                                <span>逾期</span>
+                                            }
+                                            else
+                                            {
+                                                <span>未还</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p>
+
+            </p>
+            <p>
+                <label>划扣日期：</label>
+                <span>@(Model.OperateDate.HasValue ? Model.OperateDate.Value.ToString("yyyy-MM-dd") : string.Empty)</span>
+            </p>
+            <p>
+                <label>委托授权书：</label>
+                <span></span>
+            </p>
+            <p>
+                <label>失败原因：</label>
+                <span>@Model.Result</span>
+            </p>
+        </div>
+        <p class="btn-nav" style="margin-top: 30px;">
+            @if (Request["orderState"] == "1")
+            {
+                if (Model.Code == "40" || Model.Code == "0")
+                {
+                    <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" id="pass" onclick="buckle()"> 扣款</button>
+                }
+                else
+                {
+                    <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" id="pass" disabled="disabled"> 扣款</button>
+                }
+                <button class="u-b-base u-b-exprot s-b-gray u-b-spild1" onclick="window.location = '/Deduction/CreditDeductionList?css=2063'">取消</button>
+            }
+            else
+            {
+                <button class="u-b-base u-b-exprot s-b-gray u-b-spild1" onclick="closeWind()">取消</button>
+            }
+
+
+        </p>
+
+    </div>
+
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/validator")
+    <script>
+        function buckle() {
+            new Alert().AlertInfo({
+                content: "确定扣款吗？",
+                callBack: function () {
+                    var params = {};
+                    var chk_value = [];
+                    chk_value.push(@Model.OrderId + "," + @Model.PeriodOrder + "," + @Model.Code +"");
+                    params.idAndPeriods = chk_value;
+                    $.ajax({
+                        url: "/Deduction/AddADeductProgressByKey",
+                        method: "post",
+                        async: true,
+                        dataType: "json",
+                        data: params,
+                        success: function (result) {
+                            if (result.ReturnType == false) {
+                                new Alert().AlertInfo({
+                                    content: result.ReturnMsg,
+                                    iClass: 'error'
+                                })
+                            }
+                            else {
+                                window.location = "/Deduction/CreditDeductionList?css=1055";
+                                return;
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+    </script>
+}
+@section css{
+    <style>
+        p.bug {
+            color: red;
+        }
+    </style>
+}

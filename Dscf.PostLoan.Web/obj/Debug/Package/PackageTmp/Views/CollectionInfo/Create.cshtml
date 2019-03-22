@@ -1,0 +1,80 @@
+﻿@using System.Web.Optimization
+
+@model Dscf.PostLoan.Model.CollectionInfoViewModel
+
+@{
+    ViewBag.Title = "添加催收信息";
+
+    var options = new AjaxOptions
+    {
+        OnSuccess = "postSuccess"
+    };
+}
+
+<div class="g-mn1c tb">
+    <div class="m-shrink">
+        <h3 class="title twidth">添加催收信息</h3>
+
+        <form id="form-collection" enctype="multipart/form-data" action="@Url.Action("Create", "CollectionInfo")" method="post">
+            @Html.AntiForgeryToken()
+            <div class="cbody">
+                @Html.ValidationSummary(true)
+                <p>
+                    @Html.TextBoxFor(model => model.OrderId, new { @type = "hidden" })
+                    @Html.TextBoxFor(model => model.OrderType, new { @type = "hidden" })
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.CollectionStatus)
+                    <span class="selectimg u-i-sort">
+                        @Html.DropDownListFor(model => model.CollectionStatus, ViewBag.SelCollectionStatus as IEnumerable<SelectListItem>,  new { @id = "form-collectionStatus", @class = "form-control select" })
+                    </span>
+                    @Html.ValidationMessageFor(model =>( model.CollectionStatus))
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.OutboundAddress)
+                    @Html.TextBoxFor(model => model.OutboundAddress, new { @class = "form-control u-i-middle" })
+                    @Html.ValidationMessageFor(model => model.OutboundAddress)
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.LinkPersonType)
+                    <span class="selectimg u-i-sort">
+                        @Html.DropDownListFor(model => model.LinkPersonType, ViewBag.SelLinkPersonType as IEnumerable<SelectListItem>, new { @id = "form-collectionStatus", @class = "form-control select" })
+                    </span>
+                    @Html.ValidationMessageFor(model => model.LinkPersonType)
+                </p>
+                <p>
+                    @Html.LabelFor(model => model.CollectionRecord)
+                    @Html.TextAreaFor(model => model.CollectionRecord, new { @class = "form-control u-i-middle " })
+                    @Html.ValidationMessageFor(model => model.CollectionRecord)
+                </p>
+                <p id="form-group-platformImgPath">
+                    @Html.LabelFor(model => model.CollectionFileList)
+                    <a class=btn_addPic href="javascript:void(0);">
+                        <span><em>+</em>添加资料</span>
+                        @Html.TextBoxFor(model => model.CollectionFileList, new { @type = "file", @class = "filePrew", @multiple = "true" })
+                    </a>
+                    @Html.ValidationMessageFor(model => model.CollectionFileList)
+                </p>
+                <ul id="UpFileNameList" style="margin-left: 21.5384%;margin-top:20px;"></ul>
+       
+
+
+                <p class="padding">
+                    <button class="u-b-base u-b-exit s-b-gray u-b-spild pull-right" onclick="closeWind()">取消</button>
+                    <input id="saveForm" class="u-b-base u-b-exprot s-b-blue u-b-spild pull-right" type="button" value="提交" />
+                </p>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/validator")
+    @Scripts.Render("~/bundles/unobtrusive")
+    @Scripts.Render("~/bundles/form")
+    @Scripts.Render("~/bundles/collectionCreate")
+}

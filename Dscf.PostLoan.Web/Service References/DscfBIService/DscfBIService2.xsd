@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dscf.BusinessIntegrate.Contract" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dscf.BusinessIntegrate.Contract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8010/DscfBIService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfMenuEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MenuEntity" nillable="true" type="tns:MenuEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMenuEntity" nillable="true" type="tns:ArrayOfMenuEntity" />
+  <xs:complexType name="MenuEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Icon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Level" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Sort" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MenuEntity" nillable="true" type="tns:MenuEntity" />
+  <xs:complexType name="ArrayOfPermissionEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PermissionEntity" nillable="true" type="tns:PermissionEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPermissionEntity" nillable="true" type="tns:ArrayOfPermissionEntity" />
+  <xs:complexType name="PermissionEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsPagePermission" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Url" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PermissionEntity" nillable="true" type="tns:PermissionEntity" />
+  <xs:complexType name="OperaterEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DepartmentInfo" nillable="true" type="tns:DepartmentEntity" />
+      <xs:element minOccurs="0" name="EntryDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IDCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RoleList" nillable="true" type="tns:ArrayOfRoleEntity" />
+      <xs:element minOccurs="0" name="WeiXin" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OperaterEntity" nillable="true" type="tns:OperaterEntity" />
+  <xs:complexType name="DepartmentEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CustomerServicePhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EarlyRepayPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="RevolvingLoanPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DepartmentEntity" nillable="true" type="tns:DepartmentEntity" />
+  <xs:complexType name="ArrayOfRoleEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoleEntity" nillable="true" type="tns:RoleEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoleEntity" nillable="true" type="tns:ArrayOfRoleEntity" />
+  <xs:complexType name="RoleEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoleEntity" nillable="true" type="tns:RoleEntity" />
+  <xs:complexType name="AuthOptRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccessPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Browser" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAjax" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OptCookie" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlatformId" type="xs:int" />
+      <xs:element minOccurs="0" name="ScreenResolution" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthOptRequest" nillable="true" type="tns:AuthOptRequest" />
+  <xs:complexType name="AuthResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuthStatus" type="tns:EnumAuthStatus" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AuthResult" nillable="true" type="tns:AuthResult" />
+  <xs:simpleType name="EnumAuthStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Success">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">200</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoLogin">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">300</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="AgainLogin">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">350</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="NoPermission">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">400</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DecryptError">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">500</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EnumAuthStatus" nillable="true" type="tns:EnumAuthStatus" />
+  <xs:complexType name="ArrayOfPlatformEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlatformEntity" nillable="true" type="tns:PlatformEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlatformEntity" nillable="true" type="tns:ArrayOfPlatformEntity" />
+  <xs:complexType name="PlatformEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HomeUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlatId" type="xs:int" />
+      <xs:element minOccurs="0" name="PlatformName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlatformEntity" nillable="true" type="tns:PlatformEntity" />
+  <xs:complexType name="ArrayOfOperaterEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperaterEntity" nillable="true" type="tns:OperaterEntity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperaterEntity" nillable="true" type="tns:ArrayOfOperaterEntity" />
+</xs:schema>

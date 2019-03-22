@@ -1,0 +1,48 @@
+﻿@using System.Web.Optimization
+@model Dscf.Settlement.Model.DeductProgressInfo[]
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(2)">
+        <i class="z-subtraction"></i>划扣信息
+    </h3>
+    <div class="cbody">
+        <table class="table table-bordered noborder">
+            <thead>
+                <tr>
+
+                    <th>第几期还款</th>
+                    <th>应划扣日期</th>
+                    <th>实际划扣日期</th>
+                    <th>应划扣金额</th>
+                    <th>实际划扣金额</th>
+                    <th>是否划扣成功</th>
+                    <th>划扣人</th>
+                    <th>操作日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    if (Model != null)
+                    {
+                        if (Model.Count() > 0)
+                        {
+                            foreach (var deduct in Model)
+                            {
+                                <tr>
+                                    <td>@deduct.RepayPeriod</td>
+                                    <td>@(deduct.PlanDeductDate.HasValue ? @deduct.PlanDeductDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                                    <td>@(deduct.ActualDeductDate.HasValue ? @deduct.ActualDeductDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                                    <td>@deduct.PlanDeductAmount</td>
+                                    <td>@deduct.ActualDeductAmount</td>
+                                    <td>@deduct.Result</td>
+                                    <td>@deduct.DeductOptName</td>
+                                    <td>@(deduct.OperateDate.HasValue ? @deduct.OperateDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                                </tr>}
+                        }
+                    }
+                }
+            </tbody>
+
+        </table>
+
+
+    </div>

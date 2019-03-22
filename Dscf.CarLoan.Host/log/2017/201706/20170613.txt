@@ -1,0 +1,40 @@
+
+ 
+记录时间：2017-06-13 17:54:35,750 
+线程ID:[3] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-13 17:54:35,801 
+线程ID:[3] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:11416/DscfCarLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-13 17:55:31,909 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-13 17:55:31,914 
+线程ID:[13] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:11416/DscfCarLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)

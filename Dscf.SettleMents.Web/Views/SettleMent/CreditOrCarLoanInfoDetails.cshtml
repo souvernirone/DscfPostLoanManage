@@ -1,0 +1,44 @@
+﻿@using System.Web.Optimization;
+
+@{
+    ViewBag.Title = "逾期客户详情";
+}
+<div class="tab-content">
+ 
+        <div class="table-responsive tab-pane active">
+            <div class="g-mn1c tb">
+                <!--借款信息-->
+                @Html.Action("LoanInfo", new { orderId = ViewData["orderId"], orderType = ViewData["orderType"] })
+                <!--划付信息-->
+                @Html.Action("PaymentInfo", new { orderId = ViewData["orderId"], orderType = ViewData["orderType"] })
+                <!--划扣信息-->
+                @Html.Action("DeductionInfo", new { orderId = ViewData["orderId"], orderType = ViewData["orderType"] })
+                <!--债权信息-->
+                @if (ViewData["orderType"].ToString() == "1")
+                {
+                    @Html.Action("CreditClaimsInfo", new { orderId = ViewData["orderId"], orderType = ViewData["orderType"] })//信贷2
+
+                }
+                else
+                {
+                    @Html.Action("CarClaimsInfo", new { orderId = ViewData["orderId"], orderType = ViewData["orderType"] })//车贷1
+                }
+            </div>
+     </div>
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/creditOrCarLoanInfoDetaiJs")
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/form")
+    @Scripts.Render("~/bundles/templete")
+    @Scripts.Render("~/bundles/dataFormat")
+    @Scripts.Render("~/bundles/validator")
+}
+@section css{
+    <style>
+        p.bug {
+            color: red;
+        }
+    </style>
+}

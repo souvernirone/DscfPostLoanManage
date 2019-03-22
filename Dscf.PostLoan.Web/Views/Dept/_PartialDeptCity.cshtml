@@ -1,0 +1,22 @@
+﻿@model System.Collections.Generic.IEnumerable<Dscf.PostLoan.Model.DeptViewModel>
+
+@{
+    int rowSize = 4;
+    int row = Convert.ToInt32(Math.Ceiling(Model.Count() * 1.0 / rowSize));
+}
+
+@for (int i = 0; i < row; i++)
+{
+    <p class="city">
+                @for (int j = 0; j < rowSize; j++)
+        {
+            int index = i * rowSize + j;
+            if (index >= Model.Count())
+            {
+                break;
+            }
+            var item = Model.ElementAt(index);
+            <input name="@(ViewBag.Type)City" data-name="@item.SignCity" id="@(ViewBag.Type + @item.Id)" type="checkbox" value="@item.Id" /><label for="@(ViewBag.Type + @item.Id)" class="ver-align">@item.SignCity</label>
+        }
+    </p>
+}

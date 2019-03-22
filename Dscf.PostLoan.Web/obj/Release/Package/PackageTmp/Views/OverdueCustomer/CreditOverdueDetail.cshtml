@@ -1,0 +1,62 @@
+﻿@using System.Web.Optimization
+@using Dscf.PostLoanGlobal
+@model Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.LoanOrderDetailDto
+
+@{
+    ViewBag.Title = "逾期客户详情";
+}
+
+<div class="g-mn1c tb">
+
+    <ul class="m-tnav">
+        <li class="active">
+            <a data-href="#ke">客户信息</a>
+        </li>
+        <li class="">
+            <a data-href="#zhai">债权信息</a>
+        </li>
+        <li>
+            <a data-href="#cui">催收信息</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="table-responsive tab-pane active" id="ke">
+            <!--基本信息-->
+            @Html.Partial("_PartialCreditUserInfo", Model.UserInfo)
+            <!--工作信息-->
+            @Html.Partial("_PartialCreditUserWorkInfo", Model.UserInfo.UserWorkInfo)
+            <!--家庭信息-->
+            @Html.Partial("_PartialCreditUserFamilyInfo", Model.UserInfo.UserFamilyInfo)
+            <!--新增信息-->
+            @Html.Action("ExtraInfoTab", "ExtraInfo", new { OrderId = Model.OrderId, OrderType = LoanOrderUtil.CreditTypeKey, ShrinkId = 3 })
+        </div>
+        <div class="table-responsive tab-pane " id="zhai" style="overflow-y:hidden;">
+            <!--债权信息-->
+            @Html.Action("CreditClaimsInfo", new { OrderDetail = Model })
+        </div>
+        <div class="table-responsive tab-pane" id="cui">
+            <!--催收信息-->
+            @Html.Action("CollectionInfo", new { OrderId = Model.OrderId, OrderType = LoanOrderUtil.CreditTypeKey })
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/creditOverdueDetail")
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/form")
+    @Scripts.Render("~/bundles/templete")
+    @Scripts.Render("~/bundles/dataFormat")
+    @Scripts.Render("~/bundles/collectionInfo")
+    @Scripts.Render("~/bundles/validator")
+    @Scripts.Render("~/bundles/extraInfoTab")
+}
+@section css{
+    <style>
+        p.bug {
+            color: red;
+        }
+    </style>
+}

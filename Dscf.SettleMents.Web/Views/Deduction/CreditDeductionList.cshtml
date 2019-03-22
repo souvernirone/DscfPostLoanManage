@@ -1,0 +1,137 @@
+﻿@using System.Web.Optimization
+@using Dscf.PostLoanGlobal;
+@{
+    ViewBag.Title = "划扣（信）";
+}
+<div class="g-mn1c tb">
+
+    <ul class="m-tnav">
+        <li class="active">
+            <a data-href="#shou">手工划扣</a>
+        </li>
+        <li>
+            <a id="tabShort" data-href="#piliang">批量划扣</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="table-responsive tab-pane active " id="shou">
+            <table class="table table-bordered noborder">
+                <thead>
+                    <tr>
+                        <th>签署地</th>
+                        <th>姓名</th>
+                        <th>产品类型</th>
+                        <th>合同金额</th>
+                        <th>扣款方式</th>
+                        <th>进入日期</th>
+                        <th>操作</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody id="shouContainer"></tbody>
+            </table>
+            <!--分页局部视图-->
+            <div>@Html.Partial("_PartialPager")</div>
+        </div>
+        <div class="table-responsive tab-pane " id="piliang">
+            <table class="table table-bordered noborder">
+                <thead>
+                    <tr>
+                        <td class="city"><input id="allCh" type="checkbox" style="display: block;"></td>
+                        <th>签署地</th>
+                        <th>姓名</th>
+                        <th>产品类型</th>
+                        <th>合同金额</th>
+                        <th>进入日期</th>
+                        <th>操作</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody id="piLiangContainer"></tbody>
+            </table>
+
+            <!--分页HTML开始-->
+            <div id="pagerOther" style="float:left"></div>
+            <div style="float:left;margin-left:20px" id="selectCount">
+                页面显示
+                <select id="selelct_OtherPageCount" style="font-size: 16px;height:38px;width:55px;" class="select">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option selected="selected" value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                </select>
+                条
+            </div>
+            <!--分页HTML结束-->
+            <div id="divShort">
+                <button class="u-b-base u-b-exprot s-b-blue u-b-spild1 btn-nav" onclick="buckle()" style="margin-left: 60%;">全部扣款</button>
+                <button class="u-b-base u-b-exprot s-b-blue u-b-spild1 btn-nav" onclick="pass()">选择扣款</button>
+                <input type="hidden" id="todayTime" value="@DateTime.Now.ToString("dd")" />
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts
+{
+    <script id="shouTemplete" type="text/x-jquery-tmpl">
+        <tr id="row-${OrderId}" data-orderid="${OrderId}" data-ordertype="${OrderType}" data-applyid="${ApplyId}">
+            <td>${SignCity}</td>
+            <td>${UserName}</td>
+            <td>${ProductName}</td>
+            <td>${Amount}元</td>
+            <td>${PayWayName}</td>
+            <td>${SignDate}</td>
+            <td>
+                {{if ApprovalStatus==1}}
+                <a class="u-b-one s-b-blue " href="/Deduction/CreditDeductClaims?orderId=${OrderId}&approvalStatus=${ApprovalStatus}&orderState=1&payWay=${PayWay}&applyId=${ApplyId}&css=2064">扣</a>
+                {{else}}
+                <a class="u-b-one s-b-gray " href="#">扣</a>
+                {{/if}}
+                <a class="u-b-one s-b-orage" target="_blank" href="/Deduction/CreditDeductClaims?orderId=${OrderId}&approvalStatus=${ApprovalStatus}&orderState=2&payWay=${PayWay}&css=2064">查</a>
+            </td>
+            <td>${ApprovalStatusName}</td>
+        </tr>
+    </script>
+
+    <script id="piLiangTemplete" type="text/x-jquery-tmpl">
+        <tr id="row-${OrderId}" data-orderid="${OrderId}" data-periodorder="${PeriodOrder}" data-code="${Code}">
+            <td width="20" class="city">
+                {{if Code=="40"||Code=="0"}}
+                <input name="Checked" value="${OrderId}" type="checkbox" style="display: block;">
+                {{/if}}
+            </td>
+            <td>${SignCity}</td>
+            <td>${Name}</td>
+            <td>${ProductName}</td>
+            <td>${Amount}元</td>
+            <td>${SignDate}</td>
+            <td>
+                {{if Code=="40"||Code=="0"}}
+                <a class="u-b-one s-b-blue " href="/Deduction/CreditBatchDeductClaims?orderId=${OrderId}&orderState=1&css=2064">扣</a>
+                {{else}}
+                <a class="u-b-one s-b-gray " href="#">扣</a>
+                {{/if}}
+                <a class="u-b-one s-b-orage " onclick="redirectPL('${OrderId}', '${Code}')">查</a>
+            </td>
+            <td>${CodeName}</td>
+        </tr>
+    </script>
+
+    @Scripts.Render("~/bundles/dataPagerJs")
+    @Scripts.Render("~/bundles/dataFormat")
+    @Scripts.Render("~/bundles/settleMentListJs")
+}
+
+
+
+
+

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:3790/DscfLoanAfterService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" />
+  <xs:complexType name="PagedApprovalListDtoList">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="Paged{0}List" Namespace="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ApprovalListDto" Namespace="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPageIndex" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" minOccurs="0" name="CurrentPageItems" nillable="true" type="q1:ArrayOfApprovalListDto" />
+      <xs:element minOccurs="0" name="TotalItemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPageCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedApprovalListDtoList" nillable="true" type="tns:PagedApprovalListDtoList" />
+  <xs:complexType name="PagedDeductPayApplyDtoList">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="Paged{0}List" Namespace="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="DeductPayApplyDto" Namespace="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPageIndex" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" minOccurs="0" name="CurrentPageItems" nillable="true" type="q2:ArrayOfDeductPayApplyDto" />
+      <xs:element minOccurs="0" name="TotalItemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPageCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedDeductPayApplyDtoList" nillable="true" type="tns:PagedDeductPayApplyDtoList" />
+  <xs:complexType name="PagedCarDeductPayInfoDtoList">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="Paged{0}List" Namespace="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="CarDeductPayInfoDto" Namespace="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPageIndex" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" minOccurs="0" name="CurrentPageItems" nillable="true" type="q3:ArrayOfCarDeductPayInfoDto" />
+      <xs:element minOccurs="0" name="TotalItemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPageCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedCarDeductPayInfoDtoList" nillable="true" type="tns:PagedCarDeductPayInfoDtoList" />
+  <xs:complexType name="PagedThroughListDtoList">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="Paged{0}List" Namespace="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ThroughListDto" Namespace="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentPageIndex" type="xs:int" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" minOccurs="0" name="CurrentPageItems" nillable="true" type="q4:ArrayOfThroughListDto" />
+      <xs:element minOccurs="0" name="TotalItemCount" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPageCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PagedThroughListDtoList" nillable="true" type="tns:PagedThroughListDtoList" />
+</xs:schema>

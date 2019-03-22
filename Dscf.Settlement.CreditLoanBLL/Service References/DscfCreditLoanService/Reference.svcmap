@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3eca7ac8-c05f-48f3-a727-3ef56838cdc8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:12454/DscfCreditLoanService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DscfCreditLoanService.xsd" MetadataType="Schema" ID="5a12db16-4ba9-48f6-ba0b-bdba4ef3a84f" SourceId="1" SourceUrl="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DscfCreditLoanService1.xsd" MetadataType="Schema" ID="83ece5e7-939f-4130-a7ed-80eb1451c1fa" SourceId="1" SourceUrl="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CreditLoanService.wsdl" MetadataType="Wsdl" ID="4bbc84cb-7625-415c-b2f4-943901c29b36" SourceId="1" SourceUrl="http://localhost:12454/DscfCreditLoanService.svc?wsdl" />
+    <MetadataFile FileName="DscfCreditLoanService2.xsd" MetadataType="Schema" ID="87ee82e0-2752-40d6-857a-86b92e62f581" SourceId="1" SourceUrl="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DscfCreditLoanService.disco" MetadataType="Disco" ID="4f7981bb-91d7-45c8-9999-f4f96ce8b557" SourceId="1" SourceUrl="http://localhost:12454/DscfCreditLoanService.svc?disco" />
+    <MetadataFile FileName="DscfCreditLoanService3.xsd" MetadataType="Schema" ID="1da49c89-ffcb-4f3f-a64d-362dbbf0db31" SourceId="1" SourceUrl="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DscfCreditLoanService4.xsd" MetadataType="Schema" ID="9851cd7f-0b92-4c34-b2fe-540a4ad42cd9" SourceId="1" SourceUrl="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,47 @@
+﻿@using System.Web.Optimization
+
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.UserInfoDto
+
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(0)">
+        <i class="z-subtraction"></i>基本信息
+    </h3>
+    <div class="cbody">
+        <p>
+            <label>姓名：</label>
+            <span>@Model.Name</span>
+        </p>
+        <p>
+            <label>身份证号码：</label>
+            <span>@Model.IDCard</span>
+        </p>
+        <p>
+            <label>联系电话：</label>
+            <span>@Model.Phone</span>
+        </p>
+        <p>
+            <label>户籍地址：</label>
+            <span>@Model.IdCardAddress</span>
+        </p>
+        <p>
+            <label> 现住址：</label>
+            <span>@Model.Address</span>
+        </p>
+        <p>
+            <label> 现住址开始时间：</label>
+            <span>@(Model.NowAddressBeginTime.HasValue ? Model.NowAddressBeginTime.Value.ToLongDateString().ToString() : string.Empty)</span>
+        </p>
+        <p>
+            <label>婚姻状况：</label>
+            <span>@Model.MaritalTypeText</span>
+        </p>
+        <p>
+            <label>学历：</label>
+            <span>@Model.EducationText</span>
+        </p>
+        <p>
+            <label>本市居住情况：</label>
+            <span>@Model.ResideTypeText</span>
+        </p>
+    </div>
+</div>

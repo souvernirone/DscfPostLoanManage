@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6c125fb2-e4d1-4638-b5da-bfe414de3a83" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11331/DscfACService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DscfACService.disco" MetadataType="Disco" ID="82a11f8c-ac8d-4f32-a010-2f27452ba1be" SourceId="1" SourceUrl="http://localhost:11331/DscfACService.svc?disco" />
+    <MetadataFile FileName="DscfACService.xsd" MetadataType="Schema" ID="5fd8b8a1-98b0-4b31-b596-d7965ebfffb8" SourceId="1" SourceUrl="http://localhost:11331/DscfACService.svc?xsd=xsd4" />
+    <MetadataFile FileName="AuthCenterService.wsdl" MetadataType="Wsdl" ID="d5678e65-eb50-4301-b5bb-07ee29b1fda0" SourceId="1" SourceUrl="http://localhost:11331/DscfACService.svc?wsdl" />
+    <MetadataFile FileName="DscfACService1.xsd" MetadataType="Schema" ID="0111472b-b5d8-45db-885f-836c839a870a" SourceId="1" SourceUrl="http://localhost:11331/DscfACService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DscfACService2.xsd" MetadataType="Schema" ID="a549816e-dc1f-4c94-b359-2388de31da65" SourceId="1" SourceUrl="http://localhost:11331/DscfACService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DscfACService3.xsd" MetadataType="Schema" ID="b24ffe60-b899-440b-95b8-4b4cdc15b734" SourceId="1" SourceUrl="http://localhost:11331/DscfACService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DscfACService4.xsd" MetadataType="Schema" ID="727d9ee4-bb68-4805-9d3b-917a19e119bf" SourceId="1" SourceUrl="http://localhost:11331/DscfACService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

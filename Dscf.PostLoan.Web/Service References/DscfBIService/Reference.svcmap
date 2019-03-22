@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="368ac910-5fea-4ca8-9bf3-60b827caa9e8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="System.ServiceModel" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8010/DscfBIService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DscfBIService.disco" MetadataType="Disco" ID="6e8f8a0a-b267-4f7a-b1cd-50134d468159" SourceId="1" SourceUrl="http://localhost:8010/DscfBIService.svc?disco" />
+    <MetadataFile FileName="DscfBIService.xsd" MetadataType="Schema" ID="f48a36e5-02ef-4c5a-b278-cb46dcf4431e" SourceId="1" SourceUrl="http://localhost:8010/DscfBIService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DscfBIServerService.wsdl" MetadataType="Wsdl" ID="9d8a1e03-9f04-483b-9c7d-a6d2dd9f3148" SourceId="1" SourceUrl="http://localhost:8010/DscfBIService.svc?wsdl" />
+    <MetadataFile FileName="DscfBIService1.xsd" MetadataType="Schema" ID="bd898a20-f02d-4326-9daa-87a781444649" SourceId="1" SourceUrl="http://localhost:8010/DscfBIService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DscfBIService2.xsd" MetadataType="Schema" ID="38d88867-f285-4a99-9093-163b7377f17e" SourceId="1" SourceUrl="http://localhost:8010/DscfBIService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

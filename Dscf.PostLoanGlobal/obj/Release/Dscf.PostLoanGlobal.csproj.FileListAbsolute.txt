@@ -1,0 +1,12 @@
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\Dscf.PostLoanGlobal.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\Dscf.PostLoanGlobal.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\log4net.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\NPOI.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\NPOI.OOXML.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\NPOI.OpenXml4Net.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\NPOI.OpenXmlFormats.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\log4net.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\bin\Release\NPOI.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\obj\Release\Dscf.PostLoanGlobal.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.PostLoanGlobal\obj\Release\Dscf.PostLoanGlobal.pdb

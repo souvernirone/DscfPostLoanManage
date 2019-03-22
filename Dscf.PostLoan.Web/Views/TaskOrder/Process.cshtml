@@ -1,0 +1,80 @@
+﻿@using System.Web.Optimization
+@using Dscf.PostLoan.AuthCenterBLL.DscfACService;
+
+@{
+    ViewBag.Title = "任务派单";
+    ViewDataDictionary vdd = new ViewDataDictionary();
+}
+
+<div class="g-mn1c tb">
+    <ul class="m-tnav">
+        <li class="active">
+            <a data-href="#xin">信贷</a>
+        </li>
+        <li>
+            <a data-href="#che">车贷</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="table-responsive tab-pane active" id="xin">
+            @{
+                vdd["Type"] = "CreditLoan";
+                Html.RenderPartial("_PartialCollectorList", ViewBag.CreditLoanCollector as IEnumerable<OperaterInfoDto>, vdd);
+            }
+        </div>
+
+        <div class="table-responsive tab-pane" id="che">
+            @{
+
+                vdd["Type"] = "CarLoan";
+                Html.RenderPartial("_PartialCollectorList", ViewBag.CarLoanCollector as IEnumerable<OperaterInfoDto>, vdd);
+            }
+        </div>
+    </div>
+</div>
+
+<div class="f-hide citywrap" id="cityCreditLoanLayer">
+    @{ Html.RenderAction("DeptCityList", "Dept", new { type = "CreditLoan" });}
+</div>
+
+<div class="f-hide citywrap" id="cityCarLoanLayer">
+    @{ Html.RenderAction("DeptCityList", "Dept", new { type = "CarLoan" });}
+</div>
+
+<div class="f-hide alert" id="collectionTypeLayer">
+
+    <p>
+        <label>姓名:</label>
+        <input id="CurrentOptName" type="text" value="" class="form-control" readonly="readonly" />
+
+    </p>
+
+    <p>
+        <label>催收角色:</label>
+
+        <span class="selectimg">
+            <select class="form-control select" name="CollectionType">
+                @foreach (var dict in ViewBag.CollectionTypeList as IEnumerable<DictionaryDto>)
+                {
+                    <option value="@dict.DictValue">@dict.DictMemo</option>
+                }
+            </select>
+            <span></span>
+        </span>
+    </p>
+
+
+    @*<label>姓名:</label><label id="CurrentOptName"></label><br/>
+        <label>催收角色:</label>*@
+</div>
+
+
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/process")
+
+}
+

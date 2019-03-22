@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C039762F-D4F6-459F-B415-0885ACB650B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dscf.Settlement.CarLoanBLL</RootNamespace>
+    <AssemblyName>Dscf.Settlement.CarLoanBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Extension\MapperExtention.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DscfCarLoanService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Service References\DscfCarLoanService\CarLoanService.wsdl" />
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.CarCountDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.CarLoanOrderDetailDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.CarRemidDetailDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.CarRemindListDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.CarUserInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.ExhibitionReviewDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.ImagesDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.InsertExhibitionReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.LoanMonthRepayDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.LoanOrderDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.LoanProductOrderDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.PagedCarOverdueListDtoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.PagedCarRemindListDtoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.PagedLoanProductOrderDtoList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.Settlement.CarLoanBLL.DscfCarLoanService.UpdateExhibitionReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DscfCarLoanService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dscf.Global\Dscf.Global.csproj">
+      <Project>{8ad7c3ed-afeb-4c48-8022-5be76888b632}</Project>
+      <Name>Dscf.Global</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.Settlement.Model\Dscf.Settlement.Model.csproj">
+      <Project>{2c75507d-0261-4cba-bbb4-9efe21fd9f61}</Project>
+      <Name>Dscf.Settlement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,161 @@
+﻿@using System.Web.Optimization;
+@using Dscf.PostLoanGlobal;
+@model Dscf.PostLoan.Model.CreditClaimsInfoTotal
+
+
+<table class="table table-bordered noborder">
+    <thead>
+        <tr>
+
+            <th>操作人</th>
+            <th>签署地</th>
+            <th>姓名</th>
+            <th>首逾日期</th>
+            <th>累计逾期天数</th>
+            <th>累计逾期次数</th>
+            <th>累计逾期本息</th>
+            <th>累计违约金</th>
+            <th>累计罚息</th>
+            <th>待还款总额</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.CollectorName</td>
+            <td>@Model.SignCity</td>
+            <td>@Model.UserName</td>
+            <td>@(Model.FirstOverdueTime.HasValue ? Model.FirstOverdueTime.Value.ToLongDateString().ToString() : string.Empty)</td>
+            <td>@Model.OverdueTimeCount</td>
+            <td>@Model.OverdueCount</td>
+            <td>@(Model.OverduePrincipalSum)元</td>
+            <td>@(Model.OverduePenaltySum)元</td>
+            <td>@(Model.DailyPenaltySum)元</td>
+            <td><span id="sumOverdue">@(Model.OverduePrincipalSum + Model.OverduePenaltySum + Model.DailyPenaltySum)</span>元</td>
+        </tr>
+    </tbody>
+
+</table>
+
+<table class="table table-bordered f-hide" id="loanDetail">
+    <thead>
+        <tr>
+            <th>姓名</th>
+            <th>划扣日期</th>
+            <th>逾期天数</th>
+            <th>月还金额</th>
+            <th>违约金</th>
+            <th>罚息</th>
+            <th>已还金额</th>
+            <th>还款标识</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claims in Model.ClaimsInfoList)
+        {
+            <tr>
+                <td>@Model.UserName</td>
+                <td>@(claims.RepayDate.HasValue ? claims.RepayDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                <td>@(claims.OverdueDayCount)天</td>
+                <td>@(claims.MonthRepay)元</td>
+                <td>@(claims.OverduePenalty)元</td>
+                <td>@(claims.DailyPenaltySumPerPeriod)元</td>
+                <td>@(claims.DeductAmountSumPerPeriod)元</td>
+                <td></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="drawback">
+    <p class="tip" onclick="actionDetail(this)">
+        <span>点击查看更多</span>
+        <i class="down"></i>
+    </p>
+</div>
+@{ if (ViewBag.DeductPayApplyAndFile != null && ViewBag.DeductPayApplyAndFile.ApprovalStatus != DeductPayUtil.SuccessfulDebit)
+ {
+    <div class="detail">
+        <p>
+            <label>本次减免金额：</label>
+            <span>@(ViewBag.DeductPayApplyAndFile.ReliefAmount)元</span>
+        </p>
+
+        <p>
+            <label>本次划扣金额：</label>
+            <span>
+                @(ViewBag.DeductPayApplyAndFile.RepayAmount)元
+            </span>
+        </p>
+        @if (ViewBag.DeductPayApplyAndFile.Reason != null && (ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.NotApproved || ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.RejectDebit))
+        {
+        <p>
+            <label>拒绝原因：</label>
+            <span>
+                @ViewBag.DeductPayApplyAndFile.Reason
+            </span>
+        </p>
+        }
+        @if (ViewBag.DeductPayApplyAndFile.Reason != null && ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.FailedDebit)
+        {
+            <p>
+                <label>失败原因：</label>
+                <span>
+                    @ViewBag.DeductPayApplyAndFile.Reason
+                </span>
+            </p>
+        }
+        
+        <div id="layer-photos" class="layer-photos-demo">
+            <img layer-src="@ViewBag.DeductPayApplyAndFile.FileEntity.FilePath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                 src="@ViewBag.DeductPayApplyAndFile.FileEntity.ThumbPath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                 alt="@ViewBag.DeductPayApplyAndFile.FileEntity.FileName" layer-pid="" />
+        </div>
+    </div>
+ }
+}
+
+<p class="btn-nav" style="margin-top: 30px;">
+    <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" id="payApply"  @((ViewBag.DeductPayApplyAndFile == null) || (ViewBag.DeductPayApplyAndFile != null && (ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.NotApproved || ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.FailedDebit || ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.SuccessfulDebit || ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.RejectDebit)) ? "onclick=payApplyDeduction()" : "disabled='disabled'") >申请划扣</button>
+    <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" id="payOff" @((ViewBag.DeductPayApplyAndFile == null) || (ViewBag.DeductPayApplyAndFile != null && (ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.NotApproved || ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.FailedDebit || ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.SuccessfulDebit || ViewBag.DeductPayApplyAndFile.ApprovalStatus == DeductPayUtil.RejectDebit)) ? "onclick=payOffline()" : "disabled='disabled'") >线下支付</button>
+    <button class="u-b-base u-b-exprot s-b-blue u-b-spild1 " onclick="closeWind()" disabled>还款记录</button>
+</p>
+
+
+
+<div id="pay" class="f-hide alert">
+    <form id="form-applyDeduct" enctype="multipart/form-data" action="/OverdueCustomer/DeductPayApply" method="post">
+        <!--订单主键ID-->
+        <p>
+            <input type="hidden" name="OrderId" value="@Model.OrderId" class="form-control" />
+        </p>
+        <!--订单类型标识：1-信用借款 2-车辆借款 -->
+        <p>
+            <input type="hidden" name="OrderType" value="1" class="form-control" />
+        </p>
+        <p>
+            <input type="hidden" name="PayWay" value="" class="form-control" />
+        </p>
+        <p>
+            <label>金额还款减免：</label>
+            <input type="text" name="ReliefAmount" class="form-control" />
+        </p>
+        <p>
+            <label>本次还款金额：</label>
+            <input type="text" name="RepayAmount" class="form-control" />
+        </p>
+        <p id="prompt" ></p>
+        <p>
+            <label>上传照片：</label>
+            <a href="javascript:;" class="file form-control">
+                <span>选择文件</span>
+                <input type="file" name="PayImage" id="" class="form-control">
+            </a>
+        </p>
+        <ul id="UpFileNameList" style="margin-left: 21.5384%;margin-top:20px;"></ul>
+        <p>
+            <label>照片备注：</label>
+            <input type="text" name="Remark" class="form-control" />
+        </p>
+    </form>
+</div>
+

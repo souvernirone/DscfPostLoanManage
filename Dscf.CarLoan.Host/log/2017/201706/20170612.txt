@@ -1,0 +1,159 @@
+
+ 
+记录时间：2017-06-12 11:39:48,955 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:39:48,999 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:11416/DscfCarLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:46:50,080 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:46:50,116 
+线程ID:[12] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:11416/DscfCarLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:50:53,855 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:11416/DscfCarLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:50:53,919 
+线程ID:[9] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:51:23,641 
+线程ID:[19] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:51:23,654 
+线程ID:[19] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:11416/DscfCarLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:59:02,307 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:11416/DscfCarLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:59:02,349 
+线程ID:[15] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 14:16:05,125 
+线程ID:[3] 
+日志级别：  ERROR 
+出错类：Dscf.CarLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.Data.SqlClient.SqlException (0x80131904): 关键字 'and' 附近有语法错误。
+“mrD”附近有语法错误。
+“mrC”附近有语法错误。
+   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 HibernatingRhinos.Profiler.Appender.ProfiledDataAccess.ProfiledCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryInternal[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__64()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass65`1.<ExecuteStoreQueryReliably>b__63()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQueryReliably[TElement](String commandText, String entitySetName, ExecutionOptions executionOptions, Object[] parameters)
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteStoreQuery[TElement](String commandText, ExecutionOptions executionOptions, Object[] parameters)
+   在 System.Data.Entity.Internal.InternalContext.<>c__DisplayClass14`1.<ExecuteSqlQuery>b__13()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 Dscf.CarLoan.Dao.Implement.LoanProductOrderRepository.GetOverdueExcelList(OverdueSearchRequest overdueSearchRequest) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CarLoan.Dao\Implement\LoanProductOrderRepository.cs:行号 570
+   在 Dscf.CarLoan.Manager.Implement.LoanProductOrderManager.GetOverdueExcelList(OverdueSearchRequest overdueSearchRequest) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CarLoan.Manager\Implement\LoanProductOrderManager.cs:行号 546
+   在 Dscf.CarLoan.Service.CarLoanService.GetOverdueExcelList(OverdueSearchRequest overdueSearchRequest) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CarLoan.Service\LoanProductOrder\CarLoanService.cs:行号 166
+   在 SyncInvokeGetOverdueExcelList(Object , Object[] , Object[] )
+   在 System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+   在 System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)
+ClientConnectionId:6db3c460-da97-4c5c-a270-7ab2039829c6
+Error Number:156,State:1,Class:15

@@ -1,0 +1,104 @@
+﻿@using System.Web.Optimization;
+@model Dscf.PostLoan.Model.CarLoanInfoDetailViewModel
+@{
+    ViewBag.Title = "车贷借款信息详细";
+}
+
+<div class="g-mn1c">
+    <div class="spilds">
+        <p>
+            @Html.HiddenFor(model => model.OrderId)
+            <label>姓名：</label>
+            <span>@Model.Name</span>
+        </p>
+        <p>
+            <label>身份证号：</label>
+            <span>@Model.IDCard</span>
+        </p>
+        <p>
+            <label>卡号：</label>
+            <span>@Model.BankCard</span>
+        </p>
+        <p>
+            <label>银行名称：</label>
+            <span>@Model.BankName</span>
+
+        </p>
+        <p>
+            <label>支行名称：</label>
+            <span>@Model.SubBranchName</span>
+
+        </p>
+        <p>
+            <label>产品类型：</label>
+            <span>@Model.ProductName</span>
+
+        </p>
+        <p>
+            <label>合同编号：</label>
+            <span>@Model.Contract</span>
+
+        </p>
+        <p>
+            <label>合同金额：</label>
+            <span>@Model.Amount</span>
+        </p>
+        <p>
+            <label>签约日期：</label>
+            <span>@(Model.SignDate.HasValue ? Model.SignDate.Value.ToLongDateString().ToString() : string.Empty)</span>
+        </p>
+        @*<p>
+            <label>月还计划表：</label>
+
+        </p>*@
+        <div class="table-responsive" style="overflow: hidden;">
+            <label style="vertical-align: top;">月还计划表：</label>
+            <table class="table table-bordered" id="integrate" style=" display: inline-block; width: 78%; height: 100%;">
+                <thead>
+                    <tr>
+                        <th>第几期</th>
+                        <th>月还款</th>
+                        <th>月还本金</th>
+                        <th>月还利息</th>
+                        <th>剩余本金</th>
+                        <th>月还时间</th>
+                        <th>还款状态</th>
+                    </tr>
+                </thead>
+                <tbody id="container"></tbody>
+            </table>
+        </div>
+        <span class="close" onclick="window.location = '/LoanInfo/LoanInfoList?css=1052'"></span>
+
+    </div>
+
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dataPagerJs")
+    @Scripts.Render("~/bundles/dataFormat")
+    @Scripts.Render("~/bundles/carLoanInfoDetail")
+
+    <script id="templete" type="text/x-jquery-tmpl">
+        <tr id="row-${RepayId}">
+            <td>${PeriodOrder}</td>
+            <td>${MonthRepay}</td>
+            <td>${MonthRepayPrincipal}</td>
+            <td>${MonthInterest}</td>
+            <td>${RemainPrincipal}</td>
+            <td>${RepayDate}</td>
+            <td>
+                {{if IsDeductSucess==0}}
+                未还
+                {{else IsDeductSucess==1}}
+                已还
+                {{else}}
+                逾期
+                {{/if}}
+            </td>
+        </tr>
+
+    </script>
+}
+

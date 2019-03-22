@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfRepayRemindDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RepayRemindDto" nillable="true" type="tns:RepayRemindDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRepayRemindDto" nillable="true" type="tns:ArrayOfRepayRemindDto" />
+  <xs:complexType name="RepayRemindDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RemindContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemindId" type="xs:int" />
+      <xs:element minOccurs="0" name="RemindType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RemindTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepayId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RepayRemindDto" nillable="true" type="tns:RepayRemindDto" />
+  <xs:complexType name="ArrayOfRemindExcleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RemindExcleDto" nillable="true" type="tns:RemindExcleDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRemindExcleDto" nillable="true" type="tns:ArrayOfRemindExcleDto" />
+  <xs:complexType name="RemindExcleDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PersonName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemindContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemindText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPhone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RemindExcleDto" nillable="true" type="tns:RemindExcleDto" />
+  <xs:complexType name="DeductPayApplyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ApprovalStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileEntity" nillable="true" type="tns:FileEntityDto" />
+      <xs:element minOccurs="0" name="FileId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PayWay" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PayWayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReliefAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RepayAmount" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeductPayApplyDto" nillable="true" type="tns:DeductPayApplyDto" />
+  <xs:complexType name="FileEntityDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="FileId" type="xs:int" />
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FilePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FileSize" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FileSuffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDeleted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SaveFileName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ThumbPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FileEntityDto" nillable="true" type="tns:FileEntityDto" />
+  <xs:complexType name="ArrayOfApprovalListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ApprovalListDto" nillable="true" type="tns:ApprovalListDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfApprovalListDto" nillable="true" type="tns:ArrayOfApprovalListDto" />
+  <xs:complexType name="ApprovalListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CollectorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreditStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstOverdueTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OptDeptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OverdueCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OverduePrincipalSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ApprovalListDto" nillable="true" type="tns:ApprovalListDto" />
+  <xs:complexType name="ArrayOfDeductPayApplyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeductPayApplyDto" nillable="true" type="tns:DeductPayApplyDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeductPayApplyDto" nillable="true" type="tns:ArrayOfDeductPayApplyDto" />
+  <xs:complexType name="ArrayOfCarDeductPayInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarDeductPayInfoDto" nillable="true" type="tns:CarDeductPayInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarDeductPayInfoDto" nillable="true" type="tns:ArrayOfCarDeductPayInfoDto" />
+  <xs:complexType name="CarDeductPayInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsExtension" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LobbyTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" type="xs:int" />
+      <xs:element minOccurs="0" name="PayWay" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PayWayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarDeductPayInfoDto" nillable="true" type="tns:CarDeductPayInfoDto" />
+  <xs:complexType name="ArrayOfThroughListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThroughListDto" nillable="true" type="tns:ThroughListDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThroughListDto" nillable="true" type="tns:ArrayOfThroughListDto" />
+  <xs:complexType name="ThroughListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApplyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ApprovalStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ApprovalStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptDeptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PayWay" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PayWayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepayAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ResultName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThroughListDto" nillable="true" type="tns:ThroughListDto" />
+  <xs:complexType name="CollectionInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CollectionRecord" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollectionStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CollectionStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeleted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LinkPersonType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LinkPersonTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OutboundAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpFileList" nillable="true" type="tns:ArrayOfFileEntityDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CollectionInfoDto" nillable="true" type="tns:CollectionInfoDto" />
+  <xs:complexType name="ArrayOfFileEntityDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FileEntityDto" nillable="true" type="tns:FileEntityDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFileEntityDto" nillable="true" type="tns:ArrayOfFileEntityDto" />
+  <xs:complexType name="ArrayOfCollectionInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CollectionInfoDto" nillable="true" type="tns:CollectionInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCollectionInfoDto" nillable="true" type="tns:ArrayOfCollectionInfoDto" />
+  <xs:complexType name="ArrayOfExtraInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtraInfoDto" nillable="true" type="tns:ExtraInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExtraInfoDto" nillable="true" type="tns:ArrayOfExtraInfoDto" />
+  <xs:complexType name="ExtraInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateOptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ExtraContent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeleted" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExtraInfoDto" nillable="true" type="tns:ExtraInfoDto" />
+  <xs:complexType name="ArrayOfExcleInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExcleInfoDto" nillable="true" type="tns:ExcleInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExcleInfoDto" nillable="true" type="tns:ArrayOfExcleInfoDto" />
+  <xs:complexType name="ExcleInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExcleInfoDto" nillable="true" type="tns:ExcleInfoDto" />
+</xs:schema>

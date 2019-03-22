@@ -1,0 +1,38 @@
+﻿@using System.Web.Optimization
+@model System.Collections.Generic.IList<Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.ContractFormationDto>
+
+@{
+    int RowCount = Convert.ToInt32(Math.Floor(Model.Count() / 3.0));//共多少行
+    int CountPerRow = 3;//每行数量
+}
+
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(3)">
+        <i class="z-subtraction"></i>签约信息
+    </h3>
+    <div class="cbody">
+
+
+        @for (int i = 0; i < RowCount; i++)
+        {
+            <p class='sign' style="text-align: center">
+                @for (int j = 0; j < CountPerRow; j++)
+                {
+                    int index = i * CountPerRow + j;
+                    if (index < Model.Count())
+                    {
+                        <span style="display: inline-block;width:20%;padding-left: 15px;">
+                            <a href="@Model[index].ContractPath" target="_blank">@Model[index].ContractName.Substring(Model[index].ContractName.LastIndexOf("-") + 1)</a>
+                        </span>
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            </p>
+        }
+
+
+    </div>
+</div>

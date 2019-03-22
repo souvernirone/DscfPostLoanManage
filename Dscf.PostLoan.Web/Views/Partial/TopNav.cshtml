@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+@using Dscf.PostLoanGlobal;
+
+@model System.Collections.Generic.IEnumerable<Dscf.PostLoan.Web.DscfBIService.PlatformEntity>
+
+
+<ul class="m-nav">
+    <li>
+        <a href="@Url.Content("/Home/Index")">贷后系统</a>
+        <ul class="subnav">
+            @foreach (var entity in Model)
+            {
+                if (entity.PlatId == PlatformUtil.PostLoanPlat)
+                {
+                    continue;
+                }
+                <li>
+                    <a target="_blank" href="@entity.HomeUrl">@entity.PlatformName</a>
+                </li>
+            }
+        </ul>
+    </li>
+    <li>
+        <a href="#">欢迎您,@ViewBag.OptName</a>
+    </li>
+    <li>
+        <a href="http://ms.dingshengcaifu.com:9015/Account/LogOut">退出</a>
+    </li>
+</ul>
+

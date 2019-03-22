@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3aa04c6c-87d8-420b-98fa-78f43610d33d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:11416/DscfCarLoanService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DscfCarLoanService.disco" MetadataType="Disco" ID="5f897f21-2915-4ab3-b2bd-8b4f998595e9" SourceId="1" SourceUrl="http://localhost:11416/DscfCarLoanService.svc?disco" />
+    <MetadataFile FileName="CarLoanService.wsdl" MetadataType="Wsdl" ID="0dda22d5-2568-4c97-a3df-c001430b3dc5" SourceId="1" SourceUrl="http://localhost:11416/DscfCarLoanService.svc?wsdl" />
+    <MetadataFile FileName="DscfCarLoanService.xsd" MetadataType="Schema" ID="830d3466-fb6c-45ce-9644-1181126937c7" SourceId="1" SourceUrl="http://localhost:11416/DscfCarLoanService.svc?xsd=xsd4" />
+    <MetadataFile FileName="DscfCarLoanService1.xsd" MetadataType="Schema" ID="a8237276-bb2a-4250-9504-94dfcacc77f6" SourceId="1" SourceUrl="http://localhost:11416/DscfCarLoanService.svc?xsd=xsd3" />
+    <MetadataFile FileName="DscfCarLoanService2.xsd" MetadataType="Schema" ID="2d6e968a-2bd6-4d8c-a12e-08bfb156e378" SourceId="1" SourceUrl="http://localhost:11416/DscfCarLoanService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DscfCarLoanService3.xsd" MetadataType="Schema" ID="15a3a150-5e9c-4e66-b857-5e451af1d42a" SourceId="1" SourceUrl="http://localhost:11416/DscfCarLoanService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DscfCarLoanService4.xsd" MetadataType="Schema" ID="63181871-e084-4ba0-a290-6bfe871fda59" SourceId="1" SourceUrl="http://localhost:11416/DscfCarLoanService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

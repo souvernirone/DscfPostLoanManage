@@ -1,0 +1,53 @@
+﻿@using System.Web.Optimization
+
+@model System.Collections.Generic.IEnumerable<Dscf.PostLoan.LoanAfterBLL.DscfLoanAfterService.ExtraInfoDto>
+
+
+<div class="m-shrink info">
+
+    <input type="hidden" name="CurrentOptId" value="@ViewBag.CurrentOperaterId" id="CurrentOptId" />
+
+    <h3 class="title f-sub f-sub1" onclick="shrink(@ViewBag.ShrinkId)">
+        <i class="z-subtraction"></i>新增信息
+    </h3>
+    <div class="action">
+        <span class="del" onclick="action(2)"></span>
+        <span class="edit" onclick="action(1)"></span>
+        <span class="add" onclick="add()"></span>
+    </div>
+    <div id="tip" class="cbody" style="padding-top:10px;clear:both;">
+        @foreach (var extra in Model)
+        {
+            <p id="@extra.Id">
+                <label>
+                    <i data-createoptid="@extra.CreateOptId" data-id="@extra.Id" class="tip f-hide"></i>
+                    @(extra.CreateTime.HasValue ? extra.CreateTime.Value.ToString("yyyy-MM-dd HH:mm") : string.Empty)
+                </label>
+                <span class="marright">@extra.CreateOptName</span>
+                <span class="marright">@extra.ExtraContent</span>
+            </p>
+        }
+    </div>
+</div>
+
+<div id="addExtra" class="f-hide alert">
+    <form id="extraInfoForm">
+        <p>
+            <input name="OrderId" value="@ViewBag.OrderId" type="hidden" />
+            <input name="OrderType" value="@ViewBag.OrderType" type="hidden" />
+            <input name="Id" value="@ViewBag.OrderType" type="hidden" />
+        </p>
+        <p class="height">
+            <label>新增信息：</label>
+            <textarea name="ExtraContent" class="form-control  height"></textarea>
+        </p>
+    </form>
+</div>
+
+<script id="templete" type="text/x-jquery-tmpl">
+    <p id="${Id}">
+        <label><i data-createoptid="${CreateOptId}" class="tip f-hide" data-id="${Id}"></i>${CreateTime}</label>
+        <span class="marright">${CreateOptName}</span>
+        <span class="marright">${ExtraContent}</span>
+    </p>
+</script>

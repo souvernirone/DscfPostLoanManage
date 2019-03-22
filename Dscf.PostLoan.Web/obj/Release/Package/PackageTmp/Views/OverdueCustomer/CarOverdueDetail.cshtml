@@ -1,0 +1,66 @@
+﻿@using System.Web.Optimization
+@using Dscf.PostLoanGlobal
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarLoanOrderDetailDto
+
+@{
+    ViewBag.Title = "逾期客户详情";
+}
+
+<div class="g-mn1c tb">
+
+    <ul class="m-tnav">
+        <li class="active">
+            <a data-href="#ke">客户信息</a>
+        </li>
+        <li class="">
+            <a data-href="#zhai">债权信息</a>
+        </li>
+        <li>
+            <a data-href="#cui">催收信息</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="table-responsive tab-pane active" id="ke">
+            <!--基本信息-->
+            @Html.Partial("_PartialCarUserInfo", Model.UserInfo)
+            <!--工作信息-->
+            @Html.Partial("_PartialCarUserWorkInfo", Model.UserInfo.UserWorkInfo)
+            <!--车辆信息-->
+            @Html.Partial("_PartialCarLoanCarInfo", Model.LobbyInfo.CarInfo)
+            <!--签约信息-->
+            @*@Html.Partial("_PartialCarContractInfo", Model.ContractFormationList)*@
+            @Html.Partial("_PartialCarLoanSignInfo", Model)
+            <!--新增信息-->
+            @Html.Action("ExtraInfoTab", "ExtraInfo", new { OrderId = Model.OrderId, OrderType = LoanOrderUtil.CarTypeKey, ShrinkId = 4 })
+        </div>
+        <div class="table-responsive tab-pane " id="zhai" style="overflow-y:hidden;">
+            <!--债权信息-->
+            @Html.Action("CarClaimsInfo", new { OrderDetail = Model })
+        </div>
+        <div class="table-responsive tab-pane" id="cui">
+            <!--催收信息-->
+            @Html.Action("CollectionInfo", new { OrderId = Model.OrderId, OrderType = LoanOrderUtil.CarTypeKey })
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/form")
+    @Scripts.Render("~/bundles/validator")
+    @Scripts.Render("~/bundles/templete")
+    @Scripts.Render("~/bundles/carOverdueDetail")
+    @Scripts.Render("~/bundles/collectionInfo")
+    @Scripts.Render("~/bundles/dataFormat")
+    @Scripts.Render("~/bundles/extraInfoTab")
+}
+@section css
+    {
+    <style>
+        p.bug {
+            color: red;
+        }
+    </style>
+}

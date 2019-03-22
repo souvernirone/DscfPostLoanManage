@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6F84A8C-C68C-4075-8568-ACF62D34F193}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dscf.SettleMents.Web</RootNamespace>
+    <AssemblyName>Dscf.SettleMents.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutoFacBootStrapper.cs" />
+    <Compile Include="App_Start\AutoMapperStrapper.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\DeductionController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\ExcleInfoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialsController.cs" />
+    <Compile Include="Controllers\SettleMentController.cs" />
+    <Compile Include="Filter\LogHandleErrorAttribute.cs" />
+    <Compile Include="Filter\UnUserAuthorizeAttribute.cs" />
+    <Compile Include="Filter\UserAuthorizeAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\LoginInfoHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DscfBIService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\base.min.css" />
+    <Content Include="Content\common.css" />
+    <Content Include="Content\datetimepicker.min.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\images\add.png" />
+    <Content Include="Content\images\add_img.jpg" />
+    <Content Include="Content\images\bg.png" />
+    <Content Include="Content\images\delete_blue.png" />
+    <Content Include="Content\images\delete_white.png" />
+    <Content Include="Content\images\down-hover.png" />
+    <Content Include="Content\images\down.png" />
+    <Content Include="Content\images\error.png" />
+    <Content Include="Content\images\fileType\file.png" />
+    <Content Include="Content\images\fileType\rar.png" />
+    <Content Include="Content\images\fileType\txt.png" />
+    <Content Include="Content\images\fileType\zip.png" />
+    <Content Include="Content\images\header-bg.png" />
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\ICON2 - 副本.png" />
+    <Content Include="Content\images\ICON2.png" />
+    <Content Include="Content\images\icons.png" />
+    <Content Include="Content\images\iealertsprite.png" />
+    <Content Include="Content\images\image.png" />
+    <Content Include="Content\images\index.jpg" />
+    <Content Include="Content\images\LOGO.png" />
+    <Content Include="Content\images\progress.png" />
+    <Content Include="Content\images\success.png" />
+    <Content Include="Content\layer\default\icon-ext.png" />
+    <Content Include="Content\layer\default\icon.png" />
+    <Content Include="Content\layer\default\loading-0.gif" />
+    <Content Include="Content\layer\default\loading-1.gif" />
+    <Content Include="Content\layer\default\loading-2.gif" />
+    <Content Include="Content\layer\layer.css" />
+    <Content Include="Content\layer\layer.min.css" />
+    <Content Include="Content\layer\laypage.css" />
+    <Content Include="Content\pagination.css" />
+    <Content Include="Content\perfect-scrollbar.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\timepicker.css" />
+    <Content Include="Content\webuploader.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular_1.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular_1.woff" />
+    <Content Include="Content\images\fileType\Thumbs.db" />
+    <Content Include="Content\layer\laypage.less" />
+    <Content Include="Scripts\base.js" />
+    <Content Include="Scripts\datapager.js" />
+    <Content Include="Scripts\datepicker-zh-CN.js" />
+    <Content Include="Scripts\datepicker.js" />
+    <Content Include="Scripts\excleInfo\exportExcle.js" />
+    <Content Include="Scripts\jquery-1.11.2.min.js" />
+    <Content Include="Scripts\jquery-dateFormat.js" />
+    <Content Include="Scripts\jquery-extension.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.tmpl.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\layer.js" />
+    <Content Include="Scripts\laypage.js" />
+    <Content Include="Scripts\settleMentJs\carLoanInfoDetail.js" />
+    <Content Include="Scripts\settleMentJs\creditBatchDeductClaimsJS.js" />
+    <Content Include="Scripts\settleMentJs\creditOrCarLoanInfoDetails.js" />
+    <Content Include="Scripts\settleMentJs\loanInfoList.js" />
+    <Content Include="Scripts\pagination.js" />
+    <Content Include="Scripts\perfect-scrollbar.min.js" />
+    <Content Include="Scripts\settleMentJs\settleMentList.js" />
+    <Content Include="Scripts\WebUploader\Uploader.swf" />
+    <Content Include="Scripts\WebUploader\webuploader.js" />
+    <Content Include="Service References\DscfBIService\Dscf.SettleMents.Web.DscfBIService.AuthResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DscfBIService\Dscf.SettleMents.Web.DscfBIService.MenuEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DscfBIService\Dscf.SettleMents.Web.DscfBIService.OperaterEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DscfBIService\Dscf.SettleMents.Web.DscfBIService.PermissionEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\DscfBIService\Dscf.SettleMents.Web.DscfBIService.PlatformEntity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\SettleMents.pubxml" />
+    <None Include="Properties\PublishProfiles\Settlement_Web.pubxml" />
+    <None Include="Service References\DscfBIService\DscfBIService.disco" />
+    <None Include="Service References\DscfBIService\configuration91.svcinfo" />
+    <None Include="Service References\DscfBIService\configuration.svcinfo" />
+    <None Include="Service References\DscfBIService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\Deduction\CarDeductClaimsDetail.cshtml">
+      <SubType>Code</SubType>
+      <DependentUpon>CarDeductionList.cshtml</DependentUpon>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\NoAccess.cshtml" />
+    <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Views\Shared\_PartialPager.cshtml" />
+    <None Include="Service References\DscfBIService\DscfBIServerService.wsdl" />
+    <None Include="Service References\DscfBIService\DscfBIService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfBIService\DscfBIService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfBIService\DscfBIService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Views\Partials\TopNav.cshtml" />
+    <Content Include="Views\Partials\Menu.cshtml" />
+    <Content Include="Views\SettleMent\SettleMentList.cshtml" />
+    <Content Include="Views\SettleMent\CreditOrCarLoanInfoDetails.cshtml" />
+    <Content Include="Views\SettleMent\_PartialPaymentInfo.cshtml" />
+    <Content Include="Views\SettleMent\_PartialDeductionInfo.cshtml" />
+    <Content Include="Views\SettleMent\_PartialCreditClaimsInfo.cshtml" />
+    <Content Include="Views\SettleMent\_PartialCarClaimsInfo.cshtml" />
+    <Content Include="Views\SettleMent\_PartialLoanInfo.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Deduction\CreditDeductionList.cshtml" />
+    <Content Include="Views\Deduction\CarDeductionList.cshtml" />
+    <Content Include="Views\Deduction\CarDeductClaims.cshtml">
+      <DependentUpon>CarDeductionList.cshtml</DependentUpon>
+    </Content>
+    <Content Include="Views\Deduction\CreditDeductClaims.cshtml" />
+    <Content Include="Views\Deduction\CarExtensionDeductClaims.cshtml">
+      <DependentUpon>CarDeductionList.cshtml</DependentUpon>
+    </Content>
+    <Content Include="Views\Deduction\CarExtensionDeductClaimsDetail.cshtml">
+      <DependentUpon>CarDeductionList.cshtml</DependentUpon>
+    </Content>
+    <Content Include="Views\Deduction\CreditBatchDeductClaims.cshtml" />
+    <Content Include="Views\ExcleInfo\ExportExcle.cshtml" />
+    <Content Include="Views\ExcleInfo\_OverdueExportExcle.cshtml" />
+    <Content Include="Views\ExcleInfo\_FinancialExportExcle.cshtml" />
+    <Content Include="Views\Deduction\CarBatchDeductClaimsDetail.cshtml">
+      <DependentUpon>CarDeductionList.cshtml</DependentUpon>
+    </Content>
+    <Content Include="Views\Deduction\CarBatchDeductClaims.cshtml">
+      <DependentUpon>CarDeductionList.cshtml</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DscfBIService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dscf.PostLoan.Web\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicProxy, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\192.168.2.2\dll\LogicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dscf.PostLoan.Web\bin\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dscf.PostLoan.Web\bin\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dscf.PostLoan.Web\bin\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dscf.PostLoan.Web\bin\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dscf.PostLoan.Web\bin\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dscf.PostLoan.AuthCenterBLL\Dscf.PostLoan.AuthCenterBLL.csproj">
+      <Project>{7456c637-8408-489b-a38e-63571509808c}</Project>
+      <Name>Dscf.PostLoan.AuthCenterBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoan.CarLoanBLL\Dscf.PostLoan.CarLoanBLL.csproj">
+      <Project>{32706f55-aae9-421f-bd89-ef1931828d76}</Project>
+      <Name>Dscf.PostLoan.CarLoanBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoan.CreditLoanBll\Dscf.PostLoan.CreditLoanBLL.csproj">
+      <Project>{b9301ee0-8aca-4d10-81d9-c15c3783bcc9}</Project>
+      <Name>Dscf.PostLoan.CreditLoanBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoan.LoanAfterBLL\Dscf.PostLoan.LoanAfterBLL.csproj">
+      <Project>{3d1f9d4c-22a9-49e5-9276-3ac567a4d16c}</Project>
+      <Name>Dscf.PostLoan.LoanAfterBLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoan.Model\Dscf.PostLoan.Model.csproj">
+      <Project>{806b7440-3bb8-4884-b35d-8d627d103a0f}</Project>
+      <Name>Dscf.PostLoan.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoanGlobal\Dscf.PostLoanGlobal.csproj">
+      <Project>{aeafb747-35f7-410a-ba21-9100417cf486}</Project>
+      <Name>Dscf.PostLoanGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.Settlement.Model\Dscf.Settlement.Model.csproj">
+      <Project>{2c75507d-0261-4cba-bbb4-9efe21fd9f61}</Project>
+      <Name>Dscf.Settlement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53328</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53328/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

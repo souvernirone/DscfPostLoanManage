@@ -1,0 +1,51 @@
+﻿@using System.Web.Optimization
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.UserWorkInfoDto
+
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(1)">
+        <i class="z-subtraction"></i>工作信息
+    </h3>
+    <div class="cbody">
+        <p>
+            <label>进入单位时间：</label>
+            <span>@(Model.EnterCompanyDate.HasValue ? Model.EnterCompanyDate.Value.ToLongDateString().ToString() : string.Empty)</span>
+        </p>
+        <p>
+            <label>工作单位：</label>
+            <span>@Model.CompanyName</span>
+        </p>
+        <p>
+            <label>单位地址：</label>
+            <span>@Model.CompanyAddress</span>
+        </p>
+        <p>
+            <label>单位电话：</label>
+            <span>@Model.CompanyTel</span>
+        </p>
+        <p>
+            <label>职位：</label>
+            <span>@Model.Position</span>
+        </p>
+        <p>
+            <label>工作邮箱：</label>
+            <span>@Model.WorkEmail</span>
+        </p>
+        <p>
+            <label>公司证明联系人1：</label>
+            <span>@Model.CertifyName</span>
+            <label>关系：</label>
+            <span>@Model.CertifyRelation</span>
+            <label>电话：</label>
+            <span>@Model.CertifyTel</span>
+        </p>
+        <p>
+            <label>公司证明联系人2：</label>
+            <span>@Model.CertifyName2</span>
+            <label>关系：</label>
+            <span>@Model.CertifyRelation2</span>
+            <label>电话：</label>
+            <span>@Model.CertifyTel2</span>
+        </p>
+        
+    </div>
+</div>

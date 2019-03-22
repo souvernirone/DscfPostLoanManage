@@ -1,0 +1,155 @@
+﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "逾期客户";
+}
+
+
+<div class="g-mn1c tb">
+    <ul class="m-tnav">
+        <li class="active">
+            <a data-href="#xin">信贷</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="table-responsive tab-pane active" id="xin">
+            <table class="table table-bordered noborder">
+                <thead>
+                    <tr>
+                        <th>操作人</th>
+                        <th>地区</th>
+                        <th>姓名</th>
+                        <th>产品类型</th>
+                        <th>签约日期</th>
+                        <th>逾期次数</th>
+                        <th>首逾日期</th>
+                        <th>债权状态</th>
+                        <th>累计逾期本金</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="container"></tbody>
+            </table>
+        </div>
+    </div>
+    <!--分页局部视图-->
+    <div>@Html.Partial("_PartialPager")</div>
+</div>
+<div id="assign" class="f-hide alert">
+    <form id="remindForm">
+        <p>
+            <label>地区：</label>
+            <span id="signCity"></span>
+        </p>
+        <p>
+            <label>姓名：</label>
+            <span id="userName"></span>
+        </p>
+        <p>
+            <label>产品类型：</label>
+            <span id="productName"></span>
+        </p>
+        <p>
+            <label>签约日期：</label>
+            <span id="signDate"></span>
+        </p>
+
+        <p>
+            <label>催收人：</label>
+            <span class="selectimg">
+                <select id="deptOptId" name="deptOptId" class="form-control select">
+                    @{System.Text.StringBuilder u = new System.Text.StringBuilder("");}
+                    @{foreach (var a in @ViewBag.CollectorRole)
+                    {
+                        u.AppendFormat("<option value=" + a.Id + ">" + a.Name + "</option>");
+                    }}
+                    @Html.Raw(u);
+                </select>
+                <span></span>
+            </span>
+        </p>
+    </form>
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/dataPagerJs")
+    @Scripts.Render("~/bundles/dataFormat")
+    <script type="text/javascript">
+        function assign(obj) {
+            $("#signCity").text($(obj).parent().parent().children().eq(1).text());
+            $("#userName").text($(obj).parent().parent().children().eq(2).text());
+            $("#productName").text($(obj).parent().parent().children().eq(3).text());
+            $("#signDate").text($(obj).parent().parent().children().eq(4).text());
+            new Alert().AlertInfo({
+                content: "#assign",
+                width: "450",
+                height: "360",
+                callBack: function () {
+                    var parms = {};
+                    parms.orderId = $(obj).parent().parent().attr("data-orderid");
+                    parms.deptOptId = $("#deptOptId").val();
+                    parms.orderType = 1;
+                    $.ajax({
+                        url: "/OverdueCustomer/UpdateLoanProductOrderReminder",
+                        method: "post",
+                        async: true,
+                        dataType: "json",
+                        data: parms,
+                        success: function (result) {
+                            if (result.ReturnType == false)
+                                new Alert().AlertInfo({
+                                    content: result.ReturnMsg,
+                                    iClass: 'error'
+                                });
+                            else {
+                                $(obj).parent().parent().children().eq(0).text($("#deptOptId option:selected").text())
+                            }
+                        }
+                    });
+                }
+            });
+        }
+
+
+        $(function () {
+            getPageOverdueList()
+        });
+        function getPageOverdueList() {
+            var page = new Page();
+            page.Url = "/OverdueCustomer/GetPageOverdueList";
+            page.Container = $("#container");
+            page.CallBack = function (data) {
+                $("#container").empty();
+                $.each(data, function (index, item) {
+                    item.FirstOverdueTime = $.format.timestamp(item.FirstOverdueTime, "yyyy年MM月dd日");
+                    item.SignDate = $.format.timestamp(item.SignDate, "yyyy年MM月dd日");
+                    $("#templete").tmpl(item).appendTo($("#container"));
+                });
+            };
+            page.GetPageData();
+        }
+    </script>
+    <script id="templete" type="text/x-jquery-tmpl">
+        <tr id="row-${OrderId}" data-orderid="${OrderId}">
+            <td>${CollectorName}</td>
+            <td>${SignCity}</td>
+            <td>${UserName}</td>
+            <td>${ProductName}</td>
+            <td>${SignDate}</td>
+            <td>${OverdueCount}</td>
+            <td>${FirstOverdueTime}</td>
+            <td>${CreditStatusName}</td>
+            <td>${OverduePrincipalSum}</td>
+            <td data-collectstatus="${CollectStatus}">${CollectStatusName}</td>
+            <td>
+                <a class="u-b-one s-b-blue " target="_self" href="/OverdueCustomer/CreditOverdueDetail?orderId=${OrderId}&css=1053">详</a>
+                @if (ViewBag.IsAssign == true)
+                {
+                    <a class="u-b-one s-b-orage " onclick="assign(this)">派</a>
+                }
+            </td>
+        </tr>
+    </script>
+}
+

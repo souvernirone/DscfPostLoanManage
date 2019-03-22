@@ -1,0 +1,54 @@
+﻿@using System.Web.Optimization
+@model Dscf.PostLoan.CreditLoanBLL.DscfCreditLoanService.UserFamilyInfoDto
+
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(2)">
+        <i class="z-subtraction"></i>家庭信息
+    </h3>
+    <div class="cbody">
+        <p>
+            <label>是否有子女：</label>
+            <span>@(Model.IsHaveChild.HasValue ? (Model.IsHaveChild.Value?"有":"无"): "未知")</span>
+        </p>
+        <p>
+            <label>直系亲属：</label>
+            <span>@Model.LinealKinName</span>
+        </p>
+        <p>
+            <label>直系亲属关系：</label>
+            <span>@Model.LineaKinRelation</span>
+        </p>
+        <p>
+            <label>直系亲属电话：</label>
+            <span>@Model.LineaKinPhone</span>
+        </p>
+        <p>
+            <label>其他联系人1姓名：</label>
+            <span>@Model.OtherLinkManName</span>
+        </p>
+        <p>
+            <label>其他联系人1关系：</label>
+            <span>@Model.OtherLinkManRel</span>
+        </p>
+        <p>
+            <label>其他联系人1电话：</label>
+            <span>@Model.OtherLinkManPhone</span>
+        </p>
+        <p>
+            <label>紧急联系人1：</label>
+            <span>@Model.EmergLinkManName1</span>
+            <label>关系：</label>
+            <span>@Model.EmergLinkManPhone1</span>
+            <label>电话：</label>
+            <span>@Model.EmergLinkManPhone1</span>
+        </p>
+        <p>
+            <label>紧急联系人2：</label>
+            <span>@Model.EmergLinkManName2</span>
+            <label>关系：</label>
+            <span>@Model.EmergLinkManPhone2</span>
+            <label>电话：</label>
+            <span>@Model.EmergLinkManPhone2</span>
+        </p>
+    </div>
+</div>

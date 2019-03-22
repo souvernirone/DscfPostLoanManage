@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CreditLoanService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ICreditLoanContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Dscf.CreditLoan.Dto" />
+      <xsd:import schemaLocation="http://localhost:12454/DscfCreditLoanService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICreditLoanContract_UpdateOrderCollectStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderCollectStatus" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateOrderCollectStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderCollectStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateOrderCollectStatusBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderCollectStatusBatch" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateOrderCollectStatusBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOrderCollectStatusBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoanProductOrderByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanProductOrderByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoanProductOrderByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanProductOrderByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageOverdueList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageOverdueList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageOverdueList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageOverdueListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoanProductOrderDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanProductOrderDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoanProductOrderDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanProductOrderDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageLoanInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageLoanInfoList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageLoanInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageLoanInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetOverdueExcelList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverdueExcelList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetOverdueExcelList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverdueExcelListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetIsRemindCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsRemindCount" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetIsRemindCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIsRemindCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoan_MonthRepayInfoByorderID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoan_MonthRepayInfoByorderID" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoan_MonthRepayInfoByorderID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoan_MonthRepayInfoByorderIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetRepayRemindList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepayRemindList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetRepayRemindList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepayRemindListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageRepayRemindList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageRepayRemindList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageRepayRemindList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageRepayRemindListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateCreditRemind_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCreditRemind" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateCreditRemind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCreditRemindResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoan_MonthRepayInfoByorderIDPeriodOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoan_MonthRepayInfoByorderIDPeriodOrder" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoan_MonthRepayInfoByorderIDPeriodOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoan_MonthRepayInfoByorderIDPeriodOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetCreditRemindDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditRemindDetail" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetCreditRemindDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditRemindDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetCriticalAmountList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriticalAmountList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetCriticalAmountList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriticalAmountListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetOverdueMonthListByOrderId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverdueMonthListByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetOverdueMonthListByOrderId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOverdueMonthListByOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateMonthRepayInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMonthRepayInfo" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateMonthRepayInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMonthRepayInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetDeductionFailedList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductionFailedList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetDeductionFailedList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductionFailedListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_DeductinfoFailedAddAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeductinfoFailedAddAll" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_DeductinfoFailedAddAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeductinfoFailedAddAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_DeductinfoFailedAddAlls_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeductinfoFailedAddAlls" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_DeductinfoFailedAddAlls_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeductinfoFailedAddAllsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_DeductinfoFailedAddOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeductinfoFailedAddOne" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_DeductinfoFailedAddOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeductinfoFailedAddOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateApplyIdByOrderId_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplyIdByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_UpdateApplyIdByOrderId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplyIdByOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetChildDeptListByDeptID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildDeptListByDeptID" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetChildDeptListByDeptID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildDeptListByDeptIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetSupportCityList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportCityList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetSupportCityList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportCityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_EditLoanOrderReminderByOrderId_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditLoanOrderReminderByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_EditLoanOrderReminderByOrderId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditLoanOrderReminderByOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageDeductApprovalList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageDeductApprovalList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetPageDeductApprovalList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageDeductApprovalListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetDeductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetDeductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoanProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanProductList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetLoanProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetCreditFinancialExportExcleList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditFinancialExportExcleList" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetCreditFinancialExportExcleList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCreditFinancialExportExcleListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetUserInfoByUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUserId" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetUserInfoByUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetOrderInfoByOrderId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoByOrderId" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetOrderInfoByOrderId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderInfoByOrderIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetBankInfoByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankInfoByName" />
+  </wsdl:message>
+  <wsdl:message name="ICreditLoanContract_GetBankInfoByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBankInfoByNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICreditLoanContract">
+    <wsdl:operation name="UpdateOrderCollectStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateOrderCollectStatus" message="tns:ICreditLoanContract_UpdateOrderCollectStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateOrderCollectStatusResponse" message="tns:ICreditLoanContract_UpdateOrderCollectStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderCollectStatusBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateOrderCollectStatusBatch" message="tns:ICreditLoanContract_UpdateOrderCollectStatusBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateOrderCollectStatusBatchResponse" message="tns:ICreditLoanContract_UpdateOrderCollectStatusBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProductOrderByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoanProductOrderByUserId" message="tns:ICreditLoanContract_GetLoanProductOrderByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoanProductOrderByUserIdResponse" message="tns:ICreditLoanContract_GetLoanProductOrderByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageOverdueList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageOverdueList" message="tns:ICreditLoanContract_GetPageOverdueList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageOverdueListResponse" message="tns:ICreditLoanContract_GetPageOverdueList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProductOrderDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoanProductOrderDetail" message="tns:ICreditLoanContract_GetLoanProductOrderDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoanProductOrderDetailResponse" message="tns:ICreditLoanContract_GetLoanProductOrderDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageLoanInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageLoanInfoList" message="tns:ICreditLoanContract_GetPageLoanInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageLoanInfoListResponse" message="tns:ICreditLoanContract_GetPageLoanInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOverdueExcelList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetOverdueExcelList" message="tns:ICreditLoanContract_GetOverdueExcelList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetOverdueExcelListResponse" message="tns:ICreditLoanContract_GetOverdueExcelList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIsRemindCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetIsRemindCount" message="tns:ICreditLoanContract_GetIsRemindCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetIsRemindCountResponse" message="tns:ICreditLoanContract_GetIsRemindCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoan_MonthRepayInfoByorderID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoan_MonthRepayInfoByorderID" message="tns:ICreditLoanContract_GetLoan_MonthRepayInfoByorderID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoan_MonthRepayInfoByorderIDResponse" message="tns:ICreditLoanContract_GetLoan_MonthRepayInfoByorderID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepayRemindList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetRepayRemindList" message="tns:ICreditLoanContract_GetRepayRemindList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetRepayRemindListResponse" message="tns:ICreditLoanContract_GetRepayRemindList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageRepayRemindList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageRepayRemindList" message="tns:ICreditLoanContract_GetPageRepayRemindList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageRepayRemindListResponse" message="tns:ICreditLoanContract_GetPageRepayRemindList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreditRemind">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateCreditRemind" message="tns:ICreditLoanContract_UpdateCreditRemind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateCreditRemindResponse" message="tns:ICreditLoanContract_UpdateCreditRemind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoan_MonthRepayInfoByorderIDPeriodOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoan_MonthRepayInfoByorderIDPeriodOrder" message="tns:ICreditLoanContract_GetLoan_MonthRepayInfoByorderIDPeriodOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoan_MonthRepayInfoByorderIDPeriodOrderResponse" message="tns:ICreditLoanContract_GetLoan_MonthRepayInfoByorderIDPeriodOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditRemindDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetCreditRemindDetail" message="tns:ICreditLoanContract_GetCreditRemindDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetCreditRemindDetailResponse" message="tns:ICreditLoanContract_GetCreditRemindDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCriticalAmountList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetCriticalAmountList" message="tns:ICreditLoanContract_GetCriticalAmountList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetCriticalAmountListResponse" message="tns:ICreditLoanContract_GetCriticalAmountList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOverdueMonthListByOrderId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetOverdueMonthListByOrderId" message="tns:ICreditLoanContract_GetOverdueMonthListByOrderId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetOverdueMonthListByOrderIdResponse" message="tns:ICreditLoanContract_GetOverdueMonthListByOrderId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonthRepayInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateMonthRepayInfo" message="tns:ICreditLoanContract_UpdateMonthRepayInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateMonthRepayInfoResponse" message="tns:ICreditLoanContract_UpdateMonthRepayInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductionFailedList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetDeductionFailedList" message="tns:ICreditLoanContract_GetDeductionFailedList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetDeductionFailedListResponse" message="tns:ICreditLoanContract_GetDeductionFailedList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeductinfoFailedAddAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddAll" message="tns:ICreditLoanContract_DeductinfoFailedAddAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddAllResponse" message="tns:ICreditLoanContract_DeductinfoFailedAddAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeductinfoFailedAddAlls">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddAlls" message="tns:ICreditLoanContract_DeductinfoFailedAddAlls_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddAllsResponse" message="tns:ICreditLoanContract_DeductinfoFailedAddAlls_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeductinfoFailedAddOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddOne" message="tns:ICreditLoanContract_DeductinfoFailedAddOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddOneResponse" message="tns:ICreditLoanContract_DeductinfoFailedAddOne_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplyIdByOrderId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateApplyIdByOrderId" message="tns:ICreditLoanContract_UpdateApplyIdByOrderId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/UpdateApplyIdByOrderIdResponse" message="tns:ICreditLoanContract_UpdateApplyIdByOrderId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildDeptListByDeptID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetChildDeptListByDeptID" message="tns:ICreditLoanContract_GetChildDeptListByDeptID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetChildDeptListByDeptIDResponse" message="tns:ICreditLoanContract_GetChildDeptListByDeptID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportCityList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetSupportCityList" message="tns:ICreditLoanContract_GetSupportCityList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetSupportCityListResponse" message="tns:ICreditLoanContract_GetSupportCityList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditLoanOrderReminderByOrderId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/EditLoanOrderReminderByOrderId" message="tns:ICreditLoanContract_EditLoanOrderReminderByOrderId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/EditLoanOrderReminderByOrderIdResponse" message="tns:ICreditLoanContract_EditLoanOrderReminderByOrderId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageDeductApprovalList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageDeductApprovalList" message="tns:ICreditLoanContract_GetPageDeductApprovalList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetPageDeductApprovalListResponse" message="tns:ICreditLoanContract_GetPageDeductApprovalList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetDeductList" message="tns:ICreditLoanContract_GetDeductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetDeductListResponse" message="tns:ICreditLoanContract_GetDeductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoanProductList" message="tns:ICreditLoanContract_GetLoanProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetLoanProductListResponse" message="tns:ICreditLoanContract_GetLoanProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditFinancialExportExcleList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetCreditFinancialExportExcleList" message="tns:ICreditLoanContract_GetCreditFinancialExportExcleList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetCreditFinancialExportExcleListResponse" message="tns:ICreditLoanContract_GetCreditFinancialExportExcleList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetUserInfoByUserId" message="tns:ICreditLoanContract_GetUserInfoByUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetUserInfoByUserIdResponse" message="tns:ICreditLoanContract_GetUserInfoByUserId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoByOrderId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetOrderInfoByOrderId" message="tns:ICreditLoanContract_GetOrderInfoByOrderId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetOrderInfoByOrderIdResponse" message="tns:ICreditLoanContract_GetOrderInfoByOrderId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfoByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICreditLoanContract/GetBankInfoByName" message="tns:ICreditLoanContract_GetBankInfoByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICreditLoanContract/GetBankInfoByNameResponse" message="tns:ICreditLoanContract_GetBankInfoByName_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ICreditLoanContract" type="tns:ICreditLoanContract">
+    <wsp:PolicyReference URI="#WSHttpBinding_ICreditLoanContract_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateOrderCollectStatus">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/UpdateOrderCollectStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrderCollectStatusBatch">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/UpdateOrderCollectStatusBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProductOrderByUserId">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetLoanProductOrderByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageOverdueList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetPageOverdueList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProductOrderDetail">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetLoanProductOrderDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageLoanInfoList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetPageLoanInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOverdueExcelList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetOverdueExcelList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIsRemindCount">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetIsRemindCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoan_MonthRepayInfoByorderID">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetLoan_MonthRepayInfoByorderID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepayRemindList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetRepayRemindList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageRepayRemindList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetPageRepayRemindList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCreditRemind">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/UpdateCreditRemind" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoan_MonthRepayInfoByorderIDPeriodOrder">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetLoan_MonthRepayInfoByorderIDPeriodOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditRemindDetail">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetCreditRemindDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCriticalAmountList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetCriticalAmountList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOverdueMonthListByOrderId">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetOverdueMonthListByOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMonthRepayInfo">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/UpdateMonthRepayInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductionFailedList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetDeductionFailedList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeductinfoFailedAddAll">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeductinfoFailedAddAlls">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddAlls" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeductinfoFailedAddOne">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/DeductinfoFailedAddOne" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplyIdByOrderId">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/UpdateApplyIdByOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildDeptListByDeptID">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetChildDeptListByDeptID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportCityList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetSupportCityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditLoanOrderReminderByOrderId">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/EditLoanOrderReminderByOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageDeductApprovalList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetPageDeductApprovalList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetDeductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanProductList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetLoanProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCreditFinancialExportExcleList">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetCreditFinancialExportExcleList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoByUserId">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetUserInfoByUserId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderInfoByOrderId">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetOrderInfoByOrderId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInfoByName">
+      <soap12:operation soapAction="http://tempuri.org/ICreditLoanContract/GetBankInfoByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditLoanService">
+    <wsdl:port name="WSHttpBinding_ICreditLoanContract" binding="tns:WSHttpBinding_ICreditLoanContract">
+      <soap12:address location="http://localhost:12454/DscfCreditLoanService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:12454/DscfCreditLoanService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

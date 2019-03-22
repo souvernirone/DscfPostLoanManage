@@ -1,0 +1,39 @@
+﻿@using System.Web.Optimization
+
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarLoanOrderDetailDto
+
+<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(3)">
+        <i class="z-subtraction"></i>签约信息
+    </h3>
+    <div class="cbody">
+        <p>
+            <label>合同金额：</label>
+            <span> @Model.Amount.Value</span>
+        </p>
+        <p>
+            <label>产品类型：</label>
+            <span> @Model.LobbyInfo.FaceTrialInfo.CarLoanConfig.CarLoanTypeName</span>
+        </p>
+        <p>
+            <label>合同开始日：</label>
+            <span>@Model.ContractStartDate.Value.ToString("yyyy-MM-dd HH:mm")</span>
+        </p>
+        <p>
+            <label>合同结束日：</label>
+            <span>@Model.ContractEndDate.Value.ToString("yyyy-MM-dd HH:mm")</span>
+        </p>
+        <p>
+            <label>开户行：</label>
+            <span>@Model.DeductBranchBank</span>
+        </p>
+        <p>
+            <label>开户支行：</label>
+            <span>@Model.DeductBranchBank</span>
+        </p>
+        <p>
+            <label>开户行卡号：</label>
+            <span>@Model.DeductBankAccount</span>
+        </p>
+    </div>
+</div>

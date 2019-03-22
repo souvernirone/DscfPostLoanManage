@@ -1,0 +1,157 @@
+
+ 
+记录时间：2017-06-12 11:39:14,115 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Dscf.CreditLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:12454/DscfCreditLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:39:14,173 
+线程ID:[11] 
+日志级别：  ERROR 
+出错类：Dscf.CreditLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:58:52,799 
+线程ID:[17] 
+日志级别：  ERROR 
+出错类：Dscf.CreditLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 AddressFilter 在 EndpointDispatcher 不匹配，To 为“http://localhost:12454/DscfCreditLoanService.svc/mex”的消息无法在接收方处理。请检查发送方和接收方的 EndpointAddresses 是否一致。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 11:58:52,835 
+线程ID:[17] 
+日志级别：  ERROR 
+出错类：Dscf.CreditLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+System.ServiceModel.FaultException: 由于 ContractFilter 在 EndpointDispatcher 不匹配，因此 Action 为“http://schemas.xmlsoap.org/ws/2004/09/transfer/Get”的消息无法在接收方处理。这可能是由于协定不匹配(发送方和接收方 Action 不匹配)或发送方和接收方绑定/安全不匹配。请检查发送方和接收方是否具有相同的协定和绑定(包括安全要求，如 Message、Transport、None)。
+   在 System.ServiceModel.Dispatcher.ErrorBehavior.ThrowAndCatch(Exception e, Message message)
+
+ 
+记录时间：2017-06-12 15:00:22,434 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Dscf.CreditLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BankInfo -> BankInfoDto
+Dscf.CreditLoan.Domain.BankInfo -> Dscf.CreditLoan.Dto.BankInfoDto
+
+Destination path:
+BankInfoDto
+
+Source value:
+Dscf.CreditLoan.Domain.BankInfo
+   在 AutoMapper.MappingEngine.Map(ResolutionContext context)
+   在 AutoMapper.Mapper.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options)
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map[TSource,TDestination](TSource source)
+   在 AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   在 Dscf.CreditLoan.Dto.Extension.MapperExtention.ToModel(BankInfo entity) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Dto\Extension\MapperExtention.cs:行号 90
+   在 Dscf.CreditLoan.Manager.Implement.BankInfoManager.GetBankInfoByName(String name) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Manager\Implement\BankInfoManager.cs:行号 25
+   在 Dscf.CreditLoan.Service.CreditLoanService.GetBankInfoByName(String name) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Service\BankInfo\CreditLoanService.cs:行号 23
+   在 SyncInvokeGetBankInfoByName(Object , Object[] , Object[] )
+   在 System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+   在 System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)
+
+ 
+记录时间：2017-06-12 15:01:19,584 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Dscf.CreditLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BankInfo -> BankInfoDto
+Dscf.CreditLoan.Domain.BankInfo -> Dscf.CreditLoan.Dto.BankInfoDto
+
+Destination path:
+BankInfoDto
+
+Source value:
+Dscf.CreditLoan.Domain.BankInfo
+   在 AutoMapper.MappingEngine.Map(ResolutionContext context)
+   在 AutoMapper.Mapper.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options)
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map[TSource,TDestination](TSource source)
+   在 AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   在 Dscf.CreditLoan.Dto.Extension.MapperExtention.ToModel(BankInfo entity) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Dto\Extension\MapperExtention.cs:行号 90
+   在 Dscf.CreditLoan.Manager.Implement.BankInfoManager.GetBankInfoByName(String name) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Manager\Implement\BankInfoManager.cs:行号 25
+   在 Dscf.CreditLoan.Service.CreditLoanService.GetBankInfoByName(String name) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Service\BankInfo\CreditLoanService.cs:行号 23
+   在 SyncInvokeGetBankInfoByName(Object , Object[] , Object[] )
+   在 System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+   在 System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)
+
+ 
+记录时间：2017-06-12 15:02:49,467 
+线程ID:[10] 
+日志级别：  ERROR 
+出错类：Dscf.CreditLoan.Contract.Extension.WCF_ExceptionHandler property: [(null)] - 
+错误描述：Error
+ 
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+BankInfo -> BankInfoDto
+Dscf.CreditLoan.Domain.BankInfo -> Dscf.CreditLoan.Dto.BankInfoDto
+
+Destination path:
+BankInfoDto
+
+Source value:
+Dscf.CreditLoan.Domain.BankInfo
+   在 AutoMapper.MappingEngine.Map(ResolutionContext context)
+   在 AutoMapper.Mapper.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options)
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   在 AutoMapper.Mapper.AutoMapper.IMapper.Map[TSource,TDestination](TSource source)
+   在 AutoMapper.Mapper.Map[TSource,TDestination](TSource source)
+   在 Dscf.CreditLoan.Dto.Extension.MapperExtention.ToModel(BankInfo entity) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Dto\Extension\MapperExtention.cs:行号 90
+   在 Dscf.CreditLoan.Manager.Implement.BankInfoManager.GetBankInfoByName(String name) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Manager\Implement\BankInfoManager.cs:行号 25
+   在 Dscf.CreditLoan.Service.CreditLoanService.GetBankInfoByName(String name) 位置 f:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.CreditLoan.Service\BankInfo\CreditLoanService.cs:行号 23
+   在 SyncInvokeGetBankInfoByName(Object , Object[] , Object[] )
+   在 System.ServiceModel.Dispatcher.SyncMethodInvoker.Invoke(Object instance, Object[] inputs, Object[]& outputs)
+   在 System.ServiceModel.Dispatcher.DispatchOperationRuntime.InvokeBegin(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage5(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage41(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage4(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage31(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage3(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage2(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage11(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.ImmutableDispatchRuntime.ProcessMessage1(MessageRpc& rpc)
+   在 System.ServiceModel.Dispatcher.MessageRpc.Process(Boolean isOperationContextSet)

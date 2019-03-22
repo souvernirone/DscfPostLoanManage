@@ -1,0 +1,30 @@
+﻿@using System.Web.Optimization
+@using Dscf.Global;
+
+@model System.Collections.Generic.IEnumerable<Dscf.SettleMents.Web.DscfBIService.PlatformEntity>
+
+
+<ul class="m-nav">
+    <li>
+        <a href="@Url.Content("/Home/Index")">结算系统</a>
+        <ul class="subnav">
+            @foreach (var entity in Model)
+            {
+                if (entity.PlatId == PlatformUtil.SettleMentPlat)
+                {
+                    continue;
+                }
+                <li>
+                    <a target="_blank" href="@entity.HomeUrl">@entity.PlatformName</a>
+                </li>
+            }
+        </ul>
+    </li>
+    <li>
+        <a href="#">欢迎您,@ViewBag.OptName</a>
+    </li>
+    <li>
+        <a href="http://ms.dingshengcaifu.com:9015/Account/LogOut">退出</a>
+    </li>
+</ul>
+

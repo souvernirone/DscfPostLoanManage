@@ -1,0 +1,153 @@
+﻿@using System.Web.Optimization
+@using Dscf.Global;
+
+@model Dscf.PostLoan.Model.CarClaimsInfoTotal
+@{
+    ViewBag.Title = "查";
+}
+<div class="g-mn1c tb">
+    <div class="m-shrink info">
+        <h3 class="title f-sub">
+            &nbsp; &nbsp;  结算划扣（查）
+        </h3>
+
+            <table class="table table-bordered ">
+                <thead>
+                    <tr>
+
+                        <th>操作人</th>
+                        <th>签署地</th>
+                        <th>姓名</th>
+                        <th>首逾日期</th>
+                        <th>累计逾期天数</th>
+                        <th>累计逾期次数</th>
+                        <th>累计逾期本息</th>
+                        <th>累计违约金</th>
+                        <th>累计罚息</th>
+                        <th>待还款总额</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Model.CollectorName</td>
+                        <td>@Model.SignCity</td>
+                        <td>@Model.UserName</td>
+                        <td>@(Model.FirstOverdueTime.HasValue ? Model.FirstOverdueTime.Value.ToLongDateString().ToString() : string.Empty)</td>
+                        <td>@Model.OverdueTimeCount</td>
+                        <td>@Model.OverdueCount</td>
+                        <td>@(Model.OverduePrincipalSum)元</td>
+                        <td>@(Model.OverduePenaltySum)元</td>
+                        <td>@(Model.DailyPenaltySum)元</td>
+                        <td><span id="sumOverdue">@(Model.OverduePrincipalSum + Model.OverduePenaltySum + Model.DailyPenaltySum)</span>元</td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <table class="table table-bordered f-hide" id="loanDetail">
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>划扣日期</th>
+                        <th>逾期天数</th>
+                        <th>月还金额</th>
+                        <th>违约金</th>
+                        <th>罚息</th>
+                        <th>已还金额</th>
+                        <th>还款标识</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var claims in Model.ClaimsInfoList)
+                    {
+                        <tr>
+                            <td>@Model.UserName</td>
+                            <td>@(claims.RepayDate.HasValue ? claims.RepayDate.Value.ToLongDateString().ToString() : string.Empty)</td>
+                            <td>@(claims.OverdueDayCount)天</td>
+                            <td>@(claims.MonthRepay)元</td>
+                            <td>@(claims.OverduePenalty)元</td>
+                            <td>@(claims.DailyPenaltySumPerPeriod)元</td>
+                            <td>@(claims.DeductAmountSumPerPeriod)元</td>
+                            <td></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="drawback">
+                <p class="tip" onclick="actionDetail(this)">
+                    <span>点击查看更多</span>
+                    <i class="down"></i>
+                </p>
+            </div>
+
+            @{ if (ViewBag.DeductPayApplyAndFile != null)
+             {
+                <div class="detail">
+                    <p>
+                        <label>本次减免金额：</label>
+                        <span>@(ViewBag.DeductPayApplyAndFile.ReliefAmount)元</span>
+                    </p>
+
+                    <p>
+                        <label>本次划扣金额：</label>
+                        <span>
+                            @(ViewBag.DeductPayApplyAndFile.RepayAmount)元
+                        </span>
+                    </p>
+                    <div id="layer-photos" class="layer-photos-demo">
+                        <img layer-src="@ViewBag.DeductPayApplyAndFile.FileEntity.FilePath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                             src="@ViewBag.DeductPayApplyAndFile.FileEntity.ThumbPath/@ViewBag.DeductPayApplyAndFile.FileEntity.SaveFileName@ViewBag.DeductPayApplyAndFile.FileEntity.FileSuffix"
+                             alt="@ViewBag.FileName" layer-index="0" />
+                    </div>
+                </div>}
+            }
+            @{if (ViewBag.deductProgress != null)
+            {
+                <div class="detail">
+                    <p>
+                        <label>划扣日期：</label>
+                        <span>@(ViewBag.deductProgress.ActualDeductDate == null ? string.Empty : ViewBag.deductProgress.ActualDeductDate.ToLongDateString().ToString())</span>
+                    </p>
+                    <p>
+                        <label>委托授权书：</label>
+                        <span></span>
+                    </p>
+                    <p>
+                        <label>划款进度：</label>
+                        <span>@(ViewBag.deductProgress.Result == null ? string.Empty : ViewBag.deductProgress.Result)</span>
+                    </p>
+                </div>
+
+            }
+            }
+            <span class="close" onclick="window.location = '/Deduction/CarDeductionList?css=2063'"></span>
+        </div>
+    </div>
+    @section scripts
+{
+
+
+        <script>
+            $(function () {
+                //if ($(".detail").length>0) {
+                //    $("#payApply").attr("disabled", true);
+                //    $("#payOff").attr("disabled", true);
+                //}
+                layer.photos({
+                    photos: '#layer-photos'
+                 , anim: 0
+                });
+            })
+            function actionDetail(obj) {
+                if ($(obj).find("i").attr("class") == "down") {
+                    $(obj).find("i").removeClass('down').addClass("up");
+                    $(obj).find("span").html("点击收起");
+                    $("#loanDetail").removeClass("f-hide");
+                } else {
+                    $(obj).find("i").removeClass('up').addClass("down");
+                    $(obj).find("span").html("点击查看更多");
+                    $("#loanDetail").addClass("f-hide");
+                }
+            }</script>
+    }

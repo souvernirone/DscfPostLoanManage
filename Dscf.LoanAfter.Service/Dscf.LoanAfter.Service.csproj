@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA8B3EC1-F41D-47DD-856F-D4F2F9378FCC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dscf.LoanAfter.Service</RootNamespace>
+    <AssemblyName>Dscf.LoanAfter.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectionInfo\LoanAfterService.cs" />
+    <Compile Include="DeductPayApply\LoanAfterService.cs" />
+    <Compile Include="ExcleInfo\LoanAfterService.cs" />
+    <Compile Include="ExtraInfo\LoanAfterService.cs" />
+    <Compile Include="File\LoanAfterService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepayRemind\LoanAfterService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dscf.Common.Dao\Dscf.Common.Dao.csproj">
+      <Project>{26efedda-a7a9-4c59-8ebc-e73d52f6d798}</Project>
+      <Name>Dscf.Common.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.Common.Manager\Dscf.Common.Manager.csproj">
+      <Project>{d9899fe1-546a-4ceb-9adc-e71ceca27160}</Project>
+      <Name>Dscf.Common.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.LoanAfter.Contract\Dscf.LoanAfter.Contract.csproj">
+      <Project>{de86e8e1-2e9e-4200-b802-6b7d99bc3781}</Project>
+      <Name>Dscf.LoanAfter.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.LoanAfter.Dao\Dscf.LoanAfter.Dao.csproj">
+      <Project>{5e0a7c01-6efb-42bc-9181-885b42aa2417}</Project>
+      <Name>Dscf.LoanAfter.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.LoanAfter.Domain\Dscf.LoanAfter.Domain.csproj">
+      <Project>{ca1daad5-81b9-48a3-9526-fdcf1c6559c0}</Project>
+      <Name>Dscf.LoanAfter.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.LoanAfter.Dto\Dscf.LoanAfter.Dto.csproj">
+      <Project>{de84cf2a-abd1-44db-9a9e-b16bace6fae4}</Project>
+      <Name>Dscf.LoanAfter.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.LoanAfter.Manager\Dscf.LoanAfter.Manager.csproj">
+      <Project>{7ab45927-5d76-43b1-a682-187e0aa66118}</Project>
+      <Name>Dscf.LoanAfter.Manager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoanGlobal\Dscf.PostLoanGlobal.csproj">
+      <Project>{aeafb747-35f7-410a-ba21-9100417cf486}</Project>
+      <Name>Dscf.PostLoanGlobal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

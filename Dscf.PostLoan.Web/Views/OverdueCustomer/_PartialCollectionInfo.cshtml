@@ -1,0 +1,145 @@
+﻿<div class="m-shrink info">
+    <h3 class="title f-sub" onclick="shrink(4)">
+        <i class="z-subtraction"></i>还款信息
+    </h3>
+    <div class="cbody">
+
+        <table class="table table-bordered" style="width:95%;">
+            <thead>
+                <tr>
+                    <th>操作人</th>
+                    <th>计划划扣日期</th>
+                    <th>计划划扣金额</th>
+                    <th>实际划扣日期</th>
+                    <th>实际划扣金额</th>
+                    <th>交易反馈</th>
+                    <th>划扣运营商</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var deductProgressDto in @ViewBag.DeductProgressDtoList)
+                {
+                    <tr>
+                        <td> @deductProgressDto.DeductOptName</td>
+                        <td>@deductProgressDto.PlanDeductDate.ToString("yyyy-MM-dd HH:mm")</td>
+                        <td>@deductProgressDto.PlanDeductAmount</td>
+                        <td>@(deductProgressDto.ActualDeductDate !=null ? deductProgressDto.ActualDeductDate.ToString("yyyy-MM-dd HH:mm"):"")</td>
+                        <td>@deductProgressDto.ActualDeductAmount</td>
+                        <td>@deductProgressDto.Result</td>
+                        <td>@deductProgressDto.PaymentTypeName</td>       
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<div class="m-shrink info">
+    <h3 class="title f-sub f-sub1" onclick="shrink(5)">
+        <i class="z-subtraction"></i>催收信息
+    </h3>
+    <div class="action">
+        <span class="add" onclick="javascript:window.open('@Url.Action("Create", "CollectionInfo", new { OrderId = ViewBag.OrderId, OrderType = ViewBag.OrderType })')"></span>
+    </div>
+    <div class="cbody" style="padding-top:65px;">
+        <table class="table table-bordered" style="width:95%;">
+            <thead>
+                <tr>
+                    <th>日期</th>
+                    <th>操作人</th>
+                    <th>催收状态</th>
+                    <th>外访地址</th>
+                    <th>联络人</th>
+                    <th>催收信息</th>
+                    <th hidden>上传材料</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var collectionInfoDto in @ViewBag.collectionInfoDtoList)
+                {
+                    <tr>
+                        <td> @collectionInfoDto.CreateTime.ToString("yyyy-MM-dd HH:mm")</td>
+                        <td>@collectionInfoDto.OptName</td>
+                        <td data-collectionstatus="@collectionInfoDto.CollectionStatus">@collectionInfoDto.CollectionStatusName</td>
+                        <td>@collectionInfoDto.OutboundAddress</td>
+                        <td data-linkpersontype="@collectionInfoDto.LinkPersonType">@collectionInfoDto.LinkPersonTypeName</td>
+                        <td>@collectionInfoDto.CollectionRecord</td>
+
+                        <td hidden>上传资料</td>
+                        <td>
+                            <a class="u-b-one s-b-orage " onclick="info(this,@collectionInfoDto.Id)">编辑</a>
+                            <a class="u-b-one s-b-red" onclick="del(this,@collectionInfoDto.Id)">删除</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <p class="btn-nav" style="margin-top: 30px;text-align: left;">
+            <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" onclick="sendSMS()">短信催收</button>
+        </p>
+
+    </div>
+</div>
+<div id="loanInfo" class="f-hide alert" style="display: none;">
+    <p>
+        <label for="">催收状态：</label>
+        <span class="selectimg u-i-sort">
+            <select id="collectionStatus" class="form-control select">
+                @{System.Text.StringBuilder u = new System.Text.StringBuilder("");}
+                @{foreach (var a in @ViewBag.dlCollectionStatus)
+                {
+                    u.AppendFormat("<option value=" + a.DictValue + ">" + a.DictMemo + "</option>");
+                }
+                }
+                @Html.Raw(u);
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="IDCard">外访地址：</label>
+        <input id="outboundAddress" class="form-control u-i-middle" type="text">
+    </p>
+    <p>
+        <label for="carNumber">联络人：</label>
+        <span class="selectimg u-i-sort">
+            <select id="linkPersonType" class="form-control select">
+                @{System.Text.StringBuilder k = new System.Text.StringBuilder("");}
+                @{foreach (var a in @ViewBag.dlLinkPersonTypeList)
+                {
+                    k.AppendFormat("<option value=" + a.DictValue + ">" + a.DictMemo + "</option>");
+                }}
+                @Html.Raw(k);
+            </select>
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="customType">催收记录：</label>
+        <input id="collectionRecord" class="form-control  u-i-sort1" type="text">
+    </p>
+    <p hidden>
+        <label for="PlatformImgPath">上传材料：</label>
+        <input id="PlatformImgPath" name="PlatformImgPath" value="" type="hidden">
+        <a class="btn_addPic" href="javascript:void(0);">
+            <span>
+                <em>+</em>
+                添加图片
+            </span>
+            <input class="filePrew" title="支持jpg、jpeg、png格式" id="PlatformImg" name="PlatformImg" type="file">
+        </a>
+        <span class="field-validation-valid" data-valmsg-for="PlatformImgPath" data-valmsg-replace="true"></span>
+    </p>
+</div>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32706F55-AAE9-421F-BD89-EF1931828D76}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Dscf.PostLoan.CarLoanBLL</RootNamespace>
+    <AssemblyName>Dscf.PostLoan.CarLoanBLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dscf.Global, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\192.168.2.2\dll\Dscf.Global.dll</HintPath>
+    </Reference>
+    <Reference Include="Dscf.Global.Interface">
+      <HintPath>\\192.168.2.2\dll\Dscf.Global.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicProxy">
+      <HintPath>\\192.168.2.2\dll\LogicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarLoanExhibitionReviewBLL.cs" />
+    <Compile Include="CarLoanImagesBLL.cs" />
+    <Compile Include="CarLoanMonthRepayBLL.cs" />
+    <Compile Include="CarLoanExtensionApplyBLL.cs" />
+    <Compile Include="CarDeductProgressBLL.cs" />
+    <Compile Include="CarLoanExcleInfoBLL.cs" />
+    <Compile Include="Extension\MapperExtention.cs" />
+    <Compile Include="CarLoanOrderProductBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DscfCarLoanService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\Dscf.CarLoan.Domain.LoanProductOrder.datasource" />
+    <None Include="Properties\DataSources\Dscf.PostLoan.Model.LoanInfoViewModel.datasource" />
+    <None Include="Service References\DscfCarLoanService\CarLoanService.wsdl" />
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarCountDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarFinancialExportExcleDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarLoanBatchDeductDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarLoanOrderDetailDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarOverdueExcelDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarOverdueListDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarRemidDetailDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarRemindListDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarUserInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.DeductProgressDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.ExhibitionReviewDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.ImagesDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.InsertExhibitionReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.LoanMonthRepayDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.LoanOrderDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.LoanProductExtensionOrderDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.LoanProductOrderDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.UpdateExhibitionReviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dscf.PostLoan.Model\Dscf.PostLoan.Model.csproj">
+      <Project>{806b7440-3bb8-4884-b35d-8d627d103a0f}</Project>
+      <Name>Dscf.PostLoan.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.PostLoanGlobal\Dscf.PostLoanGlobal.csproj">
+      <Project>{aeafb747-35f7-410a-ba21-9100417cf486}</Project>
+      <Name>Dscf.PostLoanGlobal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dscf.Settlement.Model\Dscf.Settlement.Model.csproj">
+      <Project>{2c75507d-0261-4cba-bbb4-9efe21fd9f61}</Project>
+      <Name>Dscf.Settlement.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DscfCarLoanService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DscfCarLoanService\DscfCarLoanService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DscfCarLoanService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

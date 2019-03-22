@@ -1,0 +1,140 @@
+﻿@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "还款提醒";
+}
+
+<div class="g-mn1c tb">
+    <ul class="m-tnav">
+        <li class="active">
+            <a data-href="#chang">车贷长期</a>
+        </li>
+        <li>
+            <a id="tabShort" data-href="#duan">车贷短期</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="table-responsive tab-pane active " id="chang">
+            <div class="search-long-condition">
+                <input type="hidden" name="IsLongLoan" value="true" />
+            </div>
+            <table class="table table-bordered noborder">
+                <thead>
+                    <tr>
+                        <th>操作人</th>
+                        <th>地区</th>
+                        <th>姓名</th>
+                        <th>联系方式</th>
+                        <th>产品类型</th>
+                        <th>合同金额</th>
+                        <th>月还金额</th>
+                        <th>操作</th>
+                        <th>状态 @ViewBag.LongCarCount.ShortNum/@ViewBag.LongCarCount.AllNum</th>
+                    </tr>
+                </thead>
+                <tbody id="longLoanContainer"></tbody>
+            </table>
+            <!--分页局部视图-->
+            <div>@Html.Partial("_PartialPager")</div>
+        </div>
+        <div class="table-responsive tab-pane " id="duan">
+            <div class="search-short-condition">
+                <input type="hidden" name="IsLongLoan" value="false" />
+            </div>
+            <table class="table table-bordered noborder">
+                <thead>
+                    <tr>
+                        <th>操作人</th>
+                        <th>地区</th>
+                        <th>姓名</th>
+                        <th>联系方式</th>
+                        <th>产品类型</th>
+                        <th>合同金额</th>
+                        <th>月还金额</th>
+                        <th>操作</th>
+                        <th>状态 @ViewBag.ShortCarCount.ShortNum/@ViewBag.ShortCarCount.AllNum</th>
+                    </tr>
+                </thead>
+                <tbody id="shortLoanContainer"></tbody>
+            </table>
+
+            <!--分页HTML开始-->
+            <div id="pagerOther" style="float:left"></div>
+            <div style="float:left;margin-left:20px" id="selectCount">
+                页面显示
+                <select id="selelct_OtherPageCount" style="font-size: 16px;height:38px;width:55px;" class="select">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option selected="selected" value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                </select>
+                条
+            </div>
+            <!--分页HTML结束-->
+
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/dataPagerJs")
+    @Scripts.Render("~/bundles/dataFormat")
+    @Scripts.Render("~/bundles/carRemindList")
+
+    <script id="tmplLongCarLoan" type="text/x-jquery-tmpl">
+        <tr id="row-${OrderId}">
+            <td>${CollectorName}</td>
+            <td>${SignCity}</td>
+            <td>${UserName}</td>
+            <td>${UserPhone}</td>
+            <td>${ProductName}</td>
+            <td>${Amount}</td>
+            <td>${MonthRepay}</td>
+            <td>
+                <a class="u-b-one s-b-blue " target="_blank" href="/RepayRemind/CarRemindDetail?orderId=${OrderId}&repayId=${RepayId}&css=1054">提</a>
+            </td>
+            <td>
+                <div class="switch has-switch">
+                    <div class="${IsRemind} switch-animate" data-repayid="${RepayId}">
+                        <input type="checkbox" checked="">
+                        <span class="switch-left">已提醒</span><label>&nbsp;</label><span class="switch-right">未提醒</span>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </script>
+
+    <script id="tmplShortCarLoan" type="text/x-jquery-tmpl">
+        <tr id="row-${OrderId}">
+            <td>${CollectorName}</td>
+            <td>${SignCity}</td>
+            <td>${UserName}</td>
+            <td>${UserPhone}</td>
+            <td>${ProductName}</td>
+            <td>${Amount}</td>
+            <td>${MonthRepay}</td>
+            <td>
+                {{if IsAllowRemain==1}}
+                <a class="u-b-one s-b-blue " target="_blank" href="/RepayRemind/CarRemindDetail?orderId=${OrderId}&repayId=${RepayId}&css=1054">提</a>
+                {{else}}
+                <a class="u-b-one s-b-gray " href="#">提</a>
+                {{/if}}
+                {{if IsCanExtension==true && IsAllowExtension==1 }}
+                 <a class="u-b-one s-b-blue1 " target="_blank" href="/RepayRemind/CarRemindExtensionDetail?orderId=${OrderId}&repayId=${RepayId}&css=1054">展</a>
+                {{else}}
+                 <a class="u-b-one s-b-gray " href="#">展</a>
+                {{/if}}
+            </td>
+            <td>${RemindText}</td>
+        </tr>
+    </script>
+
+}

@@ -1,0 +1,61 @@
+﻿@using Dscf.PostLoan.LoanAfterBLL.DscfLoanAfterService;
+@using System.Web.Optimization
+@model Dscf.PostLoan.Model.OverdueExportExcleViewModel
+<h3 class="title f-sub" onclick="shrink(1)">
+    <i class="z-subtraction"></i>
+    逾期违约报表
+</h3>
+<div class="cbody">
+    <p>
+        <label for="loanOrderType">借款类型：</label>
+        <span class="selectimg u-i-middle">
+            @Html.DropDownListFor(model => model.LoanOrderType, ViewData["productType"] as IEnumerable<SelectListItem>, new { @class = "form-control select", @id = "loanOrderType" })
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="deptId">城市：</label>
+        <span class="selectimg u-i-sort">
+            @Html.DropDownListFor(model => model.DeptId, ViewData["common"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "deptId" })
+            <span></span>
+        </span>
+    </p>
+    <p hidden>
+        <label for="customerType">客户类型：</label>
+        <span class="selectimg u-i-sort">
+            @Html.DropDownListFor(model => model.CustomerType, ViewData["customerType"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "customerType" })
+
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="loanTypeId">产品名称：</label>
+        <span class="selectimg u-i-middle">
+
+            @Html.DropDownListFor(model => model.LoanTypeId, ViewData["common"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "loanTypeId" })
+            <span></span>
+        </span>
+    </p>
+    <div>
+        <label for="repayDate">到期还款日：</label>
+        <input readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="repayDate" name="repayDate" type="text">
+    </div>
+    <p>
+        <label for="status">目前状态：</label>
+        <span class="selectimg u-i-middle">
+            @Html.DropDownListFor(model => model.Status, ViewData["statusName"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "status" })
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="collectStatus">是否催收成功：</label>
+        <span class="selectimg u-i-middle">
+            @Html.DropDownListFor(model => model.CollectStatus, ViewData["collectStatusName"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "collectStatus" })
+            <span></span>
+        </span>
+    </p>
+    <p class="padding">
+        <button class="u-b-base u-b-exit s-b-gray u-b-spild pull-right" onclick="closeWind()">取消</button>
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild pull-right" id="overdueExportExcle">导出EXCEL</button>
+    </p>
+</div>

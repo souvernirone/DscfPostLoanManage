@@ -1,0 +1,8 @@
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\bin\Release\Dscf.AuthCenter.Domain.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\bin\Release\Dscf.AuthCenter.Domain.pdb
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\bin\Release\EntityFramework.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\bin\Release\EntityFramework.SqlServer.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\bin\Release\EntityFramework.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\bin\Release\EntityFramework.SqlServer.xml
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\obj\Release\Dscf.AuthCenter.Domain.dll
+F:\鼎盛财富\LoanAfterII\核心代码\DscfPostLoanManage\Dscf.AuthCenter.Domain\obj\Release\Dscf.AuthCenter.Domain.pdb

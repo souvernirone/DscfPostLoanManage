@@ -1,0 +1,76 @@
+﻿@using System.Web.Optimization
+
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarRemidDetailDto
+
+@{
+    ViewBag.Title = "还款提醒短期展期";
+}
+
+<div class="g-mn1c">
+    <form class="spilds">
+        <p>
+            <label>姓名：</label>
+            <span>@Model.Name</span>
+        </p>
+        <p>
+            <label>身份证号：</label>
+            <span>@Model.IDCard</span>
+        </p>
+        <p>
+            <label>银行卡号：</label>
+            <span>@Model.DeductBankAccount</span>
+        </p>
+        <p>
+            <label>银行名称：</label>
+            <span>@Model.DeductBankName-@Model.DeductBranchBank</span>
+
+        </p>
+        <p>
+            <label>合同编号：</label>
+            <span>@Model.ContractNumber</span>
+
+        </p>
+        <p>
+            <label>合同金额：</label>
+            <span>@(Model.Amount)元</span>
+
+        </p>
+        <p>
+            <label>签约日期：</label>
+            <span>@(Model.SignDate.HasValue ? Model.SignDate.Value.ToLongDateString().ToString() : string.Empty)</span>
+
+        </p>
+        <p>
+            <label>划扣日期：</label>
+            <span>@(Model.RepayDate.HasValue ? Model.RepayDate.Value.ToLongDateString().ToString() : string.Empty)</span>
+        </p>
+        <p>
+            <label>降额额度：</label>
+            <input type="text" id="derationAmount" name="derationAmount" class="form-control  u-i-sort1" value="">
+        </p>
+        <p class="height">
+            <label>展期意见：</label>
+            <textarea id="extensionMemo" name="extensionMemo" class="form-control u-i-long height"></textarea>
+        </p>
+    </form>
+    <p class="btn-nav">
+        <button class="u-b-base u-b-exprot s-b-green u-b-spild1" onclick="applySubmit()">提交</button>
+        <button class="u-b-base u-b-exprot s-b-gray u-b-spild1" onclick="closeWind()">取消</button>
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild1" onclick="giveUp()">放弃展期</button>
+    </p>
+
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/validator")
+    @Scripts.Render("~/bundles/carRemindExtensionDetail")
+}
+@section css
+{
+    <style>
+        span.bug {
+            color: red;
+        }
+    </style>
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b822d246-15b3-4d73-8c73-9337fa2aa38f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.168.2.2:9660/DscfBIService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DscfBIServerService.wsdl" MetadataType="Wsdl" ID="3e951bab-f2b9-4df1-a899-c50d35af6a99" SourceId="1" SourceUrl="http://192.168.2.2:9660/DscfBIService.svc?wsdl" />
+    <MetadataFile FileName="DscfBIService.xsd" MetadataType="Schema" ID="839f7c39-4d51-408e-b4fe-5f8813456ba9" SourceId="1" SourceUrl="http://192.168.2.2:9660/DscfBIService.svc?xsd=xsd0" />
+    <MetadataFile FileName="DscfBIService1.xsd" MetadataType="Schema" ID="875db374-8f98-4f1a-b7cd-010c991f56f7" SourceId="1" SourceUrl="http://192.168.2.2:9660/DscfBIService.svc?xsd=xsd1" />
+    <MetadataFile FileName="DscfBIService2.xsd" MetadataType="Schema" ID="973b8c38-32e0-42e3-8640-5cee407a85fd" SourceId="1" SourceUrl="http://192.168.2.2:9660/DscfBIService.svc?xsd=xsd2" />
+    <MetadataFile FileName="DscfBIService.disco" MetadataType="Disco" ID="f67a7d79-6333-4889-a4a6-baa0279c117d" SourceId="1" SourceUrl="http://192.168.2.2:9660/DscfBIService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

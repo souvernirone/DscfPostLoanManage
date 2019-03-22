@@ -1,0 +1,131 @@
+﻿@using System.Web.Optimization
+
+@model Dscf.PostLoan.CarLoanBLL.DscfCarLoanService.CarRemidDetailDto
+
+@{
+    ViewBag.Title = "还款提醒详情";
+}
+
+<div class="g-mn1c">
+    <div class="m-shrink info">
+        <h3 class="title f-sub" onclick="shrink(0)">
+            <i class="z-subtraction"></i>基本信息
+        </h3>
+        <div class="cbody">
+            <p>
+                <label>姓名：</label>
+                <span>@Model.Name</span>
+            </p>
+            <p>
+                <label>身份证号：</label>
+                <span>@Model.IDCard</span>
+            </p>
+            <p>
+                <label>银行卡号：</label>
+                <span>@Model.DeductBankAccount</span>
+            </p>
+            <p>
+                <label>银行名称：</label>
+                <span>@Model.DeductBankName-@Model.DeductBranchBank</span>
+
+            </p>
+            <p>
+                <label>合同编号：</label>
+                <span>@Model.ContractNumber</span>
+
+            </p>
+            <p>
+                <label>合同金额：</label>
+                <span>@(Model.Amount)元</span>
+
+            </p>
+            <p>
+                <label>签约日期：</label>
+                <span>@(Model.SignDate.HasValue ? Model.SignDate.Value.ToLongDateString().ToString() : string.Empty)</span>
+
+            </p>
+            <p>
+                <label>总期数：</label>
+                <span>@(Model.Term)期</span>
+            </p>
+            <p>
+                <label>月还金额：</label>
+                <span>@(Model.MonthRepay)元</span>
+            </p>
+        </div>
+
+    </div>
+    <div class="m-shrink info">
+        <h3 class="title f-sub" onclick="shrink(1)">
+            <i class="z-subtraction"></i>联系人信息
+        </h3>
+        <div class="cbody">
+            <p>
+                <label>公司：</label>
+                <span>@Model.CompanyName</span>
+                <label>电话：</label>
+                <span>@Model.CompanyTel</span>
+
+            </p>
+            <p>
+                <label>姓名：</label>
+                <span>@Model.EmergLinkManName1</span>
+                <label>关系：</label>
+                <span>@Model.EmergLinkManRel1</span>
+                <label>电话：</label>
+                <span>@Model.EmergLinkManPhone1</span>
+
+            </p>
+            <p>
+                <label>姓名：</label>
+                <span>@Model.EmergLinkManName2</span>
+                <label>关系：</label>
+                <span>@Model.EmergLinkManRel2</span>
+                <label>电话：</label>
+                <span>@Model.EmergLinkManPhone2</span>
+
+            </p>
+        </div>
+    </div>
+@Html.Partial("_RepayRemindList")
+
+</div>
+
+<div id="addRemind" class="f-hide alert" data-ordertype="2">
+    <form id="remindForm">
+        <p>
+            <label>提醒结果：</label>
+            <span class="selectimg">
+                <select id="repayRemindType" name="repayRemindType" class="form-control select">
+                    @{System.Text.StringBuilder u = new System.Text.StringBuilder("");}
+                    @{foreach (var a in @ViewBag.dlRepayRemindType)
+                    {
+                        u.AppendFormat("<option value=" + a.DictValue + ">" + a.DictMemo + "</option>");
+                    }}
+                    @Html.Raw(u);
+                </select>
+                <span></span>
+            </span>
+        </p>
+
+        <p class="height">
+            <label>提醒日志：</label>
+            <textarea id="remindContent" name="remindContent" class="form-control  height"></textarea>
+        </p>
+        </form>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/validator")
+    @Scripts.Render("~/bundles/_RepayRemindList")
+    @Scripts.Render("~/bundles/dataFormat")
+    @Scripts.Render("~/bundles/templete")
+}
+<style>
+    p.bug {
+        color: red;
+    }
+</style>
+

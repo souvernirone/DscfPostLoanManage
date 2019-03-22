@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LoanAfterService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_ILoanAfterContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:3790/DscfLoanAfterService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:3790/DscfLoanAfterService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:3790/DscfLoanAfterService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Dscf.LoanAfter.Dto" />
+      <xsd:import schemaLocation="http://localhost:3790/DscfLoanAfterService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="http://localhost:3790/DscfLoanAfterService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Dscf.PostLoanGlobal" />
+      <xsd:import schemaLocation="http://localhost:3790/DscfLoanAfterService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILoanAfterContract_GetRepayRemindListByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepayRemindListByKey" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetRepayRemindListByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepayRemindListByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetRepayRemindListByKeys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepayRemindListByKeys" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetRepayRemindListByKeys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRepayRemindListByKeysResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_AddRepayMindByDto_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRepayMindByDto" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_AddRepayMindByDto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddRepayMindByDtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_EditRepayMindByDto_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditRepayMindByDto" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_EditRepayMindByDto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditRepayMindByDtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_DelRepayMindByDto_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelRepayMindByDto" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_DelRepayMindByDto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelRepayMindByDtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_AddDeductPayApply_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeductPayApply" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_AddDeductPayApply_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDeductPayApplyResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpFileMessage">
+    <wsdl:part name="parameters" element="tns:UpFileMessage" />
+  </wsdl:message>
+  <wsdl:message name="UpFileMessage_Headers">
+    <wsdl:part name="IsImage" element="tns:IsImage" />
+    <wsdl:part name="OriginalFileName" element="tns:OriginalFileName" />
+    <wsdl:part name="ThumbHeight" element="tns:ThumbHeight" />
+    <wsdl:part name="ThumbWidth" element="tns:ThumbWidth" />
+  </wsdl:message>
+  <wsdl:message name="UpFileResultMessage">
+    <wsdl:part name="parameters" element="tns:UpFileResultMessage" />
+  </wsdl:message>
+  <wsdl:message name="UpFileResultMessage_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="FilePath" element="tns:FilePath" />
+    <wsdl:part name="FileSuffix" element="tns:FileSuffix" />
+    <wsdl:part name="IsSuccess" element="tns:IsSuccess" />
+    <wsdl:part name="Message" element="tns:Message" />
+    <wsdl:part name="SaveFileName" element="tns:SaveFileName" />
+    <wsdl:part name="ThumbPath" element="tns:ThumbPath" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetDeductPayApplyAndFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductPayApplyAndFile" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetDeductPayApplyAndFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductPayApplyAndFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateStatusByApplyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusByApplyId" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateStatusByApplyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStatusByApplyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetDeductPayList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductPayList" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetDeductPayList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeductPayListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateApplyStatusBatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplyStatusBatch" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateApplyStatusBatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplyStatusBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateApplyStatusByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplyStatusByKey" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateApplyStatusByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateApplyStatusByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetPageDeductPayList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageDeductPayList" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetPageDeductPayList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPageDeductPayListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_SelectCarDeductOrderList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCarDeductOrderList" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_SelectCarDeductOrderList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCarDeductOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_SelectCreditDeductOrderList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCreditDeductOrderList" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_SelectCreditDeductOrderList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SelectCreditDeductOrderListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_InsertCollectionInfoAndUpFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCollectionInfoAndUpFile" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_InsertCollectionInfoAndUpFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertCollectionInfoAndUpFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetCollectionInfoByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionInfoByKey" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetCollectionInfoByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectionInfoByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_DelCollectionInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelCollectionInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_DelCollectionInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelCollectionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateCollectionInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateCollectionInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectionInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetExtraInfoListByOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtraInfoListByOrder" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetExtraInfoListByOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExtraInfoListByOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_InsertExtraInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertExtraInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_InsertExtraInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertExtraInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateExtraInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExtraInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_UpdateExtraInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExtraInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_DelExtraInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelExtraInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_DelExtraInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelExtraInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetLoanAfterProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanAfterProduct" />
+  </wsdl:message>
+  <wsdl:message name="ILoanAfterContract_GetLoanAfterProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLoanAfterProductResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILoanAfterContract">
+    <wsdl:operation name="GetRepayRemindListByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetRepayRemindListByKey" message="tns:ILoanAfterContract_GetRepayRemindListByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetRepayRemindListByKeyResponse" message="tns:ILoanAfterContract_GetRepayRemindListByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRepayRemindListByKeys">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetRepayRemindListByKeys" message="tns:ILoanAfterContract_GetRepayRemindListByKeys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetRepayRemindListByKeysResponse" message="tns:ILoanAfterContract_GetRepayRemindListByKeys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRepayMindByDto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/AddRepayMindByDto" message="tns:ILoanAfterContract_AddRepayMindByDto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/AddRepayMindByDtoResponse" message="tns:ILoanAfterContract_AddRepayMindByDto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditRepayMindByDto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/EditRepayMindByDto" message="tns:ILoanAfterContract_EditRepayMindByDto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/EditRepayMindByDtoResponse" message="tns:ILoanAfterContract_EditRepayMindByDto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelRepayMindByDto">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/DelRepayMindByDto" message="tns:ILoanAfterContract_DelRepayMindByDto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/DelRepayMindByDtoResponse" message="tns:ILoanAfterContract_DelRepayMindByDto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDeductPayApply">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/AddDeductPayApply" message="tns:ILoanAfterContract_AddDeductPayApply_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/AddDeductPayApplyResponse" message="tns:ILoanAfterContract_AddDeductPayApply_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/UpLoadFile" name="UpFileMessage" message="tns:UpFileMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/UpLoadFileResponse" name="UpFileResultMessage" message="tns:UpFileResultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductPayApplyAndFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetDeductPayApplyAndFile" message="tns:ILoanAfterContract_GetDeductPayApplyAndFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetDeductPayApplyAndFileResponse" message="tns:ILoanAfterContract_GetDeductPayApplyAndFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusByApplyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateStatusByApplyId" message="tns:ILoanAfterContract_UpdateStatusByApplyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateStatusByApplyIdResponse" message="tns:ILoanAfterContract_UpdateStatusByApplyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductPayList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetDeductPayList" message="tns:ILoanAfterContract_GetDeductPayList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetDeductPayListResponse" message="tns:ILoanAfterContract_GetDeductPayList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplyStatusBatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateApplyStatusBatch" message="tns:ILoanAfterContract_UpdateApplyStatusBatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateApplyStatusBatchResponse" message="tns:ILoanAfterContract_UpdateApplyStatusBatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplyStatusByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateApplyStatusByKey" message="tns:ILoanAfterContract_UpdateApplyStatusByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateApplyStatusByKeyResponse" message="tns:ILoanAfterContract_UpdateApplyStatusByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPageDeductPayList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetPageDeductPayList" message="tns:ILoanAfterContract_GetPageDeductPayList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetPageDeductPayListResponse" message="tns:ILoanAfterContract_GetPageDeductPayList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCarDeductOrderList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/SelectCarDeductOrderList" message="tns:ILoanAfterContract_SelectCarDeductOrderList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/SelectCarDeductOrderListResponse" message="tns:ILoanAfterContract_SelectCarDeductOrderList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SelectCreditDeductOrderList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/SelectCreditDeductOrderList" message="tns:ILoanAfterContract_SelectCreditDeductOrderList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/SelectCreditDeductOrderListResponse" message="tns:ILoanAfterContract_SelectCreditDeductOrderList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertCollectionInfoAndUpFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/InsertCollectionInfoAndUpFile" message="tns:ILoanAfterContract_InsertCollectionInfoAndUpFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/InsertCollectionInfoAndUpFileResponse" message="tns:ILoanAfterContract_InsertCollectionInfoAndUpFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionInfoByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetCollectionInfoByKey" message="tns:ILoanAfterContract_GetCollectionInfoByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetCollectionInfoByKeyResponse" message="tns:ILoanAfterContract_GetCollectionInfoByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelCollectionInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/DelCollectionInfo" message="tns:ILoanAfterContract_DelCollectionInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/DelCollectionInfoResponse" message="tns:ILoanAfterContract_DelCollectionInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectionInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateCollectionInfo" message="tns:ILoanAfterContract_UpdateCollectionInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateCollectionInfoResponse" message="tns:ILoanAfterContract_UpdateCollectionInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExtraInfoListByOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetExtraInfoListByOrder" message="tns:ILoanAfterContract_GetExtraInfoListByOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetExtraInfoListByOrderResponse" message="tns:ILoanAfterContract_GetExtraInfoListByOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertExtraInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/InsertExtraInfo" message="tns:ILoanAfterContract_InsertExtraInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/InsertExtraInfoResponse" message="tns:ILoanAfterContract_InsertExtraInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExtraInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateExtraInfo" message="tns:ILoanAfterContract_UpdateExtraInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/UpdateExtraInfoResponse" message="tns:ILoanAfterContract_UpdateExtraInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelExtraInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/DelExtraInfo" message="tns:ILoanAfterContract_DelExtraInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/DelExtraInfoResponse" message="tns:ILoanAfterContract_DelExtraInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanAfterProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoanAfterContract/GetLoanAfterProduct" message="tns:ILoanAfterContract_GetLoanAfterProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILoanAfterContract/GetLoanAfterProductResponse" message="tns:ILoanAfterContract_GetLoanAfterProduct_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_ILoanAfterContract" type="tns:ILoanAfterContract">
+    <wsp:PolicyReference URI="#WSHttpBinding_ILoanAfterContract_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRepayRemindListByKey">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetRepayRemindListByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRepayRemindListByKeys">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetRepayRemindListByKeys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRepayMindByDto">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/AddRepayMindByDto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditRepayMindByDto">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/EditRepayMindByDto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelRepayMindByDto">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/DelRepayMindByDto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDeductPayApply">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/AddDeductPayApply" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpLoadFile">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/UpLoadFile" style="document" />
+      <wsdl:input name="UpFileMessage">
+        <soap12:header message="tns:UpFileMessage_Headers" part="IsImage" use="literal" />
+        <soap12:header message="tns:UpFileMessage_Headers" part="OriginalFileName" use="literal" />
+        <soap12:header message="tns:UpFileMessage_Headers" part="ThumbHeight" use="literal" />
+        <soap12:header message="tns:UpFileMessage_Headers" part="ThumbWidth" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="UpFileResultMessage">
+        <soap12:header message="tns:UpFileResultMessage_Headers" part="FileName" use="literal" />
+        <soap12:header message="tns:UpFileResultMessage_Headers" part="FilePath" use="literal" />
+        <soap12:header message="tns:UpFileResultMessage_Headers" part="FileSuffix" use="literal" />
+        <soap12:header message="tns:UpFileResultMessage_Headers" part="IsSuccess" use="literal" />
+        <soap12:header message="tns:UpFileResultMessage_Headers" part="Message" use="literal" />
+        <soap12:header message="tns:UpFileResultMessage_Headers" part="SaveFileName" use="literal" />
+        <soap12:header message="tns:UpFileResultMessage_Headers" part="ThumbPath" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductPayApplyAndFile">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetDeductPayApplyAndFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStatusByApplyId">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/UpdateStatusByApplyId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeductPayList">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetDeductPayList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplyStatusBatch">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/UpdateApplyStatusBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateApplyStatusByKey">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/UpdateApplyStatusByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPageDeductPayList">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetPageDeductPayList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCarDeductOrderList">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/SelectCarDeductOrderList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SelectCreditDeductOrderList">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/SelectCreditDeductOrderList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertCollectionInfoAndUpFile">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/InsertCollectionInfoAndUpFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectionInfoByKey">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetCollectionInfoByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelCollectionInfo">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/DelCollectionInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectionInfo">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/UpdateCollectionInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExtraInfoListByOrder">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetExtraInfoListByOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertExtraInfo">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/InsertExtraInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExtraInfo">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/UpdateExtraInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelExtraInfo">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/DelExtraInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLoanAfterProduct">
+      <soap12:operation soapAction="http://tempuri.org/ILoanAfterContract/GetLoanAfterProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoanAfterService">
+    <wsdl:port name="WSHttpBinding_ILoanAfterContract" binding="tns:WSHttpBinding_ILoanAfterContract">
+      <soap12:address location="http://localhost:3790/DscfLoanAfterService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:3790/DscfLoanAfterService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

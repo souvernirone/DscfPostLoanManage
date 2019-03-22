@@ -1,0 +1,26 @@
+﻿@using System.Web.Optimization;
+
+@{
+    ViewBag.Title = "报表导出";
+}
+
+<div class="g-mn1c tb">
+    <div class="m-shrink">
+        @Html.Partial("_FinancialExportExcle")
+    </div>
+    <div class="m-shrink">
+        @Html.Partial("_OverdueExportExcle")
+    </div>
+</div>
+
+@section css
+{
+    @Styles.Render("~/Content/css/datepicker")
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/datepickerJs")
+    @Scripts.Render("~/bundles/exportExcleJs")
+   
+}

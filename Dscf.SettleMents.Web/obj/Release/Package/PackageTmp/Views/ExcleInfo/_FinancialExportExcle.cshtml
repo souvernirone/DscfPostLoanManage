@@ -1,0 +1,55 @@
+﻿@using Dscf.PostLoan.LoanAfterBLL.DscfLoanAfterService;
+@using System.Web.Optimization
+@model Dscf.PostLoan.Model.FinancialExportExcleViewModel
+<h3 class="title f-sub" onclick="shrink(0)">
+    <i class="z-subtraction"></i>
+    财务报表
+</h3>
+<div class="cbody" style="display: block;">
+    <p>
+        <label for="productType">借款类型：</label>
+        <span class="selectimg u-i-middle">
+            @Html.DropDownListFor(model => model.ProductType, ViewData["productType"] as IEnumerable<SelectListItem>, new { @class = "form-control select", @id = "productType_jk" })
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="cityName">城市：</label>
+        <span class="selectimg u-i-middle">
+            @Html.DropDownListFor(model => model.CityName, ViewData["cityName"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "cityName_jk" })
+            <span></span>
+        </span>
+    </p>
+    <p>
+        <label for="productName">产品名称：</label>
+        <span class="selectimg u-i-middle">
+            @Html.DropDownListFor(model => model.ProductName, ViewData["cityName"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "productName_jk" })
+            <span></span>
+        </span>
+    </p>
+    <div>
+        <label for="contractDate1">合同签署日期：</label>
+        <input readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="contractDataBegin_jk" name="contractDataBegin" type="text">
+        <sapn class="u-spild spild">至</sapn>
+        <input readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="contractDataEnd_jk" name="contractDataEnd" type="text">
+    </div>
+    <div>
+        <label for="productName">放款时间：</label>
+        <input readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="loansDataBegin_jk" name="loansDataBegin" type="text">
+        <sapn class="u-spild spild">至</sapn>
+        <input readonly="readonly" size="10" class="form-control form_datetime  u-i-middle" id="loansDataEnd_jk" name="loansDataEnd" type="text">
+
+    </div>
+    <p>
+        <label for="teamName">所属团队：</label>
+        <span class="selectimg u-i-middle">
+            @Html.DropDownListFor(model => model.TeamName, ViewData["cityName"] as IEnumerable<SelectListItem>, new { @class = "form-control select", id = "teamName_jk" })
+            <span></span>
+        </span>
+    </p>
+    <p class="padding">
+        <button class="u-b-base u-b-exit s-b-gray u-b-spild pull-right" onclick="closeWind()">取消</button>
+        <button class="u-b-base u-b-exprot s-b-blue u-b-spild pull-right" id="financialExportExcle">导出EXCEL</button>
+    </p>
+</div>
+

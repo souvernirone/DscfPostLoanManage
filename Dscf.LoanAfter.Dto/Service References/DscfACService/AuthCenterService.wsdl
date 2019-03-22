@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AuthCenterService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IAuthCenterContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:11331/DscfACService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:11331/DscfACService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:11331/DscfACService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:11331/DscfACService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Dscf.AuthCenter.Dto" />
+      <xsd:import schemaLocation="http://localhost:11331/DscfACService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IAuthCenterContract_GetRoleIdsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleIdsById" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetRoleIdsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoleIdsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDeptIdsById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptIdsById" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDeptIdsById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptIdsByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDeptByDeptID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptByDeptID" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDeptByDeptID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptByDeptIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDeptSignSitiesById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptSignSitiesById" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDeptSignSitiesById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeptSignSitiesByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetCollectorListByRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectorListByRole" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetCollectorListByRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectorListByRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetChildDeptListByDeptID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildDeptListByDeptID" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetChildDeptListByDeptID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChildDeptListByDeptIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_UpdateOptCollectionType_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOptCollectionType" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_UpdateOptCollectionType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOptCollectionTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetOperaterInfoByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperaterInfoByID" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetOperaterInfoByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperaterInfoByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetOperaterInfoList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperaterInfoList" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetOperaterInfoList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperaterInfoListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetOperaterInfoLists_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperaterInfoLists" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetOperaterInfoLists_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperaterInfoListsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetCollectorSupportCityList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectorSupportCityList" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetCollectorSupportCityList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCollectorSupportCityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDictListByKey_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDictListByKey" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetDictListByKey_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDictListByKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetRemindNameByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemindNameByType" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_GetRemindNameByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRemindNameByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_UpdateCollectorSupportCityList_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectorSupportCityList" />
+  </wsdl:message>
+  <wsdl:message name="IAuthCenterContract_UpdateCollectorSupportCityList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCollectorSupportCityListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IAuthCenterContract">
+    <wsdl:operation name="GetRoleIdsById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetRoleIdsById" message="tns:IAuthCenterContract_GetRoleIdsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetRoleIdsByIdResponse" message="tns:IAuthCenterContract_GetRoleIdsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptIdsById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDeptIdsById" message="tns:IAuthCenterContract_GetDeptIdsById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDeptIdsByIdResponse" message="tns:IAuthCenterContract_GetDeptIdsById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptByDeptID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDeptByDeptID" message="tns:IAuthCenterContract_GetDeptByDeptID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDeptByDeptIDResponse" message="tns:IAuthCenterContract_GetDeptByDeptID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptSignSitiesById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDeptSignSitiesById" message="tns:IAuthCenterContract_GetDeptSignSitiesById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDeptSignSitiesByIdResponse" message="tns:IAuthCenterContract_GetDeptSignSitiesById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectorListByRole">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetCollectorListByRole" message="tns:IAuthCenterContract_GetCollectorListByRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetCollectorListByRoleResponse" message="tns:IAuthCenterContract_GetCollectorListByRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildDeptListByDeptID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetChildDeptListByDeptID" message="tns:IAuthCenterContract_GetChildDeptListByDeptID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetChildDeptListByDeptIDResponse" message="tns:IAuthCenterContract_GetChildDeptListByDeptID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOptCollectionType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/UpdateOptCollectionType" message="tns:IAuthCenterContract_UpdateOptCollectionType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/UpdateOptCollectionTypeResponse" message="tns:IAuthCenterContract_UpdateOptCollectionType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperaterInfoByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetOperaterInfoByID" message="tns:IAuthCenterContract_GetOperaterInfoByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetOperaterInfoByIDResponse" message="tns:IAuthCenterContract_GetOperaterInfoByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperaterInfoList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetOperaterInfoList" message="tns:IAuthCenterContract_GetOperaterInfoList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetOperaterInfoListResponse" message="tns:IAuthCenterContract_GetOperaterInfoList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperaterInfoLists">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetOperaterInfoLists" message="tns:IAuthCenterContract_GetOperaterInfoLists_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetOperaterInfoListsResponse" message="tns:IAuthCenterContract_GetOperaterInfoLists_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectorSupportCityList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetCollectorSupportCityList" message="tns:IAuthCenterContract_GetCollectorSupportCityList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetCollectorSupportCityListResponse" message="tns:IAuthCenterContract_GetCollectorSupportCityList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDictListByKey">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDictListByKey" message="tns:IAuthCenterContract_GetDictListByKey_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetDictListByKeyResponse" message="tns:IAuthCenterContract_GetDictListByKey_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemindNameByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/GetRemindNameByType" message="tns:IAuthCenterContract_GetRemindNameByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/GetRemindNameByTypeResponse" message="tns:IAuthCenterContract_GetRemindNameByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectorSupportCityList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAuthCenterContract/UpdateCollectorSupportCityList" message="tns:IAuthCenterContract_UpdateCollectorSupportCityList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAuthCenterContract/UpdateCollectorSupportCityListResponse" message="tns:IAuthCenterContract_UpdateCollectorSupportCityList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IAuthCenterContract" type="tns:IAuthCenterContract">
+    <wsp:PolicyReference URI="#WSHttpBinding_IAuthCenterContract_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetRoleIdsById">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetRoleIdsById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptIdsById">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetDeptIdsById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptByDeptID">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetDeptByDeptID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptSignSitiesById">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetDeptSignSitiesById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectorListByRole">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetCollectorListByRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildDeptListByDeptID">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetChildDeptListByDeptID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOptCollectionType">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/UpdateOptCollectionType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperaterInfoByID">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetOperaterInfoByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperaterInfoList">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetOperaterInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperaterInfoLists">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetOperaterInfoLists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCollectorSupportCityList">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetCollectorSupportCityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDictListByKey">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetDictListByKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemindNameByType">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/GetRemindNameByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCollectorSupportCityList">
+      <soap12:operation soapAction="http://tempuri.org/IAuthCenterContract/UpdateCollectorSupportCityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthCenterService">
+    <wsdl:port name="WSHttpBinding_IAuthCenterContract" binding="tns:WSHttpBinding_IAuthCenterContract">
+      <soap12:address location="http://localhost:11331/DscfACService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:11331/DscfACService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

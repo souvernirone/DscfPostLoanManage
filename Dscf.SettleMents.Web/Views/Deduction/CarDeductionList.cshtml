@@ -1,0 +1,244 @@
+﻿@using System.Web.Optimization
+
+@{
+    ViewBag.Title = "划扣（车）";
+}
+
+<div class="g-mn1c tb">
+    <ul class="m-tnav">
+        <li class="active">
+            <a data-href="#dan">手工划扣</a>
+        </li>
+        <li>
+            <a id="tabduo" data-href="#duo">批量划款</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="table-responsive tab-pane active " id="dan">
+            <div class="search-long-condition">
+                <input type="hidden" name="IsDan" value="true" />
+            </div>
+            <table class="table table-bordered noborder">
+                <thead>
+                    <tr>
+                        <th>签署地</th>
+                        <th>姓名</th>
+                        <th>产品类型</th>
+                        <th>合同金额</th>
+                        <th>扣款方式</th>
+                        <th>进入大堂时间</th>
+                        <th>操作</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody id="danContainer"></tbody>
+            </table>
+            <!--分页局部视图-->
+            <div>@Html.Partial("_PartialPager")</div>
+        </div>
+        <div class="table-responsive tab-pane " id="duo">
+            <div class="search-short-condition">
+                <input type="hidden" name="IsDan" value="false" />
+            </div>
+            <table class="table table-bordered noborder">
+                <thead>
+                    <tr>
+                        <td class="city"><input id="allCh" type="checkbox" style="display: block;"></td>
+                        <th>签署地</th>
+                        <th>姓名</th>
+                        <th>产品类型</th>
+                        <th>合同金额</th>
+                        <th>进入大堂时间</th>
+                        <th>操作</th>
+                        <th>状态</th>
+                    </tr>
+                </thead>
+                <tbody id="duoContainer"></tbody>
+            </table>
+
+            <!--分页HTML开始-->
+            <div id="pagerOther" style="float:left"></div>
+            <div style="float:left;margin-left:20px" id="selectCount">
+                页面显示
+                <select id="selelct_OtherPageCount" style="font-size: 16px;height:38px;width:55px;" class="select">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option selected="selected" value="10">10</option>
+                    <option value="20">20</option>
+                    <option value="30">30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                </select>
+                条
+            </div>
+            <!--分页HTML结束-->
+            <div id="btn">
+                <button class="u-b-base u-b-exprot s-b-blue u-b-spild1 btn-nav" style="margin-left: 60%;" onclick="deductAll()">全部扣款</button>
+                <button class="u-b-base u-b-exprot s-b-blue u-b-spild1 btn-nav" onclick="deduct()">选择扣款</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/dialog")
+    @Scripts.Render("~/bundles/dataPagerJs")
+    @Scripts.Render("~/bundles/dataFormat")
+
+    <script id="tmplDanCarLoan" type="text/x-jquery-tmpl">
+        <tr id="row-${Id}" >
+            <td>${SignCity}</td>
+            <td>${UserName}</td>
+            <td>${ProductName}</td>
+            <td>${Amount}</td>
+            <td>${PayWayName}</td>
+            <td>${LobbyTime}</td>
+            <td>
+                {{if StatusId==2||StatusId==4}}
+                <a class="u-b-one s-b-gray " href="#">扣</a>
+                {{else}}
+                <a class="u-b-one s-b-blue " target="_self" href="/Deduction/CarDeductClaims?orderId=${OrderId}&isExtension=${IsExtension}&payWay=${PayWay}&applyId=${Id}&css=2063">扣</a>
+                {{/if}}
+                <a class="u-b-one s-b-orage " target="_blank" href="/Deduction/CarDeductClaimsDetail?orderId=${OrderId}&StatusId=${StatusId}&isExtension=${IsExtension}&payWay=${PayWay}&css=2063">查</a>
+            </td>
+            <td>${StatusName}</td>
+        </tr>
+    </script>
+
+    <script id="tmplDuoCarLoan" type="text/x-jquery-tmpl">
+        <tr id="row-${OrderId}" data-repayid="${RepayId}" data-periodorder="${PeriodOrder}">
+            <td class="city"><input name="Checked" value="${OrderId}" type="checkbox" style="display: block;"></td>
+            <td>${SignCity}</td>
+            <td>${UserName}</td>
+            <td>${ProductName}</td>
+            <td>${Amount}</td>
+            <td>${LobbyTime}</td>
+            <td>
+                {{if (PaymentType==1&&(Code=="10"||Code=="20"))||(PaymentType==0&&Code=="10")}}
+                <a name="kou" class="u-b-one s-b-gray " href="#">扣</a>
+                {{else}}
+                <a class="u-b-one s-b-blue " target="_self" href="/Deduction/CarBatchDeductClaims?orderId=${OrderId}&repayId=${RepayId}&codeName=${CodeName}&css=2063">扣</a>
+                {{/if}}
+                <a class="u-b-one s-b-orage " target="_blank" href="/Deduction/CarBatchDeductClaimsDetail?orderId=${OrderId}&repayId=${RepayId}&codeName=${CodeName}&css=2063">查</a>
+            </td>
+            <td>${CodeName}</td>
+        </tr>
+    </script>
+
+    <script type="text/javascript">
+        function deductAll() {
+            new Alert().AlertInfo({
+                content: "确定全部扣款吗？",
+                iClass: 'yes',
+                callBack: function () {
+
+                    $.ajax({
+                        url: "/Deduction/AddBatchCarDeductProgress",
+                        method: "post",
+                        async: true,
+                        dataType: "json",
+                        success: function (result) {
+                            if (!result.ReturnType) {
+                                new Alert().AlertInfo({
+                                    content: result.ReturnMsg,
+                                    iClass: result.ReturnType ? 'yes' : 'error'
+                                });
+                            }
+                            else {
+                                GetPageCarLoanBatchDeductList();
+                                $("a[name='kou']").parents("tr").each(function () { $(this).children().eq(0).children().remove(); })
+                            }
+                        }
+                    });
+                }
+            })
+        }
+
+        function deduct() {
+            new Alert().AlertInfo({
+                content: "确定对选择项进行扣款吗？",
+                iClass: 'yes',
+                callBack: function () {
+                    var params = {};
+                    var chk_value = [];
+                    $('input[name="Checked"]:checked').each(function () {
+                        chk_value.push($(this).val() + "," + $(this).parent().parent().attr("data-repayid"));
+                    });
+
+                    params.idAndPeriods = chk_value;
+                    $.ajax({
+                        url: "/Deduction/AddCarDeductProgressByKey",
+                        method: "post",
+                        async: true,
+                        dataType: "json",
+                        data: params,
+                        success: function (result) {
+                            if (!result.ReturnType) {
+                                new Alert().AlertInfo({
+                                    content: result.ReturnMsg,
+                                    iClass: result.ReturnType ? 'yes' : 'error'
+                                });
+                            }
+                            else {
+                                GetPageCarLoanBatchDeductList();
+                                $("a[name='kou']").parents("tr").each(function () { $(this).children().eq(0).children().remove(); })
+                            }
+                        }
+                    });
+                }
+            })
+        }
+        $(function () {
+            GetCarPageDeductApplyList();
+            if ("@ViewBag.Day" == "6" || "@ViewBag.Day" == "20") {//批量划扣时间配置
+                GetPageCarLoanBatchDeductList();
+            }
+            else {
+                $("#btn").remove();
+            }
+
+            $("a[name='kou']").parents("tr").each(function () { $(this).children().eq(0).children().remove(); })
+
+            $("#allCh").click(function () {
+                $("input[name='Checked'] ").prop("checked", this.checked);
+            });
+            $("input[name='Checked']").click(function () {
+                if (!this.checked)
+                    $("#allCh").prop("checked", this.checked);
+            })
+        })
+
+        function GetCarPageDeductApplyList() {
+            var page = new Page();
+            page.Url = "/Deduction/GetCarPageDeductApplyList";
+            page.Container = $("#danContainer");
+            page.CallBack = function (data) {
+                $("#danContainer").empty();
+                $.each(data, function (index, item) {
+                    item.LobbyTime = $.format.timestamp(item.LobbyTime, "yyyy年MM月dd日");
+                    $("#tmplDanCarLoan").tmpl(item).appendTo($("#danContainer"));
+                });
+            }
+            page.GetPageData();
+        }
+
+        function GetPageCarLoanBatchDeductList() {
+            var page = new OtherPage();
+            page.Url = "/Deduction/GetPageCarLoanBatchDeductList";
+            page.Container = $("#duoContainer");
+            page.CallBack = function (data) {
+                $("#duoContainer").empty();
+                $.each(data, function (index, item) {
+                    item.LobbyTime = $.format.timestamp(item.LobbyTime, "yyyy年MM月dd日");
+
+                    $("#tmplDuoCarLoan").tmpl(item).appendTo($("#duoContainer"));
+                });
+            };
+            page.GetPageData();
+        }
+    </script>
+}

@@ -1,0 +1,2 @@
+﻿<%@ServiceHost Service="Dscf.LoanAfter.Contract.ILoanAfterContract,Dscf.LoanAfter.Contract" 
+     Factory="Autofac.Integration.Wcf.AutofacServiceHostFactory, Autofac.Integration.Wcf" %>

@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dscf.CarLoan.Dto" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dscf.CarLoan.Dto" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:11416/DscfCarLoanService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfCarUserInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarUserInfoDto" nillable="true" type="tns:CarUserInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarUserInfoDto" nillable="true" type="tns:ArrayOfCarUserInfoDto" />
+  <xs:complexType name="CarUserInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarUserInfoDto" nillable="true" type="tns:CarUserInfoDto" />
+  <xs:complexType name="LoanSearchaRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OptId" type="xs:int" />
+      <xs:element minOccurs="0" name="PageNum" type="xs:int" />
+      <xs:element minOccurs="0" name="PageSize" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SignSities" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="SignTimeFrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignTimeTo" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanSearchaRequest" nillable="true" type="tns:LoanSearchaRequest" />
+  <xs:complexType name="ArrayOfLoanProductOrderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoanProductOrderDto" nillable="true" type="tns:LoanProductOrderDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoanProductOrderDto" nillable="true" type="tns:ArrayOfLoanProductOrderDto" />
+  <xs:complexType name="LoanProductOrderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BankCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyRelation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyRelation2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyTel2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollectStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contract" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LobbyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LobbyLoanExtensionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderType" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SubBranchName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Term" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanProductOrderDto" nillable="true" type="tns:LoanProductOrderDto" />
+  <xs:complexType name="ArrayOfCarRemindListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarRemindListDto" nillable="true" type="tns:CarRemindListDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarRemindListDto" nillable="true" type="tns:ArrayOfCarRemindListDto" />
+  <xs:complexType name="CarRemindListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CollectorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsAllowExtension" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAllowRemain" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsCanExtension" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRemind" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MonthRepay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OptDeptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OptName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemindDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RemindText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepayId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserPhone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarRemindListDto" nillable="true" type="tns:CarRemindListDto" />
+  <xs:complexType name="ArrayOfCarOverdueListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CarOverdueListDto" nillable="true" type="tns:CarOverdueListDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCarOverdueListDto" nillable="true" type="tns:ArrayOfCarOverdueListDto" />
+  <xs:complexType name="CarOverdueListDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarLoanStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CarLoanStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollectStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CollectStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CollectorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeptOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtensionApplyCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstOverdueTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsCanExtension" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OptDeptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OverdueCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OverduePrincipalSum" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReconsiderationStatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RepayId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarOverdueListDto" nillable="true" type="tns:CarOverdueListDto" />
+  <xs:complexType name="CarLoanOrderDetailDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CarInfo" nillable="true" type="tns:CarInfoDto" />
+      <xs:element minOccurs="0" name="CollectorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ContractFormationList" nillable="true" type="tns:ArrayOfContractFormationDto" />
+      <xs:element minOccurs="0" name="ContractStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeductBankAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductBankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductBranchBank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanMonthRepayList" nillable="true" type="tns:ArrayOfLoanMonthRepayDto" />
+      <xs:element minOccurs="0" name="LobbyInfo" nillable="true" type="tns:LobbyInfoDto" />
+      <xs:element minOccurs="0" name="NetAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="UserInfo" nillable="true" type="tns:UserInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarLoanOrderDetailDto" nillable="true" type="tns:CarLoanOrderDetailDto" />
+  <xs:complexType name="CarInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarInfoId" type="xs:int" />
+      <xs:element minOccurs="0" name="CarSeats" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CertificateNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChassisNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Displacement" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Distance" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Dormer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EngineNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gearbox" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsModify" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufactureDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifyMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OpenFare" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnershipNum" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RegistDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SimilarMarketPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TermInsurance" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleBrands" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ViolateComment" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarInfoDto" nillable="true" type="tns:CarInfoDto" />
+  <xs:complexType name="ArrayOfContractFormationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ContractFormationDto" nillable="true" type="tns:ContractFormationDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractFormationDto" nillable="true" type="tns:ArrayOfContractFormationDto" />
+  <xs:complexType name="ContractFormationDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ContractName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractOperator" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContractPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ContractType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ContratctNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreditListId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtensionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FinancingOrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsSignature" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoanOrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StartName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TypeCode" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ContractFormationDto" nillable="true" type="tns:ContractFormationDto" />
+  <xs:complexType name="ArrayOfLoanMonthRepayDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LoanMonthRepayDto" nillable="true" type="tns:LoanMonthRepayDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLoanMonthRepayDto" nillable="true" type="tns:ArrayOfLoanMonthRepayDto" />
+  <xs:complexType name="LoanMonthRepayDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActualDeductAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AmountOfHand" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContractAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DailyPenalty" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DebtOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DeductDailyPenalty" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductMonthRepay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeductOverduePenalty" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="EarlyRepayPenalty" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GiveUpExtension" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDeductSucess" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsRemind" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LoanOrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MonthInterest" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthRepay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthRepayPrincipal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OneRepayAll" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OverduePenalty" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PeriodOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RemainPrincipal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RepayDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RepayId" type="xs:int" />
+      <xs:element minOccurs="0" name="ReturnServiceFee" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ToalPeriod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalPricipalInterest" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalServiceFee" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanMonthRepayDto" nillable="true" type="tns:LoanMonthRepayDto" />
+  <xs:complexType name="LobbyInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssessId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CarInfo" nillable="true" type="tns:CarInfoDto" />
+      <xs:element minOccurs="0" name="CarInfoId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DeptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FaceTrialId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FaceTrialInfo" nillable="true" type="tns:FaceTrialInfoDto" />
+      <xs:element minOccurs="0" name="IdCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoanExtensionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LobbyId" type="xs:int" />
+      <xs:element minOccurs="0" name="LobbyTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NewOrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignedId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SignedInfo" nillable="true" type="tns:SignedInfoDto" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LobbyInfoDto" nillable="true" type="tns:LobbyInfoDto" />
+  <xs:complexType name="FaceTrialInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApplyAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CarLoanConfig" nillable="true" type="tns:CarLoanConfigDto" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerManager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FaceTrailId" type="xs:int" />
+      <xs:element minOccurs="0" name="FaceTrialMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupManager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupManagerPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LicensePlate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Purpose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FaceTrialInfoDto" nillable="true" type="tns:FaceTrialInfoDto" />
+  <xs:complexType name="CarLoanConfigDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AuditFeesRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BeforeRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BreachOfContractRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="BreakRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CarLoanTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ComplexRateTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ConfigId" type="xs:int" />
+      <xs:element minOccurs="0" name="ConsultancyRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ContractChar" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Formality" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GPSContractLimits" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GPSIncrease" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="GPSInstallFees" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsShow" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoanDays" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LoanTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Margin" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MiddleRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="MonthRateTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherFees" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OverdueRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="PenaltyRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RateTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ServicesFeesRate" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TypeId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarLoanConfigDto" nillable="true" type="tns:CarLoanConfigDto" />
+  <xs:complexType name="SignedInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CityId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CommercialInsurancePass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CovenantNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CovenantStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DrivingLicensePass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GPSNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCardPass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IdCardType" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ImportVehiclePass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="InvoicePass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KeyNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="KeyPass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LobbyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OtherMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProvinceId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RegistrationCertificatePass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="SignCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignId" type="xs:int" />
+      <xs:element minOccurs="0" name="SignMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SigningDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StronginsurancePass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TCCPass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TemporaryPass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TransferPass" type="xs:boolean" />
+      <xs:element minOccurs="0" name="UserBankInfoId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VehicleHandoverTime" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SignedInfoDto" nillable="true" type="tns:SignedInfoDto" />
+  <xs:complexType name="UserInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressZipCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="EducationText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCardAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaritalTypeText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NowAddressBeginTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ResideTypeText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="UserWorkInfo" nillable="true" type="tns:UserWorkInfoDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserInfoDto" nillable="true" type="tns:UserInfoDto" />
+  <xs:complexType name="UserWorkInfoDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertifyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyRelation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyRelation2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertifyTel2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EnterCompanyDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserId" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkCity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WorkEmail" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserWorkInfoDto" nillable="true" type="tns:UserWorkInfoDto" />
+  <xs:complexType name="LoanOrderDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AgreementId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApplyAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApplyTerm" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CarId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CoborrowCaId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoborrowName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CoborrowTransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractEndDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ContractStartDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CustomerManager" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DeductDate" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Ditratings" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FirstVerifyOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsAuthorization" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsCoborrowLoan" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsExtension" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsOpen" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSyncSuccess" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LastVerifyOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LobbyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MonthAmount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Narrator" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NetAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductOrderId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductTypeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Purpose" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReconsiderOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ReconsiderationStatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="RepayPerMonth" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SignDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TeamManager" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Term" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalReviewOptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TransactionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserBankInfoId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="YearRate" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoanOrderDto" nillable="true" type="tns:LoanOrderDto" />
+  <xs:complexType name="CarRemidDetailDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Amount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyTel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContractNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductBankAccount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductBankName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeductBranchBank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergLinkManName1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergLinkManName2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergLinkManPhone1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergLinkManPhone2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergLinkManRel1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmergLinkManRel2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDCard" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MonthRepay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RepayDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SignDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Term" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarRemidDetailDto" nillable="true" type="tns:CarRemidDetailDto" />
+  <xs:complexType name="CarCountDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllNum" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortNum" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarCountDto" nillable="true" type="tns:CarCountDto" />
+  <xs:complexType name="CarLoanExtensionApplyDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DerationAmount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ExtensionId" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtensionMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ExtensionOrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoanProductOrerId" type="xs:int" />
+      <xs:element minOccurs="0" name="LobbyId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CarLoanExtensionApplyDto" nillable="true" type="tns:CarLoanExtensionApplyDto" />
+  <xs:complexType name="ArrayOfExhibitionReviewDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExhibitionReviewDto" nillable="true" type="tns:ExhibitionReviewDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExhibitionReviewDto" nillable="true" type="tns:ArrayOfExhibitionReviewDto" />
+  <xs:complexType name="ExhibitionReviewDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CarExtensionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LoanOrderId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="StatusId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExhibitionReviewDto" nillable="true" type="tns:ExhibitionReviewDto" />
+  <xs:complexType name="ImagesDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CurrentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ImgFixd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImgId" type="xs:int" />
+      <xs:element minOccurs="0" name="ImgName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImgPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ImgType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsDelete" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IsEnable" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastOperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="LastUpdateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OperateId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ThumPath" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ImagesDto" nillable="true" type="tns:ImagesDto" />
+  <xs:complexType name="ArrayOfImagesDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ImagesDto" nillable="true" type="tns:ImagesDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImagesDto" nillable="true" type="tns:ArrayOfImagesDto" />
+</xs:schema>
